@@ -581,8 +581,20 @@ video {
   position: fixed;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.left-1\/2{
+  left: 50%;
+}
+
 .top-0{
   top: 0px;
+}
+
+.top-1\/2{
+  top: 50%;
 }
 
 .z-40{
@@ -606,6 +618,14 @@ video {
   display: none;
 }
 
+.h-16{
+  height: 4rem;
+}
+
+.h-32{
+  height: 8rem;
+}
+
 .h-full{
   height: 100%;
 }
@@ -614,8 +634,33 @@ video {
   width: 91.666667%;
 }
 
+.w-16{
+  width: 4rem;
+}
+
+.w-32{
+  width: 8rem;
+}
+
 .w-full{
   width: 100%;
+}
+
+.origin-center{
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-y-full{
@@ -642,6 +687,22 @@ video {
   justify-content: space-between;
 }
 
+.fill-cyan{
+  fill: #66FCF1;
+}
+
+.fill-transparent{
+  fill: transparent;
+}
+
+.stroke-cyan{
+  stroke: #66FCF1;
+}
+
+.stroke-\[15px\]{
+  stroke-width: 15px;
+}
+
 .p-4{
   padding: 1rem;
 }
@@ -651,21 +712,8 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.font-opensans{
-  font-family: Open Sans, sans-serif;
-}
-
 .font-robotomono{
   font-family: Roboto Mono, monospace;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.font-bold{
-  font-weight: 700;
 }
 
 .text-cyan{
@@ -706,11 +754,91 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.animate-logo-shrink {
+  -webkit-animation: shrink 0.5s ease 3.5s, move-to-topleft 1s ease 4s;
+          animation: shrink 0.5s ease 3.5s, move-to-topleft 1s ease 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes shrink {
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@keyframes shrink {
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@-webkit-keyframes move-to-topleft {
+  to {
+    top: calc(24px + 32px);
+    left: calc((100% / 24 + 32px));
+  }
+}
+
+@keyframes move-to-topleft {
+  to {
+    top: calc(24px + 32px);
+    left: calc((100% / 24 + 32px));
+  }
+}
+
+.loading-letters {
+  stroke: #66fcf1;
+  fill: #66fcf1;
+  opacity: 0;
+  -webkit-animation: show-letters 0.5s ease 3s;
+          animation: show-letters 0.5s ease 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes show-letters {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show-letters {
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-polygon {
+  stroke: #66fcf1;
+  stroke-width: 15;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  fill: transparent;
+  -webkit-animation: draw-polygon 3s ease forwards;
+          animation: draw-polygon 3s ease forwards;
+}
+
+@-webkit-keyframes draw-polygon {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-polygon {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 html,
 body,
 #root,
 .app {
   height: 100%;
+  width: 100%;
   background-color: #1f2833;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -730,6 +858,25 @@ body,
 .before\:content-\[\'\$\{index\.toString\(\)\}\'\]::before{
   --tw-content: '${index.toString()}';
   content: var(--tw-content);
+}
+
+@-webkit-keyframes spin{
+  to{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin{
+  to{
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.hover\:animate-spin-slow:hover{
+  -webkit-animation: spin 5s linear infinite;
+          animation: spin 5s linear infinite;
 }
 
 .hover\:text-cyan:hover{

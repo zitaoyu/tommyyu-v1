@@ -14,6 +14,9 @@ module.exports = {
         robotomono: ["Roboto Mono", "monospace"],
         opensans: ["Open Sans", "sans-serif"],
       },
+      animation: {
+        "spin-slow": "spin 5s linear infinite",
+      },
     },
     screens: {
       xs: "480px",

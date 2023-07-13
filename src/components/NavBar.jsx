@@ -2,10 +2,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect, useState } from "react";
 import MotionDiv from "./MotionDiv";
-
-const Logo = () => {
-  return <h4 className="text-cyan text-5xl font-bold font-opensans">TY</h4>;
-};
+import { SpinLogo } from "./Logo";
 
 const Link = ({ index, page }) => {
   const lowerCasePage = page.toLowerCase();
@@ -74,7 +71,7 @@ const NavBar = () => {
         ${y === 0 ? "shadow-none" : "shadow-md"}`}
     >
       <div className="flex justify-between items-center mx-auto w-11/12">
-        <Logo />
+        <SpinLogo />
         {isAboveSmallScreens ? <LinkGroup /> : <div></div>}
       </div>
     </nav>
