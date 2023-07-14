@@ -688,7 +688,7 @@ video {
 }
 
 .fill-cyan{
-  fill: #66FCF1;
+  fill: #64ffda;
 }
 
 .fill-transparent{
@@ -696,7 +696,7 @@ video {
 }
 
 .stroke-cyan{
-  stroke: #66FCF1;
+  stroke: #64ffda;
 }
 
 .stroke-\[15px\]{
@@ -718,7 +718,7 @@ video {
 
 .text-cyan{
   --tw-text-opacity: 1;
-  color: rgb(102 252 241 / var(--tw-text-opacity));
+  color: rgb(100 255 218 / var(--tw-text-opacity));
 }
 
 .text-slate{
@@ -852,7 +852,7 @@ body,
 .before\:text-cyan::before{
   content: var(--tw-content);
   --tw-text-opacity: 1;
-  color: rgb(102 252 241 / var(--tw-text-opacity));
+  color: rgb(100 255 218 / var(--tw-text-opacity));
 }
 
 .before\:content-\[\'\$\{index\.toString\(\)\}\'\]::before{
@@ -881,5 +881,5 @@ body,
 
 .hover\:text-cyan:hover{
   --tw-text-opacity: 1;
-  color: rgb(102 252 241 / var(--tw-text-opacity));
+  color: rgb(100 255 218 / var(--tw-text-opacity));
 }
