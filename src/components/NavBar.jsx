@@ -3,6 +3,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import MotionDiv from "./MotionDiv";
 import { SpinLogo } from "./Logo";
+import { Page } from "../util/page";
 import menuIcon from "../assets/menu-icon.svg";
 import closeIcon from "../assets/close-icon.svg";
 
@@ -15,29 +16,29 @@ const Link = ({ index, page }) => {
       href={`#${lowerCasePage}`}
       onClick={() => {}}
     >
-      <span className="text-cyan mr-1">{index}.</span>
-      {page}
+      <span className="text-cyan mr-1">{"[" + index + "]"}.</span>
+      {page.charAt(0).toUpperCase() + page.slice(1)}
     </AnchorLink>
   );
 };
 
-const LinkGroup = () => {
+const LinkGroup = ({ className }) => {
   return (
-    <div className="flex justify-between">
+    <div className={className}>
       <MotionDiv delay={0} duration={0.4} y1={-20} y2={0}>
-        <Link index={"[0]"} page={"Home"} />
+        <Link index={0} page={Page.Home} />
       </MotionDiv>
       <MotionDiv delay={0.2} duration={0.4} y1={-20} y2={0}>
-        <Link index={"[1]"} page={"About"} />
+        <Link index={1} page={Page.About} />
       </MotionDiv>
       <MotionDiv delay={0.4} duration={0.4} y1={-20} y2={0}>
-        <Link index={"[2]"} page={"Experience"} />
+        <Link index={2} page={Page.Experience} />
       </MotionDiv>
       <MotionDiv delay={0.6} duration={0.4} y1={-20} y2={0}>
-        <Link index={"[3]"} page={"Work"} />
+        <Link index={3} page={Page.Work} />
       </MotionDiv>
       <MotionDiv delay={0.8} duration={0.4} y1={-20} y2={0}>
-        <Link index={"[4]"} page={"Contact"} />
+        <Link index={4} page={Page.Contact} />
       </MotionDiv>
     </div>
   );
@@ -51,7 +52,7 @@ const NavBar = () => {
 
   const updateNavBar = () => {
     const windowY = window.scrollY;
-    if (showNavBar && y < windowY) {
+    if (showNavBar && y < windowY && !isMenuToggled) {
       setShowNavBar(false);
     } else if (!showNavBar && y > windowY) {
       setShowNavBar(true);
@@ -75,52 +76,47 @@ const NavBar = () => {
       <div className="flex justify-between items-center mx-auto w-11/12">
         <SpinLogo />
         {isAboveSmallScreens ? (
-          <LinkGroup />
+          <LinkGroup className={`flex justify-between`} />
         ) : (
-          <button
-            className="rounded-full bg-cyan p-2"
-            onClick={() => setIsMenuToggled(!isMenuToggled)}
-          >
-            <img alt="menu-icon" src={menuIcon} />
-          </button>
+          <MotionDiv delay={0} y1={-20} y2={0}>
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <img
+                className="h-9 w-9 bg-cyan p-2 rounded-full"
+                alt="menu-icon"
+                src={menuIcon}
+              />
+            </button>
+          </MotionDiv>
         )}
       </div>
 
       {/* MOBILE MENU POPUP */}
       {
         <div
-          className={`fixed right-0 top-0 h-screen bg-dark-grey w-[66%] 
+          className={`fixed right-0 top-0 h-[100vh] bg-navy w-[66%] 
                       ease-in-out duration-500
                       ${
                         !isAboveSmallScreens && isMenuToggled
-                          ? "translate-x-0"
+                          ? "translate-x-0 overflow-hidden"
                           : `translate-x-full`
                       }`}
         >
           {/* CLOSE ICON */}
           <div className="flex justify-end pt-11 pr-8">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <img alt="close-icon" className="h-8 w-8" src={closeIcon} />
+              <img
+                alt="close-icon"
+                className="h-9 w-9 bg-cyan p-2 rounded-full"
+                src={closeIcon}
+              />
             </button>
           </div>
           {/* MENU ITEMS */}
-          <div className="flex flex-col items-center justify-between h-1/2 gap-10 my-4 text-2xl text-slate">
-            <MotionDiv delay={0} duration={0.4} y1={-20} y2={0}>
-              <Link index={"[0]"} page={"Home"} />
-            </MotionDiv>
-            <MotionDiv delay={0.2} duration={0.4} y1={-20} y2={0}>
-              <Link index={"[1]"} page={"About"} />
-            </MotionDiv>
-            <MotionDiv delay={0.4} duration={0.4} y1={-20} y2={0}>
-              <Link index={"[2]"} page={"Experience"} />
-            </MotionDiv>
-            <MotionDiv delay={0.6} duration={0.4} y1={-20} y2={0}>
-              <Link index={"[3]"} page={"Work"} />
-            </MotionDiv>
-            <MotionDiv delay={0.8} duration={0.4} y1={-20} y2={0}>
-              <Link index={"[4]"} page={"Contact"} />
-            </MotionDiv>
-          </div>
+          <LinkGroup
+            className={
+              "flex flex-col items-center justify-between my-12 h-1/2 text-xl text-slate"
+            }
+          />
         </div>
       }
     </nav>

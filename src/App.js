@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import { LoadingScreen } from "./components/Logo";
+import LandingSection from "./scenes/Landing";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +19,7 @@ function App() {
       ) : (
         <div className="app">
           <NavBar />
-          <div className="h-full"></div>
+          <LandingSection />
           <div className="h-full"></div>
         </div>
       )}
