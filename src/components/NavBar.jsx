@@ -7,14 +7,15 @@ import { Page } from "../util/page";
 import menuIcon from "../assets/menu-icon.svg";
 import closeIcon from "../assets/close-icon.svg";
 
-const Link = ({ index, page }) => {
-  const lowerCasePage = page.toLowerCase();
+const Link = ({ index, page, selectedPage, setSelectedPage }) => {
   // const beforeStyle = `before:content-['${index.toString()}'] before:mr-1 before:text-cyan`;
   return (
     <AnchorLink
-      className={`font-robotomono text-slate  hover:text-cyan transition duration-500 p-4`}
-      href={`#${lowerCasePage}`}
-      onClick={() => {}}
+      className={`${
+        selectedPage === page ? "text-cyan" : "text-slate"
+      } font-robotomono hover:text-cyan transition duration-500 p-4`}
+      href={`#${page}`}
+      onClick={() => setSelectedPage(page)}
     >
       <span className="text-cyan mr-1">{"[" + index + "]"}.</span>
       {page.charAt(0).toUpperCase() + page.slice(1)}
@@ -22,30 +23,56 @@ const Link = ({ index, page }) => {
   );
 };
 
-const LinkGroup = ({ className }) => {
+const LinkGroup = ({ className, selectedPage, setSelectedPage }) => {
   return (
     <div className={className}>
       <MotionDiv delay={0} duration={0.4} y1={-20} y2={0}>
-        <Link index={0} page={Page.Home} />
+        <Link
+          index={0}
+          page={Page.Home}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </MotionDiv>
       <MotionDiv delay={0.2} duration={0.4} y1={-20} y2={0}>
-        <Link index={1} page={Page.About} />
+        <Link
+          index={1}
+          page={Page.About}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </MotionDiv>
       <MotionDiv delay={0.4} duration={0.4} y1={-20} y2={0}>
-        <Link index={2} page={Page.Experience} />
+        <Link
+          index={2}
+          page={Page.Experience}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </MotionDiv>
       <MotionDiv delay={0.6} duration={0.4} y1={-20} y2={0}>
-        <Link index={3} page={Page.Work} />
+        <Link
+          index={3}
+          page={Page.Work}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </MotionDiv>
       <MotionDiv delay={0.8} duration={0.4} y1={-20} y2={0}>
-        <Link index={4} page={Page.Contact} />
+        <Link
+          index={4}
+          page={Page.Contact}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </MotionDiv>
     </div>
   );
 };
 
-const NavBar = () => {
+const NavBar = ({ selectedPage, setSelectedPage }) => {
   const [y, setY] = useState(0);
+  const [mouseAtTop, setMouseAtTop] = useState(false);
   const [showNavBar, setShowNavBar] = useState(true);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
@@ -60,23 +87,38 @@ const NavBar = () => {
     setY(windowY);
   };
 
+  const handleMouseMove = (event) => {
+    let y = event.clientY;
+    if (y < 80) {
+      setMouseAtTop(true);
+    } else if (mouseAtTop && y > 112) {
+      setMouseAtTop(false);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", updateNavBar);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("scroll", updateNavBar);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   });
 
   return (
     <nav
-      className={`fixed w-full top-0 py-6 z-40 ease-in-out duration-500 
-        ${showNavBar ? "translate-y-0" : "-translate-y-full"} 
+      className={`fixed w-full top-0 xs:py-6 py-3 z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
+        ${showNavBar || mouseAtTop ? "translate-y-0" : "-translate-y-full"} 
         ${y === 0 ? "shadow-none" : "shadow-md"}`}
     >
       <div className="flex justify-between items-center mx-auto w-11/12">
         <SpinLogo />
         {isAboveSmallScreens ? (
-          <LinkGroup className={`flex justify-between`} />
+          <LinkGroup
+            className={`flex justify-between`}
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
         ) : (
           <MotionDiv delay={0} y1={-20} y2={0}>
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -116,6 +158,8 @@ const NavBar = () => {
             className={
               "flex flex-col items-center justify-between my-12 h-1/2 text-xl text-slate"
             }
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
           />
         </div>
       }

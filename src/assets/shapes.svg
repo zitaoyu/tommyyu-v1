@@ -1,0 +1,7 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="container">
+<path id="triangle" d="M17.7276 159.5L100 17L182.272 159.5H17.7276Z" stroke="#64FFDA" stroke-width="5"/>
+<circle id="circle" cx="311" cy="99" r="57.5" stroke="#64FFDA" stroke-width="5"/>
+<rect id="reactangle" x="153.5" y="214.5" width="145" height="145" stroke="#64FFDA" stroke-width="5"/>
+</g>
+</svg>

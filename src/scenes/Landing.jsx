@@ -1,15 +1,103 @@
 import { Page } from "../util/page";
+import { AnchorLinkButton } from "../components/Button";
+import MotionDiv from "../components/MotionDiv";
 
-const LandingSection = ({}) => {
+const ShapesCanvas = () => {
   return (
-    <div className="w-5/6 max-w-[1920px] mx-auto md:h-full">
+    <div className="h-full stroke-cyan stroke-[5px]">
+      <svg
+        width="500"
+        height="500"
+        viewBox="0 0 400 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="container">
+          <path
+            className="opacity-30 translate-y-6"
+            id="triangle"
+            d="M17.7276 159.5L100 17L182.272 159.5H17.7276Z"
+          />
+          <circle
+            className="opacity-50"
+            id="circle"
+            cx="311"
+            cy="99"
+            r="57.5"
+          />
+          <rect
+            className="opacity-60"
+            id="reactangle"
+            x="153.5"
+            y="214.5"
+            width="145"
+            height="145"
+          />
+        </g>
+      </svg>
+    </div>
+  );
+};
+
+const LandingSection = ({ setSelectedPage }) => {
+  return (
+    <div className="sm:h-full w-5/6 max-w-[1200px] mx-auto">
       <section
-        className="md:flex md:justify-between justify-center md:items-center gap-16 md:h-full py-10"
+        className="flex h-full flex-col justify-center py-10 md:relative"
         id={Page.Home}
       >
-        <h1 className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
-          Hi, my name is.
-        </h1>
+        {/* Introduction Section*/}
+        <div className="md:mt-0 mt-20 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+          <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
+            <h1 className="text-cyan text-base font-robotomono">
+              Hello world, my name is
+            </h1>
+          </MotionDiv>
+          <MotionDiv delay={1.2} duration={0.4} x1={20} x2={0}>
+            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold">
+              Tommy Yu
+            </h2>
+          </MotionDiv>
+          <MotionDiv delay={2.2} duration={0.4} x1={20} x2={0}>
+            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold">
+              I create fun things for the web.
+            </h3>
+          </MotionDiv>
+          <MotionDiv delay={2.4} duration={0.4} x1={20} x2={0}>
+            <p className="text-slate font-opensans max-w-3xl">
+              Hello and welcome to my portfolio! I'm a passionate software
+              engineer specializing in crafting web applications with
+              exceptional user experiences and captivating graphics. From
+              designing seamless interfaces to implementing cutting-edge
+              technologies, I'm dedicated to creating digital wonders that leave
+              a lasting impression.
+            </p>
+          </MotionDiv>
+          <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
+            <div className="flex sm:flex-row flex-col gap-10 md:mt-8 mt-4">
+              <AnchorLinkButton
+                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                link={Page.About}
+                onClick={() => setSelectedPage(Page.About)}
+              >
+                Check me out!
+              </AnchorLinkButton>
+
+              <AnchorLinkButton
+                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                link={Page.Contact}
+                onClick={() => setSelectedPage(Page.Contact)}
+              >
+                Contact info
+              </AnchorLinkButton>
+            </div>
+          </MotionDiv>
+        </div>
+        <div className="md:visible invisible absolute z-1 right-0">
+          <MotionDiv delay={3} duration={0.4} x1={20} x2={0}>
+            <ShapesCanvas />
+          </MotionDiv>
+        </div>
       </section>
     </div>
   );
