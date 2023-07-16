@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import { AnchorLinkButton } from "../components/Button";
 import MotionDiv from "../components/MotionDiv";
@@ -41,7 +42,11 @@ const ShapesCanvas = () => {
 
 const LandingSection = ({ setSelectedPage }) => {
   return (
-    <div className="sm:h-full w-5/6 max-w-[1200px] mx-auto">
+    <motion.div
+      className="sm:h-full w-5/6 max-w-[1200px] mx-auto"
+      amount="all"
+      onViewportEnter={() => setSelectedPage(Page.Home)}
+    >
       <section
         className="flex h-full flex-col justify-center py-10 md:relative"
         id={Page.Home}
@@ -65,12 +70,11 @@ const LandingSection = ({ setSelectedPage }) => {
           </MotionDiv>
           <MotionDiv delay={2.4} duration={0.4} x1={20} x2={0}>
             <p className="text-slate font-opensans max-w-3xl">
-              Hello and welcome to my portfolio! I'm a passionate software
-              engineer specializing in crafting web applications with
-              exceptional user experiences and captivating graphics. From
-              designing seamless interfaces to implementing cutting-edge
-              technologies, I'm dedicated to creating digital wonders that leave
-              a lasting impression.
+              I'm a passionate software engineer specializing in crafting web
+              applications with exceptional user experiences and captivating
+              graphics. From designing seamless interfaces to implementing
+              cutting-edge technologies, I'm dedicated to creating digital
+              wonders that leave a lasting impression.
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
@@ -99,7 +103,7 @@ const LandingSection = ({ setSelectedPage }) => {
           </MotionDiv>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

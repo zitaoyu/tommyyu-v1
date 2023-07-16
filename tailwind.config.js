@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   mode: "jit",
@@ -19,10 +22,16 @@ module.exports = {
       animation: {
         "spin-slow": "spin 5s linear infinite",
         "pulse-slow": "pulse-slow 0.5s ease-in-out forwards alternate",
+        "fade-in-7s": "fadein 7s linear",
+        "fade-in-5s": "fadein 5s linear",
       },
       keyframes: {
         "pulse-slow": {
           to: { transform: "scale(0.95)" },
+        },
+        fadein: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
         },
       },
     },
@@ -35,5 +44,20 @@ module.exports = {
       xl: "1700px",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        }
+      );
+    }),
+  ],
 };

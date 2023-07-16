@@ -1,6 +1,12 @@
-const DummySection = ({ page }) => {
+import { motion } from "framer-motion";
+
+const DummySection = ({ page, setSelectedPage }) => {
   return (
-    <div className="h-full w-5/6 max-w-[1920px] mx-auto ">
+    <motion.div
+      className="h-full w-5/6 max-w-[1920px] mx-auto "
+      amount="all"
+      onViewportEnter={() => setSelectedPage(page)}
+    >
       <section
         className="h-full flex flex-col justify-center text-cyan"
         id={page}
@@ -9,7 +15,7 @@ const DummySection = ({ page }) => {
           {page} page is under construction...
         </h1>
       </section>
-    </div>
+    </motion.div>
   );
 };
 export default DummySection;

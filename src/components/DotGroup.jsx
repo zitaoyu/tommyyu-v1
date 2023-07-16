@@ -19,7 +19,7 @@ const DotLink = ({ page, selectedPage, setSelectedPage }) => {
 
 const DotGroup = ({ selectedPage, setSelectedPage }) => {
   return (
-    <div className="flex flex-col gap-6 fixed top-[60%] right-7">
+    <div className="flex flex-col gap-6 fixed top-[60%] right-7 animate-fade-in-5s">
       <DotLink
         page={Page.Home}
         selectedPage={selectedPage}

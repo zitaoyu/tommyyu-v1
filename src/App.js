@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import LandingSection from "./scenes/Landing";
 import DummySection from "./scenes/DummySection";
 import DotGroup from "./components/DotGroup";
+import IconGroup from "./components/IconGroup";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -33,25 +34,39 @@ function App() {
             setSelectedPage={setSelectedPage}
           />
           {isDesktop && (
-            <DotGroup
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <>
+              <DotGroup
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <IconGroup />
+            </>
           )}
           {/* Landing */}
           <LandingSection setSelectedPage={setSelectedPage} />
+
           <SectionDivider />
+
           {/* About */}
-          <DummySection page={Page.About} />
+          <DummySection page={Page.About} setSelectedPage={setSelectedPage} />
+
           <SectionDivider />
+
           {/* Experience */}
-          <DummySection page={Page.Experience} />
+          <DummySection
+            page={Page.Experience}
+            setSelectedPage={setSelectedPage}
+          />
+
           <SectionDivider />
+
           {/* Work */}
-          <DummySection page={Page.Work} />
+          <DummySection page={Page.Work} setSelectedPage={setSelectedPage} />
+
           <SectionDivider />
+
           {/* Contact */}
-          <DummySection page={Page.Contact} />
+          <DummySection page={Page.Contact} setSelectedPage={setSelectedPage} />
         </div>
       )}
     </div>
