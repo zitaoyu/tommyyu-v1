@@ -42,6 +42,8 @@ module.exports = {
       md: "1060px",
       lg: "1200px",
       xl: "1700px",
+      "xs-max-h": { raw: "(max-height: 480px)" },
+      "ss-max-h": { raw: "(max-height: 620px)" },
     },
   },
   plugins: [

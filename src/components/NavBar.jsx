@@ -98,16 +98,20 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", updateNavBar);
-    window.addEventListener("mousemove", handleMouseMove);
+    if (isAboveSmallScreens) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
     return () => {
       window.removeEventListener("scroll", updateNavBar);
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (isAboveSmallScreens) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
     };
   });
 
   return (
     <nav
-      className={`fixed w-full top-0 xs:py-6 py-3 z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
+      className={`fixed w-full top-0 ss-max-h:py-3 xs:py-6 py-3 z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
         ${showNavBar || mouseAtTop ? "translate-y-0" : "-translate-y-full"} 
         ${y === 0 ? "shadow-none" : "shadow-md"}`}
     >

@@ -20,14 +20,14 @@ const ShapesCanvas = () => {
             d="M17.7276 159.5L100 17L182.272 159.5H17.7276Z"
           />
           <circle
-            className="opacity-50"
+            className="opacity-60"
             id="circle"
             cx="311"
             cy="99"
             r="57.5"
           />
           <rect
-            className="opacity-60"
+            className="opacity-30"
             id="reactangle"
             x="153.5"
             y="214.5"
@@ -52,7 +52,7 @@ const LandingSection = ({ setSelectedPage }) => {
         id={Page.Home}
       >
         {/* Introduction Section*/}
-        <div className="md:mt-0 mt-20 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+        <div className="ss-max-h:mt-20 md:mt-0 mt-20 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
             <h1 className="text-cyan text-base font-robotomono">
               Hello world, my name is

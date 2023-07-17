@@ -37,6 +37,7 @@
   .loading-polygon {
     stroke: #66fcf1;
     stroke-width: 15;
+    stroke-linecap: round;
     stroke-dasharray: 900;
     stroke-dashoffset: 900;
     fill: transparent;
