@@ -16,7 +16,7 @@
   }
   @keyframes move-to-topleft {
     to {
-      top: calc(24px + 32px);
+      top: calc(2.5vh + 32px);
       left: calc((100% / 24 + 32px));
     }
   }
