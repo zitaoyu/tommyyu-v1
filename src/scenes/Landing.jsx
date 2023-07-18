@@ -43,7 +43,7 @@ const ShapesCanvas = () => {
 const LandingSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="sm:h-full w-5/6 max-w-[1200px] mx-auto"
+      className="h-screen w-5/6 max-w-[1200px] mx-auto"
       amount="all"
       onViewportEnter={() => setSelectedPage(Page.Home)}
     >
@@ -52,7 +52,7 @@ const LandingSection = ({ setSelectedPage }) => {
         id={Page.Home}
       >
         {/* Introduction Section*/}
-        <div className="ss-max-h:mt-20 md:mt-0 mt-20 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+        <div className="ss-max-h:mt-20 md:mt-0 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
             <h1 className="text-cyan text-base font-robotomono">
               Hello world, my name is
@@ -78,9 +78,9 @@ const LandingSection = ({ setSelectedPage }) => {
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
-            <div className="flex sm:flex-row flex-col gap-10 md:mt-8 mt-4">
+            <div className="flex sm:flex-row flex-row md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"}
                 link={Page.About}
                 onClick={() => setSelectedPage(Page.About)}
               >
@@ -88,7 +88,7 @@ const LandingSection = ({ setSelectedPage }) => {
               </AnchorLinkButton>
 
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-5"}
                 link={Page.Contact}
                 onClick={() => setSelectedPage(Page.Contact)}
               >

@@ -36,7 +36,7 @@ const LinkGroup = ({
   className,
   selectedPage,
   setSelectedPage,
-  setIsMenuToggled,
+  setIsMenuToggled = () => {},
 }) => {
   return (
     <div className={className}>
