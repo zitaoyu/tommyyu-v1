@@ -43,7 +43,7 @@ module.exports = {
       lg: "1200px",
       xl: "1700px",
       "xs-max-h": { raw: "(max-height: 480px)" },
-      "ss-max-h": { raw: "(max-height: 620px)" },
+      "ss-max-h": { raw: "(max-height: 680px)" },
     },
   },
   plugins: [

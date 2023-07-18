@@ -43,7 +43,7 @@ const ShapesCanvas = () => {
 const LandingSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="h-screen w-5/6 max-w-[1200px] mx-auto"
+      className="h-screen"
       amount="all"
       onViewportEnter={() => setSelectedPage(Page.Home)}
     >

@@ -7,6 +7,7 @@ import LandingSection from "./scenes/Landing";
 import DummySection from "./scenes/DummySection";
 import DotGroup from "./components/DotGroup";
 import IconGroup from "./components/IconGroup";
+import AboutSection from "./scenes/About";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -28,7 +29,7 @@ function App() {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <div className="app">
+        <div className="app w-5/6 max-w-[1200px] mx-auto">
           <NavBar
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
@@ -48,7 +49,7 @@ function App() {
           <SectionDivider />
 
           {/* About */}
-          <DummySection page={Page.About} setSelectedPage={setSelectedPage} />
+          <AboutSection setSelectedPage={setSelectedPage} />
 
           <SectionDivider />
 

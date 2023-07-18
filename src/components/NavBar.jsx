@@ -130,7 +130,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
 
   return (
     <nav
-      className={`fixed w-full top-0 py-[2.5vh] z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
+      className={`fixed w-full left-0 top-0 py-[2.5vh] z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
         ${
           // TODO: mobile hide bavbar when y = 0 due to mobile browser
           showNavBar || mouseAtTop || y === 0
