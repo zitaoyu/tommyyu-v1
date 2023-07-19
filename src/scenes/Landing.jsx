@@ -44,8 +44,8 @@ const LandingSection = ({ setSelectedPage }) => {
   return (
     <motion.div
       className="h-screen"
-      amount="all"
       onViewportEnter={() => setSelectedPage(Page.Home)}
+      viewport={{ amount: 0.7 }}
     >
       <section
         className="flex h-full flex-col justify-center py-10 md:relative"

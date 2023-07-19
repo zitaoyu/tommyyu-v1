@@ -1,5 +1,3 @@
-import MotionDiv from "../components/MotionDiv";
-
 const SocialMediaIcon = ({ link, children }) => {
   return (
     <a

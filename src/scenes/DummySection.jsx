@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 const DummySection = ({ page, setSelectedPage }) => {
   return (
     <motion.div
-      className="h-full w-5/6 max-w-[1920px] mx-auto "
-      amount="all"
+      className="h-full w-5/6 max-w-[1920px] mx-auto"
       onViewportEnter={() => setSelectedPage(page)}
+      viewport={{ amount: 0.7 }}
     >
       <section
         className="h-full flex flex-col justify-center text-cyan"
