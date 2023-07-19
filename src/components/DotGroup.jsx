@@ -8,8 +8,10 @@ const selectedStyles = `relative bg-cyan before:absolute before:w-6 before:h-6
 const DotLink = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
-      className={`w-3 h-3 rounded-full ${
-        selectedPage === page ? selectedStyles : "bg-slate"
+      className={`w-3 h-3 rounded-full transition duration-500 ${
+        selectedPage === page
+          ? selectedStyles
+          : "bg-slate hover:border-cyan hover:border-2"
       } `}
       href={`#${page}`}
       onClick={() => setSelectedPage(page)}
