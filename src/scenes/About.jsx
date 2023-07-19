@@ -3,6 +3,56 @@ import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import profilePicture from "../assets/profile-picture.jpg";
 
+const TechTerm = ({ children }) => {
+  return (
+    <span className="text-light-slate bg-navy rounded-md p-1 mr-3 mt-2">
+      {children}
+    </span>
+  );
+};
+
+const BulletPoint = ({ title, items }) => {
+  return (
+    <div>
+      <div className="inline-block mr-2">
+        <svg
+          className="w-6 h-6 stroke-2 stroke-cyan fill-none inline-block mr-1 -translate-y-[2px]"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7 8L3 12L7 16" />
+          <path d="M17 8L21 12L17 16" />
+          <path d="M14 4L9.8589 19.4548" />
+        </svg>
+        <span className="text-cyan">{title}</span>
+      </div>
+      <div className="flex flex-wrap">
+        {items.map((item) => {
+          return <TechTerm>{item}</TechTerm>;
+        })}
+      </div>
+    </div>
+  );
+};
+
+const ProfilePicture = () => {
+  return (
+    <div class="bg-cyan h-[40%] w-full rounded-lg shadow-window-shadow">
+      <div class="h-[25px] inline-flex">
+        <div class="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
+        <div class="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
+        <div class="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
+      </div>
+      {/* <div className="h-[2px] w-full bg-cyan"></div> */}
+      <div class="bg-slate h-[200px] w-full" contenteditable>
+        {/* <img alt="profile" className="" src={profilePicture} /> */}
+      </div>
+    </div>
+  );
+};
+
 const AboutSection = ({ setSelectedPage }) => {
   return (
     <motion.div
@@ -17,7 +67,7 @@ const AboutSection = ({ setSelectedPage }) => {
         {/* MAIN SECTION */}
         <div className="z-30 basis-3/5 mt-12 md:mt-32 bg-red">
           <MotionDiv duration={0.4} y1={50} y2={0}>
-            <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-2xl text-light-slate font-robotomono">
+            <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-2xl text-light-slate font-robotomono font-semibold">
               <span className="text-cyan mr-1">[1].</span>About Me
             </h3>
             <div className="flex flex-col gap-6 text-slate font-opensans max-w-3xl">
@@ -35,22 +85,27 @@ const AboutSection = ({ setSelectedPage }) => {
                 cutting-edge technologies, I'm dedicated to creating digital
                 wonders that leave a lasting impression.
               </p>
-              <ul className="text-light-slate font-robotomono">
-                <li className="mb-4">Language:</li>
-                <li className="mb-4">Framework:</li>
+              <ul className="font-robotomono">
+                <li className="mb-4">
+                  <BulletPoint
+                    title={"Language: "}
+                    items={["JavaScript", "TypeScript", "CSS", "Python", "C++"]}
+                  ></BulletPoint>
+                </li>
+                <li className="mb-4">
+                  <BulletPoint
+                    title={"Framework: "}
+                    items={["React", "Angular", "Tailwind CSS"]}
+                  ></BulletPoint>
+                </li>
               </ul>
             </div>
           </MotionDiv>
         </div>
 
-        <div className="basis-2/5 z-10 mt-16 md:mt-32 flex justify-center">
+        <div className="basis-2/5 z-10 mt-16 md:mt-32 flex flex-col justify-center h-full">
           {/* PROFILE PICTURE */}
-          <img
-            alt="profile"
-            className="hover:filter hover:saturate-150 transition duration-500 z-10 
-                w-full max-w-[400px] md:max-w-lg"
-            src={profilePicture}
-          />
+          <ProfilePicture />
         </div>
       </section>
     </motion.div>
