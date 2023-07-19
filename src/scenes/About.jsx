@@ -39,15 +39,22 @@ const BulletPoint = ({ title, items }) => {
 
 const ProfilePicture = () => {
   return (
-    <div class="bg-cyan h-[40%] w-full rounded-lg shadow-window-shadow">
+    <div class="bg-cyan md:h-[60%] min-h-[400px] w-full max-w-[300px] rounded-lg shadow-window-shadow hover:scale-110 transition transition duration-500">
       <div class="h-[25px] inline-flex">
         <div class="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
         <div class="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
         <div class="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
       </div>
       {/* <div className="h-[2px] w-full bg-cyan"></div> */}
-      <div class="bg-slate h-[200px] w-full" contenteditable>
-        {/* <img alt="profile" className="" src={profilePicture} /> */}
+      <div
+        class="bg-slate h-[calc(100%-25px)] w-full rounded-b-lg flex flex-col justify-center"
+        contenteditable
+      >
+        <img
+          className="h-5/6 w-5/6 rounded-lg m-auto"
+          alt="profile"
+          src={profilePicture}
+        />
       </div>
     </div>
   );
@@ -62,10 +69,10 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="md:flex md:justify-between md:items-center md:h-full md:py-[15%] gap-16 py-10"
+        className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10"
       >
         {/* MAIN SECTION */}
-        <div className="z-30 basis-3/5 mt-12 md:mt-32 bg-red">
+        <div className="z-30 basis-3/5 bg-red ss-max-h:mt-32">
           <MotionDiv duration={0.4} y1={50} y2={0}>
             <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-2xl text-light-slate font-robotomono font-semibold">
               <span className="text-cyan mr-1">[1].</span>About Me
@@ -103,7 +110,7 @@ const AboutSection = ({ setSelectedPage }) => {
           </MotionDiv>
         </div>
 
-        <div className="basis-2/5 z-10 mt-16 md:mt-32 flex flex-col justify-center h-full">
+        <div className="basis-2/5 z-10 mt-8 md:mt-24 flex md:flex-col justify-center h-full">
           {/* PROFILE PICTURE */}
           <ProfilePicture />
         </div>

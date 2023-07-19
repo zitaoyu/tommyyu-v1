@@ -59,12 +59,12 @@ const LandingSection = ({ setSelectedPage }) => {
             </h1>
           </MotionDiv>
           <MotionDiv delay={1.2} duration={0.4} x1={20} x2={0}>
-            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold">
+            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold tracking-tight">
               Tommy Yu
             </h2>
           </MotionDiv>
           <MotionDiv delay={2.2} duration={0.4} x1={20} x2={0}>
-            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold">
+            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold tracking-tight">
               I create fun things for the web.
             </h3>
           </MotionDiv>

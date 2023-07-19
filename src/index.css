@@ -41,7 +41,8 @@
     stroke-dasharray: 900;
     stroke-dashoffset: 900;
     fill: transparent;
-    animation: draw-polygon 3s ease forwards;
+    animation: draw-polygon 3s ease-in-out forwards;
+    will-change: auto;
   }
 
   @keyframes draw-polygon {
