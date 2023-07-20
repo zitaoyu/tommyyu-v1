@@ -39,19 +39,18 @@ const BulletPoint = ({ title, items }) => {
 
 const ProfilePicture = () => {
   return (
-    <div class="bg-cyan md:h-[60%] min-h-[400px] w-full max-w-[300px] rounded-lg shadow-window-shadow hover:scale-110 transition transition duration-500">
-      <div class="h-[25px] inline-flex">
+    <div className="md:w-full w-[90%] max-w-[380px] shadow-window-shadow flex flex-col opacity-80 hover:opacity-90 hover:scale-110 transition duration-500">
+      <div className="h-[30px] bg-cyan border border-cyan rounded-t-lg w-full inline-flex flex-1">
         <div class="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
         <div class="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
         <div class="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
+        {/* <span className="text-sm text-gray font-robotomono m-auto">
+          profile_picture.jpeg
+        </span> */}
       </div>
-      {/* <div className="h-[2px] w-full bg-cyan"></div> */}
-      <div
-        class="bg-slate h-[calc(100%-25px)] w-full rounded-b-lg flex flex-col justify-center"
-        contenteditable
-      >
+      <div class="max-h-[500px] w-full aspect-[3/4] rounded-b-lg flex flex-col justify-center bg-light-slate border border-cyan">
         <img
-          className="h-5/6 w-5/6 rounded-lg m-auto"
+          className="h-[85%] w-[85%] w-5/6 rounded-lg m-auto"
           alt="profile"
           src={profilePicture}
         />
@@ -74,7 +73,7 @@ const AboutSection = ({ setSelectedPage }) => {
         {/* MAIN SECTION */}
         <div className="z-30 basis-3/5 bg-red ss-max-h:mt-32">
           <MotionDiv duration={0.4} y1={50} y2={0}>
-            <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-2xl text-light-slate font-robotomono font-semibold">
+            <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-3xl text-light-slate font-robotomono font-semibold md:tracking-tight">
               <span className="text-cyan mr-1">[1].</span>About Me
             </h3>
             <div className="flex flex-col gap-6 text-slate font-opensans max-w-3xl">
@@ -96,7 +95,14 @@ const AboutSection = ({ setSelectedPage }) => {
                 <li className="mb-4">
                   <BulletPoint
                     title={"Language: "}
-                    items={["JavaScript", "TypeScript", "CSS", "Python", "C++"]}
+                    items={[
+                      "JavaScript",
+                      "TypeScript",
+                      "CSS",
+                      "Python",
+                      "Java",
+                      "C++",
+                    ]}
                   ></BulletPoint>
                 </li>
                 <li className="mb-4">
@@ -110,7 +116,7 @@ const AboutSection = ({ setSelectedPage }) => {
           </MotionDiv>
         </div>
 
-        <div className="basis-2/5 z-10 mt-8 md:mt-24 flex md:flex-col justify-center h-full">
+        <div className="basis-2/5 z-10 mt-12 md:mt-24 flex md:flex-col justify-center h-full">
           {/* PROFILE PICTURE */}
           <ProfilePicture />
         </div>
