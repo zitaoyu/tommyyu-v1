@@ -13,6 +13,9 @@ module.exports = {
         "light-slate": "#D8E0E9",
         slate: "#94a3b8",
         cyan: "#64ffda",
+        "window-red": "#ff5f56",
+        "window-yellow": "#ffbd2e",
+        "window-green": "#27c93f",
         "gray-transparent-blur": "rgba(31, 40, 51, 0.96)",
       },
       fontFamily: {
@@ -34,6 +37,9 @@ module.exports = {
           to: { opacity: 1 },
         },
       },
+      boxShadow: {
+        "window-shadow": "0 6px 14px -4px black",
+      },
     },
     screens: {
       xs: "480px",
@@ -42,6 +48,8 @@ module.exports = {
       md: "1060px",
       lg: "1200px",
       xl: "1700px",
+      "xs-max-h": { raw: "(max-height: 480px)" },
+      "ss-max-h": { raw: "(max-height: 680px)" },
     },
   },
   plugins: [

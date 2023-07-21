@@ -20,14 +20,14 @@ const ShapesCanvas = () => {
             d="M17.7276 159.5L100 17L182.272 159.5H17.7276Z"
           />
           <circle
-            className="opacity-50"
+            className="opacity-60"
             id="circle"
             cx="311"
             cy="99"
             r="57.5"
           />
           <rect
-            className="opacity-60"
+            className="opacity-30"
             id="reactangle"
             x="153.5"
             y="214.5"
@@ -43,28 +43,28 @@ const ShapesCanvas = () => {
 const LandingSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="sm:h-full w-5/6 max-w-[1200px] mx-auto"
-      amount="all"
+      className="min-h-screen"
       onViewportEnter={() => setSelectedPage(Page.Home)}
+      viewport={{ amount: 0.7 }}
     >
       <section
-        className="flex h-full flex-col justify-center py-10 md:relative"
+        className="flex min-h-screen flex-col justify-center py-10 md:relative"
         id={Page.Home}
       >
         {/* Introduction Section*/}
-        <div className="md:mt-0 mt-20 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+        <div className="ss-max-h:mt-12 md:mt-0 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
             <h1 className="text-cyan text-base font-robotomono">
               Hello world, my name is
             </h1>
           </MotionDiv>
           <MotionDiv delay={1.2} duration={0.4} x1={20} x2={0}>
-            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold">
+            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold tracking-tight">
               Tommy Yu
             </h2>
           </MotionDiv>
           <MotionDiv delay={2.2} duration={0.4} x1={20} x2={0}>
-            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold">
+            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold tracking-tight">
               I create fun things for the web.
             </h3>
           </MotionDiv>
@@ -78,9 +78,9 @@ const LandingSection = ({ setSelectedPage }) => {
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
-            <div className="flex sm:flex-row flex-col gap-10 md:mt-8 mt-4">
+            <div className="flex flex-wrap md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"}
                 link={Page.About}
                 onClick={() => setSelectedPage(Page.About)}
               >
@@ -88,7 +88,7 @@ const LandingSection = ({ setSelectedPage }) => {
               </AnchorLinkButton>
 
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[180px] sm:px-10 px-5"}
+                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-5"}
                 link={Page.Contact}
                 onClick={() => setSelectedPage(Page.Contact)}
               >

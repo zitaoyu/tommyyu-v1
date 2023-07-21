@@ -16,7 +16,7 @@
   }
   @keyframes move-to-topleft {
     to {
-      top: calc(24px + 32px);
+      top: calc(2.5vh + 32px);
       left: calc((100% / 24 + 32px));
     }
   }
@@ -37,10 +37,12 @@
   .loading-polygon {
     stroke: #66fcf1;
     stroke-width: 15;
+    stroke-linecap: round;
     stroke-dasharray: 900;
     stroke-dashoffset: 900;
     fill: transparent;
-    animation: draw-polygon 3s ease forwards;
+    animation: draw-polygon 3s ease-in-out forwards;
+    will-change: auto;
   }
 
   @keyframes draw-polygon {

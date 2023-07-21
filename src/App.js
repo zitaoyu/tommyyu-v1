@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { Page } from "./util/page";
 import { LoadingScreen } from "./components/Logo";
-import NavBar from "./components/NavBar";
+import NavBar from "./scenes/NavBar";
 import LandingSection from "./scenes/Landing";
 import DummySection from "./scenes/DummySection";
 import DotGroup from "./components/DotGroup";
 import IconGroup from "./components/IconGroup";
+import AboutSection from "./scenes/About";
+import Footer from "./scenes/Footer";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -28,7 +30,7 @@ function App() {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <div className="app">
+        <div className="app w-5/6 max-w-[1200px] mx-auto">
           <NavBar
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
@@ -48,7 +50,7 @@ function App() {
           <SectionDivider />
 
           {/* About */}
-          <DummySection page={Page.About} setSelectedPage={setSelectedPage} />
+          <AboutSection setSelectedPage={setSelectedPage} />
 
           <SectionDivider />
 
@@ -67,6 +69,8 @@ function App() {
 
           {/* Contact */}
           <DummySection page={Page.Contact} setSelectedPage={setSelectedPage} />
+
+          <Footer isDesktop={isDesktop} />
         </div>
       )}
     </div>
