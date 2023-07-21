@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import MotionDiv from "./MotionDiv";
-import { SpinLogo } from "./Logo";
+import MotionDiv from "../components/MotionDiv";
+import { SpinLogo } from "../components/Logo";
 import { Page } from "../util/page";
 import menuIcon from "../assets/menu-icon.svg";
 import closeIcon from "../assets/close-icon.svg";

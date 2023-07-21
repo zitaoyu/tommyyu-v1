@@ -19,8 +19,8 @@ const BulletPoint = ({ title, items }) => {
           className="w-6 h-6 stroke-2 stroke-cyan fill-none inline-block mr-1 -translate-y-[2px]"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path d="M7 8L3 12L7 16" />
           <path d="M17 8L21 12L17 16" />
@@ -39,16 +39,16 @@ const BulletPoint = ({ title, items }) => {
 
 const ProfilePicture = () => {
   return (
-    <div className="md:w-full w-[90%] max-w-[380px] shadow-window-shadow flex flex-col opacity-80 hover:opacity-90 hover:scale-110 transition duration-500">
+    <div className="md:w-full w-[90%] max-w-[380px] shadow-window-shadow flex flex-col opacity-80 hover:opacity-90 hover:scale-105 transition duration-500">
       <div className="h-[30px] bg-cyan border border-cyan rounded-t-lg w-full inline-flex flex-1">
-        <div class="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
-        <div class="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
-        <div class="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
+        <div className="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
+        <div className="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
+        <div className="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
         {/* <span className="text-sm text-gray font-robotomono m-auto">
           profile_picture.jpeg
         </span> */}
       </div>
-      <div class="max-h-[500px] w-full aspect-[3/4] rounded-b-lg flex flex-col justify-center bg-light-slate border border-cyan">
+      <div className="max-h-[500px] w-full aspect-[3/4] rounded-b-lg flex flex-col justify-center bg-light-slate border border-cyan">
         <img
           className="h-[85%] w-[85%] w-5/6 rounded-lg m-auto"
           alt="profile"
@@ -62,7 +62,7 @@ const ProfilePicture = () => {
 const AboutSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="md:h-full md:w-5/6 mx-auto"
+      className="md:min-h-[90vh] md:w-5/6 mx-auto"
       onViewportEnter={() => setSelectedPage(Page.About)}
       viewport={{ amount: 0.7 }}
     >
@@ -76,20 +76,16 @@ const AboutSection = ({ setSelectedPage }) => {
             <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-3xl text-light-slate font-robotomono font-semibold md:tracking-tight">
               <span className="text-cyan mr-1">[1].</span>About Me
             </h3>
-            <div className="flex flex-col gap-6 text-slate font-opensans max-w-3xl">
-              <p>
+            <div className="flex flex-col text-slate font-opensans max-w-3xl">
+              <p className="mb-4">
                 I'm a passionate software engineer specializing in crafting web
                 applications with exceptional user experiences and captivating
                 graphics. From designing seamless interfaces to implementing
                 cutting-edge technologies, I'm dedicated to creating digital
                 wonders that leave a lasting impression.
               </p>
-              <p>
-                I'm a passionate software engineer specializing in crafting web
-                applications with exceptional user experiences and captivating
-                graphics. From designing seamless interfaces to implementing
-                cutting-edge technologies, I'm dedicated to creating digital
-                wonders that leave a lasting impression.
+              <p className="mb-2">
+                Here are some of the technologies I've been working with:
               </p>
               <ul className="font-robotomono">
                 <li className="mb-4">
@@ -109,6 +105,12 @@ const AboutSection = ({ setSelectedPage }) => {
                   <BulletPoint
                     title={"Framework: "}
                     items={["React", "Angular", "Tailwind CSS"]}
+                  ></BulletPoint>
+                </li>{" "}
+                <li className="mb-4">
+                  <BulletPoint
+                    title={"Dev Tools: "}
+                    items={["AWS", "Azure DevOps", "Linux"]}
                   ></BulletPoint>
                 </li>
               </ul>

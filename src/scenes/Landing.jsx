@@ -43,16 +43,16 @@ const ShapesCanvas = () => {
 const LandingSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="h-screen"
+      className="min-h-screen"
       onViewportEnter={() => setSelectedPage(Page.Home)}
       viewport={{ amount: 0.7 }}
     >
       <section
-        className="flex h-full flex-col justify-center py-10 md:relative"
+        className="flex min-h-screen flex-col justify-center py-10 md:relative"
         id={Page.Home}
       >
         {/* Introduction Section*/}
-        <div className="ss-max-h:mt-20 md:mt-0 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+        <div className="ss-max-h:mt-12 md:mt-0 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
             <h1 className="text-cyan text-base font-robotomono">
               Hello world, my name is
@@ -78,7 +78,7 @@ const LandingSection = ({ setSelectedPage }) => {
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
-            <div className="flex sm:flex-row flex-row md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
+            <div className="flex flex-wrap md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
               <AnchorLinkButton
                 className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"}
                 link={Page.About}

@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { Page } from "./util/page";
 import { LoadingScreen } from "./components/Logo";
-import NavBar from "./components/NavBar";
+import NavBar from "./scenes/NavBar";
 import LandingSection from "./scenes/Landing";
 import DummySection from "./scenes/DummySection";
 import DotGroup from "./components/DotGroup";
 import IconGroup from "./components/IconGroup";
 import AboutSection from "./scenes/About";
+import Footer from "./scenes/Footer";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -68,6 +69,8 @@ function App() {
 
           {/* Contact */}
           <DummySection page={Page.Contact} setSelectedPage={setSelectedPage} />
+
+          <Footer isDesktop={isDesktop} />
         </div>
       )}
     </div>
