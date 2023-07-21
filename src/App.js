@@ -9,6 +9,7 @@ import DotGroup from "./components/DotGroup";
 import IconGroup from "./components/IconGroup";
 import AboutSection from "./scenes/About";
 import Footer from "./scenes/Footer";
+import ContactSection from "./scenes/Contact";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -68,7 +69,7 @@ function App() {
           <SectionDivider />
 
           {/* Contact */}
-          <DummySection page={Page.Contact} setSelectedPage={setSelectedPage} />
+          <ContactSection setSelectedPage={setSelectedPage} />
 
           <Footer isDesktop={isDesktop} />
         </div>

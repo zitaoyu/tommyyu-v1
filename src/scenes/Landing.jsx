@@ -48,7 +48,7 @@ const LandingSection = ({ setSelectedPage }) => {
       viewport={{ amount: 0.7 }}
     >
       <section
-        className="flex min-h-screen flex-col justify-center py-10 md:relative"
+        className="min-h-screen flex flex-col justify-center py-10 md:relative"
         id={Page.Home}
       >
         {/* Introduction Section*/}
@@ -80,7 +80,7 @@ const LandingSection = ({ setSelectedPage }) => {
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
             <div className="flex flex-wrap md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"}
+                className="sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"
                 link={Page.About}
                 onClick={() => setSelectedPage(Page.About)}
               >
@@ -88,7 +88,7 @@ const LandingSection = ({ setSelectedPage }) => {
               </AnchorLinkButton>
 
               <AnchorLinkButton
-                className={"sm:max-w-[240px] max-w-[160px] sm:px-10 px-5"}
+                className="sm:max-w-[240px] max-w-[160px] sm:px-10 px-5"
                 link={Page.Contact}
                 onClick={() => setSelectedPage(Page.Contact)}
               >

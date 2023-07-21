@@ -72,7 +72,7 @@ const AboutSection = ({ setSelectedPage }) => {
       >
         {/* MAIN SECTION */}
         <div className="z-30 basis-3/5 bg-red ss-max-h:mt-32">
-          <MotionDiv duration={0.4} y1={50} y2={0}>
+          <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
             <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-3xl text-light-slate font-robotomono font-semibold md:tracking-tight">
               <span className="text-cyan mr-1">[1].</span>About Me
             </h3>
@@ -118,10 +118,12 @@ const AboutSection = ({ setSelectedPage }) => {
           </MotionDiv>
         </div>
 
-        <div className="basis-2/5 z-10 mt-12 md:mt-24 flex md:flex-col justify-center h-full">
-          {/* PROFILE PICTURE */}
-          <ProfilePicture />
-        </div>
+        <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
+          <div className="basis-2/5 z-10 mt-12 md:mt-24 flex md:flex-col justify-center h-full">
+            {/* PROFILE PICTURE */}
+            <ProfilePicture />
+          </div>
+        </MotionDiv>
       </section>
     </motion.div>
   );
