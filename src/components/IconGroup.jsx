@@ -1,7 +1,7 @@
 const SocialMediaIcon = ({ link, children }) => {
   return (
     <a
-      className={`ss-max-h:h-6 ss-max-h:w-6 h-8 w-8 stroke-transparent fill-slate hover:fill-cyan hover:-translate-y-1 transition duration-500`}
+      className={`h-8 w-8 fill-slate stroke-transparent transition duration-500 hover:-translate-y-1 hover:fill-cyan ss-max-h:h-6 ss-max-h:w-6`}
       href={link}
       target="_blank"
       rel="noreferrer"
@@ -16,9 +16,9 @@ const IconGroup = ({ isVerticle = true }) => {
     <div
       className={`flex ${
         isVerticle
-          ? "flex-col fixed bottom-0 left-7 animate-fade-in-5s xs-max-h:hidden"
+          ? "fixed bottom-0 left-7 animate-fade-in-5s flex-col xs-max-h:hidden"
           : "flex-row justify-center"
-      } ss-max-h:gap-3 gap-6`}
+      } gap-6 ss-max-h:gap-3`}
     >
       <SocialMediaIcon link={"https://www.linkedin.com"}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ const IconGroup = ({ isVerticle = true }) => {
       </SocialMediaIcon>
       {isVerticle && (
         <div
-          className={`ss-max-h:h-[75px] h-[100px] w-0.5 bg-slate m-auto`}
+          className={`m-auto h-[100px] w-0.5 bg-slate ss-max-h:h-[75px]`}
         ></div>
       )}
     </div>

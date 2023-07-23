@@ -5,7 +5,7 @@ import profilePicture from "../assets/profile-picture.jpg";
 
 const TechTerm = ({ children }) => {
   return (
-    <span className="text-light-slate bg-navy rounded-md p-1 mr-3 mt-2">
+    <span className="mr-3 mt-2 rounded-md bg-navy p-1 text-light-slate">
       {children}
     </span>
   );
@@ -14,9 +14,9 @@ const TechTerm = ({ children }) => {
 const BulletPoint = ({ title, items }) => {
   return (
     <div>
-      <div className="inline-block mr-2">
+      <div className="mr-2 inline-block">
         <svg
-          className="w-6 h-6 stroke-2 stroke-cyan fill-none inline-block mr-1 -translate-y-[2px]"
+          className="mr-1 inline-block h-6 w-6 -translate-y-[2px] fill-none stroke-cyan stroke-2"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           strokeLinecap="round"
@@ -39,18 +39,18 @@ const BulletPoint = ({ title, items }) => {
 
 const ProfilePicture = () => {
   return (
-    <div className="md:w-full w-[90%] max-w-[380px] shadow-window-shadow flex flex-col opacity-80 hover:opacity-90 hover:scale-105 transition duration-500">
-      <div className="h-[30px] bg-cyan border border-cyan rounded-t-lg w-full inline-flex flex-1">
-        <div className="border-[8px] rounded-xl m-[6px] text-[#ff5f56]"></div>
-        <div className="border-[8px] rounded-xl m-[6px] text-[#ffbd2e]"></div>
-        <div className="border-[8px] rounded-xl m-[6px] text-[#27c93f]"></div>
+    <div className="flex w-[90%] max-w-[380px] flex-col opacity-80 shadow-window-shadow transition duration-500 hover:scale-105 hover:opacity-90 md:w-full">
+      <div className="inline-flex h-[30px] w-full flex-1 rounded-t-lg border border-cyan bg-cyan">
+        <div className="m-[6px] rounded-xl border-[8px] text-[#ff5f56]"></div>
+        <div className="m-[6px] rounded-xl border-[8px] text-[#ffbd2e]"></div>
+        <div className="m-[6px] rounded-xl border-[8px] text-[#27c93f]"></div>
         {/* <span className="text-sm text-gray font-robotomono m-auto">
           profile_picture.jpeg
         </span> */}
       </div>
-      <div className="max-h-[500px] w-full aspect-[3/4] rounded-b-lg flex flex-col justify-center bg-light-slate border border-cyan">
+      <div className="flex aspect-[3/4] max-h-[500px] w-full flex-col justify-center rounded-b-lg border border-cyan bg-light-slate">
         <img
-          className="h-[85%] w-[85%] w-5/6 rounded-lg m-auto"
+          className="m-auto h-[85%] w-5/6 rounded-lg"
           alt="profile"
           src={profilePicture}
         />
@@ -62,21 +62,21 @@ const ProfilePicture = () => {
 const AboutSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="md:min-h-[90vh] md:w-5/6 mx-auto"
+      className="mx-auto md:min-h-[90vh] md:w-5/6"
       onViewportEnter={() => setSelectedPage(Page.About)}
       viewport={{ amount: 0.7 }}
     >
       <section
         id={Page.About}
-        className="md:flex md:justify-between md:items-center md:h-full gap-16 py-10"
+        className="gap-16 py-10 md:flex md:h-full md:items-center md:justify-between"
       >
         {/* MAIN SECTION */}
-        <div className="z-30 basis-3/5 bg-red ss-max-h:mt-32">
+        <div className="bg-red z-30 basis-3/5 ss-max-h:mt-32">
           <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
-            <h3 className="md:mb-6 mb-4 md:text-5xl sm:text-4xl text-3xl text-light-slate font-robotomono font-semibold md:tracking-tight">
-              <span className="text-cyan mr-1">[1].</span>About Me
+            <h3 className="mb-4 font-robotomono text-3xl font-semibold text-light-slate sm:text-4xl md:mb-6 md:text-5xl md:tracking-tight">
+              <span className="mr-1 text-cyan">[1].</span>About Me
             </h3>
-            <div className="flex flex-col text-slate font-opensans max-w-3xl">
+            <div className="flex max-w-3xl flex-col font-opensans text-slate">
               <p className="mb-4">
                 I'm a passionate software engineer specializing in crafting web
                 applications with exceptional user experiences and captivating
@@ -119,7 +119,7 @@ const AboutSection = ({ setSelectedPage }) => {
         </div>
 
         <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
-          <div className="basis-2/5 z-10 mt-12 md:mt-24 flex md:flex-col justify-center h-full">
+          <div className="z-10 mt-12 flex h-full basis-2/5 justify-center md:mt-24 md:flex-col">
             {/* PROFILE PICTURE */}
             <ProfilePicture />
           </div>

@@ -6,7 +6,9 @@
 
 @layer utilities {
   .animate-logo-shrink {
-    animation: shrink 0.5s ease 3.5s, move-to-topleft 1s ease 4s;
+    animation:
+      shrink 0.5s ease 3.5s,
+      move-to-topleft 1s ease 4s;
     animation-fill-mode: forwards;
   }
   @keyframes shrink {

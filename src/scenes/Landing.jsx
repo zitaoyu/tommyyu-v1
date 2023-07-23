@@ -15,7 +15,7 @@ const ShapesCanvas = () => {
       >
         <g id="container">
           <path
-            className="opacity-30 translate-y-6"
+            className="translate-y-6 opacity-30"
             id="triangle"
             d="M17.7276 159.5L100 17L182.272 159.5H17.7276Z"
           />
@@ -48,28 +48,28 @@ const LandingSection = ({ setSelectedPage }) => {
       viewport={{ amount: 0.7 }}
     >
       <section
-        className="min-h-screen flex flex-col justify-center py-10 md:relative"
+        className="flex min-h-screen flex-col justify-center py-10 md:relative"
         id={Page.Home}
       >
         {/* Introduction Section*/}
-        <div className="ss-max-h:mt-12 md:mt-0 max-w-screen-md sm:p-6 z-10 flex flex-col justify-start md:gap-4 gap-2">
+        <div className="z-10 flex max-w-screen-md flex-col justify-start gap-2 sm:p-6 md:mt-0 md:gap-4 ss-max-h:mt-12">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
-            <h1 className="text-cyan text-base font-robotomono">
+            <h1 className="font-robotomono text-base text-cyan">
               Hello world, my name is
             </h1>
           </MotionDiv>
           <MotionDiv delay={1.2} duration={0.4} x1={20} x2={0}>
-            <h2 className="text-light-slate md:text-7xl sm:text-6xl text-5xl font-opensans font-extrabold tracking-tight">
+            <h2 className="font-opensans text-5xl font-extrabold tracking-tight text-light-slate sm:text-6xl md:text-7xl">
               Tommy Yu
             </h2>
           </MotionDiv>
           <MotionDiv delay={2.2} duration={0.4} x1={20} x2={0}>
-            <h3 className="text-slate md:text-7xl sm:text-6xl text-4xl font-opensans font-bold tracking-tight">
+            <h3 className="font-opensans text-4xl font-bold tracking-tight text-slate sm:text-6xl md:text-7xl">
               I create fun things for the web.
             </h3>
           </MotionDiv>
           <MotionDiv delay={2.4} duration={0.4} x1={20} x2={0}>
-            <p className="text-slate font-opensans max-w-3xl">
+            <p className="max-w-3xl font-opensans text-slate">
               I'm a passionate software engineer specializing in crafting web
               applications with exceptional user experiences and captivating
               graphics. From designing seamless interfaces to implementing
@@ -78,9 +78,9 @@ const LandingSection = ({ setSelectedPage }) => {
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
-            <div className="flex flex-wrap md:gap-10 gap-5 md:mt-8 mt-4 md:text-base text-sm">
+            <div className="mt-4 flex flex-wrap gap-5 text-sm md:mt-8 md:gap-10 md:text-base">
               <AnchorLinkButton
-                className="sm:max-w-[240px] max-w-[160px] sm:px-10 px-4"
+                className="max-w-[160px] px-4 sm:max-w-[240px] sm:px-10"
                 link={Page.About}
                 onClick={() => setSelectedPage(Page.About)}
               >
@@ -88,7 +88,7 @@ const LandingSection = ({ setSelectedPage }) => {
               </AnchorLinkButton>
 
               <AnchorLinkButton
-                className="sm:max-w-[240px] max-w-[160px] sm:px-10 px-5"
+                className="max-w-[160px] px-5 sm:max-w-[240px] sm:px-10"
                 link={Page.Contact}
                 onClick={() => setSelectedPage(Page.Contact)}
               >
@@ -97,7 +97,7 @@ const LandingSection = ({ setSelectedPage }) => {
             </div>
           </MotionDiv>
         </div>
-        <div className="md:visible invisible absolute z-1 right-0">
+        <div className="z-1 invisible absolute right-0 md:visible">
           <MotionDiv delay={3} duration={0.4} x1={20} x2={0}>
             <ShapesCanvas />
           </MotionDiv>

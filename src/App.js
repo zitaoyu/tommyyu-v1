@@ -31,7 +31,7 @@ function App() {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <div className="app w-5/6 max-w-[1200px] mx-auto">
+        <div className="app mx-auto w-5/6 max-w-[1200px]">
           <NavBar
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}

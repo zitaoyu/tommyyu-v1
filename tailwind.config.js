@@ -64,7 +64,7 @@ module.exports = {
         },
         {
           values: theme("transitionDelay"),
-        }
+        },
       );
     }),
   ],

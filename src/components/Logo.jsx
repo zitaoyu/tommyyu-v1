@@ -2,7 +2,7 @@ export const SpinLogo = () => {
   return (
     <a href="/">
       <svg
-        className="w-16 h-16 stroke-cyan"
+        className="h-16 w-16 stroke-cyan"
         viewBox="0 0 320 320"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export const SpinLogo = () => {
           />
         </g>
         <g
-          className="origin-center hover:animate-spin-slow fill-transparent"
+          className="origin-center fill-transparent hover:animate-spin-slow"
           id="polygon"
         >
           <path
@@ -30,7 +30,7 @@ export const SpinLogo = () => {
 export const LoadingScreen = () => {
   return (
     <svg
-      className="w-32 h-32 stroke-cyan top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute animate-logo-shrink"
+      className="animate-logo-shrink absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 stroke-cyan"
       viewBox="0 0 320 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

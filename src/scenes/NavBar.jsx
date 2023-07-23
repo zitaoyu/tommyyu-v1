@@ -19,14 +19,14 @@ const Link = ({
     <AnchorLink
       className={`${
         selectedPage === page ? "text-cyan" : "text-slate"
-      } font-robotomono hover:text-cyan transition duration-500 p-4`}
+      } p-4 font-robotomono transition duration-500 hover:text-cyan`}
       href={`#${page}`}
       onClick={() => {
         setSelectedPage(page);
         setIsMenuToggled(false);
       }}
     >
-      <span className="text-cyan mr-1">{"[" + index + "]"}.</span>
+      <span className="mr-1 text-cyan">{"[" + index + "]"}.</span>
       {page.charAt(0).toUpperCase() + page.slice(1)}
     </AnchorLink>
   );
@@ -130,7 +130,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
 
   return (
     <nav
-      className={`fixed w-full left-0 top-0 py-[2.5vh] z-40 bg-gray ease-in-out duration-500 bg-gray-transparent-blur
+      className={`fixed left-0 top-0 z-40 w-full bg-gray bg-gray-transparent-blur py-[2.5vh] duration-500 ease-in-out
         ${
           // TODO: mobile hide bavbar when y = 0 due to mobile browser
           showNavBar || mouseAtTop || y === 0
@@ -139,7 +139,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
         } 
         ${y === 0 ? "shadow-none" : "shadow-md"}`}
     >
-      <div className="flex justify-between items-center mx-auto w-11/12">
+      <div className="mx-auto flex w-11/12 items-center justify-between">
         <SpinLogo />
         {isAboveSmallScreens ? (
           <LinkGroup
@@ -151,7 +151,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
           <MotionDiv delay={0} y1={-20} y2={0}>
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <img
-                className="h-9 w-9 bg-cyan p-2 rounded-full"
+                className="h-9 w-9 rounded-full bg-cyan p-2"
                 alt="menu-icon"
                 src={menuIcon}
               />
@@ -163,8 +163,8 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
       {/* MOBILE MENU POPUP */}
       {
         <div
-          className={`fixed right-0 top-0 h-[150vh] bg-navy w-[66%] 
-                      ease-in-out duration-300
+          className={`fixed right-0 top-0 h-[150vh] w-[66%] bg-navy 
+                      duration-300 ease-in-out
                       ${
                         !isAboveSmallScreens && isMenuToggled
                           ? "translate-x-0 overflow-hidden"
@@ -172,11 +172,11 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
                       }`}
         >
           {/* CLOSE ICON */}
-          <div className="flex justify-end pt-11 pr-8">
+          <div className="flex justify-end pr-8 pt-11">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <img
                 alt="close-icon"
-                className="h-9 w-9 bg-cyan p-2 rounded-full"
+                className="h-9 w-9 rounded-full bg-cyan p-2"
                 src={closeIcon}
               />
             </button>
@@ -184,7 +184,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
           {/* MENU ITEMS */}
           <LinkGroup
             className={
-              "top-0 flex flex-col items-center justify-between my-12 h-2/5 text-xl text-slate"
+              "top-0 my-12 flex h-2/5 flex-col items-center justify-between text-xl text-slate"
             }
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}

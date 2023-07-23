@@ -8,10 +8,10 @@ const selectedStyles = `relative bg-cyan before:absolute before:w-6 before:h-6
 const DotLink = ({ page, selectedPage, setSelectedPage }) => {
   return (
     <AnchorLink
-      className={`w-3 h-3 rounded-full transition duration-500 ${
+      className={`h-3 w-3 rounded-full transition duration-500 ${
         selectedPage === page
           ? selectedStyles
-          : "bg-slate hover:border-cyan hover:border-2"
+          : "bg-slate hover:border-2 hover:border-cyan"
       } `}
       href={`#${page}`}
       onClick={() => setSelectedPage(page)}
@@ -21,7 +21,7 @@ const DotLink = ({ page, selectedPage, setSelectedPage }) => {
 
 const DotGroup = ({ selectedPage, setSelectedPage }) => {
   return (
-    <div className="flex flex-col gap-6 fixed top-[60%] right-7 animate-fade-in-5s xs-max-h:hidden">
+    <div className="fixed right-7 top-[60%] flex animate-fade-in-5s flex-col gap-6 xs-max-h:hidden">
       <DotLink
         page={Page.Home}
         selectedPage={selectedPage}
