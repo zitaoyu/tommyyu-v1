@@ -1,6 +1,11 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-export const LinkButton = ({ link = "#", className, children, onClick }) => {
+export const LinkButton = ({
+  link = "#",
+  className,
+  children,
+  onClick = {},
+}) => {
   return (
     <a
       className={`${className}
