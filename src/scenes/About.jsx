@@ -39,7 +39,7 @@ const BulletPoint = ({ title, items }) => {
 
 const ProfilePicture = () => {
   return (
-    <div className="flex w-[90%] max-w-[380px] flex-col opacity-80 shadow-window-shadow transition duration-500 hover:scale-105 hover:opacity-90 md:w-full">
+    <div className="flex w-[90%] max-w-[380px] flex-col opacity-80 shadow-window-shadow transition duration-500 hover:opacity-90 md:w-full">
       <div className="inline-flex h-[30px] w-full flex-1 rounded-t-lg border border-cyan bg-cyan">
         <div className="m-[6px] rounded-xl border-[8px] text-[#ff5f56]"></div>
         <div className="m-[6px] rounded-xl border-[8px] text-[#ffbd2e]"></div>
@@ -50,7 +50,7 @@ const ProfilePicture = () => {
       </div>
       <div className="flex aspect-[3/4] max-h-[500px] w-full flex-col justify-center rounded-b-lg border border-cyan bg-light-slate">
         <img
-          className="m-auto h-[85%] w-5/6 rounded-lg"
+          className="m-[10px] rounded-lg md:m-[20px] md:transition md:duration-500 md:hover:scale-110"
           alt="profile"
           src={profilePicture}
         />
@@ -68,14 +68,20 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="gap-16 py-10 md:flex md:h-full md:items-center md:justify-between"
+        className="md:min-h-[90vh] py-10 flex flex-col justify-center ss-max-h:pt-28"
       >
-        {/* MAIN SECTION */}
-        <div className="bg-red z-30 basis-3/5 ss-max-h:mt-32">
+        {/* SECTION TITLE */}
+        <div className="flex mb-4">
+          <h3 className="font-robotomono text-4xl font-semibold text-light-slate md:mb-6 md:tracking-tight">
+            <span className="mr-1 text-cyan">[1].</span>About Me
+          </h3>
+          <div className="h-[1px] ml-8 my-[22px] flex-grow bg-gradient-to-r from-light-slate to-cyan"></div>
+        </div>
+
+        <div className="gap-16 md:flex md:h-full md:justify-between"> 
+        {/* LEFT */}
+        <div className="z-30 basis-3/5">
           <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
-            <h3 className="mb-4 font-robotomono text-4xl font-semibold text-light-slate md:mb-6 md:tracking-tight">
-              <span className="mr-1 text-cyan">[1].</span>About Me
-            </h3>
             <div className="flex max-w-3xl flex-col font-opensans text-slate">
               <p className="mb-4">
                 I'm a passionate software engineer specializing in crafting web
@@ -117,13 +123,13 @@ const AboutSection = ({ setSelectedPage }) => {
             </div>
           </MotionDiv>
         </div>
-
+        {/* RIGHT */}
         <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
-          <div className="z-10 mt-12 flex h-full basis-2/5 justify-center md:mt-24 md:flex-col">
-            {/* PROFILE PICTURE */}
+          <div className="z-10 mt-24 flex h-full basis-2/5 justify-center md:mt-0 md:flex-col">
             <ProfilePicture />
           </div>
         </MotionDiv>
+        </div>
       </section>
     </motion.div>
   );
