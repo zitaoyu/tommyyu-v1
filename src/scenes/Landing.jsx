@@ -54,7 +54,7 @@ const LandingSection = ({ setSelectedPage }) => {
         {/* Introduction Section*/}
         <div className="z-10 flex max-w-screen-md flex-col justify-start gap-2 sm:p-6 md:mt-0 md:gap-4 ss-max-h:mt-12">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
-            <h1 className="font-robotomono text-base text-cyan">
+            <h1 className="font-robotomono text-cyan">
               Hello world, my name is
             </h1>
           </MotionDiv>

@@ -73,7 +73,7 @@ const AboutSection = ({ setSelectedPage }) => {
         {/* MAIN SECTION */}
         <div className="bg-red z-30 basis-3/5 ss-max-h:mt-32">
           <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
-            <h3 className="mb-4 font-robotomono text-3xl font-semibold text-light-slate sm:text-4xl md:mb-6 md:text-5xl md:tracking-tight">
+            <h3 className="mb-4 font-robotomono text-4xl font-semibold text-light-slate md:mb-6 md:tracking-tight">
               <span className="mr-1 text-cyan">[1].</span>About Me
             </h3>
             <div className="flex max-w-3xl flex-col font-opensans text-slate">

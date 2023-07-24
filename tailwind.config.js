@@ -13,9 +13,6 @@ module.exports = {
         "light-slate": "#D8E0E9",
         slate: "#94a3b8",
         cyan: "#64ffda",
-        "window-red": "#ff5f56",
-        "window-yellow": "#ffbd2e",
-        "window-green": "#27c93f",
         "gray-transparent-blur": "rgba(31, 40, 51, 0.96)",
       },
       fontFamily: {
