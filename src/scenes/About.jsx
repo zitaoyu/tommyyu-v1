@@ -29,7 +29,7 @@ const BulletPoint = ({ title, items }) => {
         </svg>
         <span className="text-cyan">{title}</span>
       </div>
-      <div className="flex flex-wrap justify-center md:justify-start">
+      <div className="flex flex-wrap">
         {items.map((item) => {
           return <TechTerm>{item}</TechTerm>;
         })}
@@ -66,13 +66,13 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="flex flex-col justify-center py-10 text-center md:min-h-[90vh] md:text-left ss-max-h:pt-28"
+        className="flex flex-col justify-center py-10 text-left md:min-h-[90vh] ss-max-h:pt-28"
       >
         {/* SECTION TITLE */}
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
           <SectionTitle index={1} title={"About Me"}></SectionTitle>
         </MotionDiv>
-        <div className="gap-16 md:flex md:h-full md:justify-between">
+        <div className="gap-16 sm:flex sm:h-full sm:justify-between">
           {/* LEFT */}
           <div className="z-30 basis-3/5">
             <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
@@ -119,7 +119,7 @@ const AboutSection = ({ setSelectedPage }) => {
           </div>
           {/* RIGHT */}
           <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
-            <div className="z-10 mt-12 flex h-full basis-2/5 justify-center md:mt-0 md:flex-col">
+            <div className="z-10 mt-12 flex h-full basis-2/5 justify-center sm:mt-0 sm:flex-col">
               <ProfilePicture />
             </div>
           </MotionDiv>
