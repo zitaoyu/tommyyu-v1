@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import { LinkButton } from "../components/Button";
 import MotionDiv from "../components/MotionDiv";
+import SectionTitle from "../components/SectionTitle";
 
 const ContactSection = ({ setSelectedPage }) => {
   return (
@@ -15,9 +16,7 @@ const ContactSection = ({ setSelectedPage }) => {
         className="flex min-h-[80vh] flex-col justify-center gap-4 text-center"
       >
         <MotionDiv duration={0.4} y1={50} y2={0}>
-          <h3 className="md-4 font-robotomono text-3xl font-semibold text-light-slate sm:text-4xl md:tracking-tight">
-            <span className="mr-1 text-cyan">[4].</span>Contact Info
-          </h3>
+          <SectionTitle index={4} title={"Contact Me"} isCenter={true} />
         </MotionDiv>
         <MotionDiv delay={0.2} duration={0.4} y1={50} y2={0}>
           <p className="mx-auto mb-16 max-w-[600px] font-opensans text-slate">

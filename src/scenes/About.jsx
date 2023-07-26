@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import profilePicture from "../assets/profile-picture.jpg";
+import SectionTitle from "../components/SectionTitle";
 
 const TechTerm = ({ children }) => {
   return (
@@ -28,7 +29,7 @@ const BulletPoint = ({ title, items }) => {
         </svg>
         <span className="text-cyan">{title}</span>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center md:justify-start">
         {items.map((item) => {
           return <TechTerm>{item}</TechTerm>;
         })}
@@ -44,9 +45,6 @@ const ProfilePicture = () => {
         <div className="m-[6px] rounded-xl border-[8px] text-[#ff5f56]"></div>
         <div className="m-[6px] rounded-xl border-[8px] text-[#ffbd2e]"></div>
         <div className="m-[6px] rounded-xl border-[8px] text-[#27c93f]"></div>
-        {/* <span className="text-sm text-gray font-robotomono m-auto">
-          profile_picture.jpeg
-        </span> */}
       </div>
       <div className="flex aspect-[3/4] max-h-[500px] w-full flex-col justify-center rounded-b-lg border border-cyan bg-light-slate">
         <img
@@ -68,67 +66,63 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="md:min-h-[90vh] py-10 flex flex-col justify-center ss-max-h:pt-28"
+        className="flex flex-col justify-center py-10 text-center md:min-h-[90vh] md:text-left ss-max-h:pt-28"
       >
         {/* SECTION TITLE */}
-        <div className="flex mb-4">
-          <h3 className="font-robotomono text-4xl font-semibold text-light-slate md:mb-6 md:tracking-tight">
-            <span className="mr-1 text-cyan">[1].</span>About Me
-          </h3>
-          <div className="h-[1px] ml-8 my-[22px] flex-grow bg-gradient-to-r from-light-slate to-cyan"></div>
-        </div>
-
-        <div className="gap-16 md:flex md:h-full md:justify-between"> 
-        {/* LEFT */}
-        <div className="z-30 basis-3/5">
-          <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
-            <div className="flex max-w-3xl flex-col font-opensans text-slate">
-              <p className="mb-4">
-                I'm a passionate software engineer specializing in crafting web
-                applications with exceptional user experiences and captivating
-                graphics. From designing seamless interfaces to implementing
-                cutting-edge technologies, I'm dedicated to creating digital
-                wonders that leave a lasting impression.
-              </p>
-              <p className="mb-2">
-                Here are some of the technologies I've been working with:
-              </p>
-              <ul className="font-robotomono">
-                <li className="mb-4">
-                  <BulletPoint
-                    title={"Language: "}
-                    items={[
-                      "JavaScript",
-                      "TypeScript",
-                      "CSS",
-                      "Python",
-                      "Java",
-                      "C++",
-                    ]}
-                  ></BulletPoint>
-                </li>
-                <li className="mb-4">
-                  <BulletPoint
-                    title={"Framework: "}
-                    items={["React", "Angular", "Tailwind CSS"]}
-                  ></BulletPoint>
-                </li>{" "}
-                <li className="mb-4">
-                  <BulletPoint
-                    title={"Dev Tools: "}
-                    items={["AWS", "Azure DevOps", "Linux"]}
-                  ></BulletPoint>
-                </li>
-              </ul>
+        <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
+          <SectionTitle index={1} title={"About Me"}></SectionTitle>
+        </MotionDiv>
+        <div className="gap-16 md:flex md:h-full md:justify-between">
+          {/* LEFT */}
+          <div className="z-30 basis-3/5">
+            <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
+              <div className="flex flex-col font-opensans text-slate md:max-w-3xl">
+                <p className="mb-4">
+                  I'm a passionate software engineer specializing in crafting
+                  web applications with exceptional user experiences and
+                  captivating graphics. From designing seamless interfaces to
+                  implementing cutting-edge technologies, I'm dedicated to
+                  creating digital wonders that leave a lasting impression.
+                </p>
+                <p className="mb-2">
+                  Here are some of the technologies I've been working with:
+                </p>
+                <ul className="font-robotomono">
+                  <li className="mb-4">
+                    <BulletPoint
+                      title={"Language: "}
+                      items={[
+                        "JavaScript",
+                        "TypeScript",
+                        "CSS",
+                        "Python",
+                        "Java",
+                        "C++",
+                      ]}
+                    ></BulletPoint>
+                  </li>
+                  <li className="mb-4">
+                    <BulletPoint
+                      title={"Framework: "}
+                      items={["React", "Angular", "Tailwind CSS"]}
+                    ></BulletPoint>
+                  </li>{" "}
+                  <li className="mb-4">
+                    <BulletPoint
+                      title={"Dev Tools: "}
+                      items={["AWS", "Azure DevOps", "Linux"]}
+                    ></BulletPoint>
+                  </li>
+                </ul>
+              </div>
+            </MotionDiv>
+          </div>
+          {/* RIGHT */}
+          <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
+            <div className="z-10 mt-12 flex h-full basis-2/5 justify-center md:mt-0 md:flex-col">
+              <ProfilePicture />
             </div>
           </MotionDiv>
-        </div>
-        {/* RIGHT */}
-        <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
-          <div className="z-10 mt-24 flex h-full basis-2/5 justify-center md:mt-0 md:flex-col">
-            <ProfilePicture />
-          </div>
-        </MotionDiv>
         </div>
       </section>
     </motion.div>
