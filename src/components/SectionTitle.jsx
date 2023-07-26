@@ -9,7 +9,7 @@ const SectionTitle = ({ index, title, isCenter = false }) => {
     </div>
   ) : (
     <div className="sm:mb-4 sm:flex">
-      <h3 className="font-robotomono text-4xl font-semibold text-light-slate sm:mb-6 md:tracking-tight">
+      <h3 className="font-robotomono text-4xl font-semibold text-light-slate sm:mb-6 sm:tracking-tight">
         <span className="mr-1 text-cyan">{index}.</span>
         {title}
       </h3>
