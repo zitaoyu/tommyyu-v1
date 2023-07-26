@@ -60,13 +60,13 @@ const ProfilePicture = () => {
 const AboutSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="mx-auto md:min-h-[90vh] md:w-5/6"
+      className="mx-auto md:w-5/6 "
       onViewportEnter={() => setSelectedPage(Page.About)}
       viewport={{ amount: 0.7 }}
     >
       <section
         id={Page.About}
-        className="flex flex-col justify-center py-10 text-left md:min-h-[90vh] ss-max-h:pt-28"
+        className="justify-centertext-left flex flex-col py-10 sm:py-32"
       >
         {/* SECTION TITLE */}
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
@@ -118,7 +118,7 @@ const AboutSection = ({ setSelectedPage }) => {
             </MotionDiv>
           </div>
           {/* RIGHT */}
-          <MotionDiv delay={0.7} duration={0.5} x1={50} x2={0}>
+          <MotionDiv delay={0.7} duration={0.5} y1={50} y2={0}>
             <div className="z-10 mt-12 flex h-full basis-2/5 justify-center sm:mt-0 sm:flex-col">
               <ProfilePicture />
             </div>

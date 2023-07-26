@@ -1,7 +1,7 @@
 const SectionTitle = ({ index, title, isCenter = false }) => {
   return isCenter ? (
     <div className="mx-auto max-w-[500px]">
-      <h3 className="font-robotomono text-4xl font-semibold text-light-slate sm:tracking-tight">
+      <h3 className="text-center font-robotomono text-4xl font-semibold text-light-slate sm:tracking-tight">
         <span className="mr-1 text-cyan">{index}.</span>
         {title}
       </h3>
