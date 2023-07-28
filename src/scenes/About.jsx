@@ -72,10 +72,10 @@ const AboutSection = ({ setSelectedPage }) => {
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
           <SectionTitle index={1} title={"About Me"}></SectionTitle>
         </MotionDiv>
-        <div className="gap-16 sm:flex sm:h-full sm:justify-between">
-          {/* LEFT */}
-          <div className="z-30 basis-3/5">
-            <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
+        <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
+          <div className="gap-16 sm:flex sm:h-full sm:justify-between">
+            {/* LEFT */}
+            <div className="z-30 basis-3/5">
               <div className="flex flex-col font-opensans text-slate md:max-w-3xl">
                 <p className="mb-4">
                   I'm a passionate software engineer specializing in crafting
@@ -115,15 +115,13 @@ const AboutSection = ({ setSelectedPage }) => {
                   </li>
                 </ul>
               </div>
-            </MotionDiv>
-          </div>
-          {/* RIGHT */}
-          <MotionDiv delay={0.7} duration={0.5} y1={50} y2={0}>
+            </div>
+            {/* RIGHT */}
             <div className="z-10 mt-12 flex h-full basis-2/5 justify-center sm:mt-0 sm:flex-col">
               <ProfilePicture />
             </div>
-          </MotionDiv>
-        </div>
+          </div>
+        </MotionDiv>
       </section>
     </motion.div>
   );

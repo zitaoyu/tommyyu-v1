@@ -1,57 +1,45 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserGraduate, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 const timelineItems = [
   {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
+    icon: "work",
+    title: "Software Engineer",
+    date: "March 2022 - Present",
+    company: "Microsoft",
+    bulletPoints: [
+      `Contributed to Microsoft Teams front-end development using TypeScript and React, focusing on enhancing the user interface and experience.`,
+      `Created a desktop application that simplified the configuration process of conference room devices through USB communication`,
+      `Developed a Python-based automation test framework to validate core features on intelligent cameras.`,
+      `Played a key role in embedded system engineering, encompassing firmware development and deployment`,
+    ],
   },
   {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
+    icon: "education",
+    title: "AWS Certified Cloud Practitioner",
+    date: "June 2023",
+    company: "AWS",
+    bulletPoints: [
+      `Validation Number: 1JH9V0GCX24QQJSD`,
+      `Foundational, high-level understanding of AWS Cloud, services, and terminology.`,
+    ],
   },
   {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
-  },
-  {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
-  },
-  {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
-  },
-  {
-    title: "Lorem Ipsum",
-    content: `Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown
-              printer took a galley of type and scrambled it to make a type
-              specimen book`,
+    icon: "education",
+    title: "Bachelor Degree",
+    date: "August 2021",
+    company: "University of Washington",
+    bulletPoints: [
+      `Bachelor of Computer Science and Systems`,
+      `Minor in Mathematics, Algorithms.`,
+      `GPA: 3.74`,
+    ],
   },
 ];
 
@@ -63,9 +51,13 @@ const ExperienceSection = ({ setSelectedPage }) => {
       onViewportEnter={() => setSelectedPage(Page.Contact)}
       viewport={{ amount: 0.7 }}
     >
-      <section id={Page.Experience} className="py-10 sm:py-32">
-        <MotionDiv className="mb-10" duration={0.4} y1={50} y2={0}>
-          <SectionTitle index={2} title={"Experience"} isCenter={true} />
+      <section id={Page.Experience} className="py-32">
+        <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
+          <SectionTitle
+            index={2}
+            title={"My Journey"}
+            isCenter={isDesktop ? true : false}
+          />
         </MotionDiv>
         <div className="container mx-auto h-full w-full py-10 md:p-10">
           <div className="relative h-full overflow-hidden">
@@ -80,21 +72,62 @@ const ExperienceSection = ({ setSelectedPage }) => {
                 const isLeft = index % 2 !== 0;
                 return (
                   <div
-                    className={`mb-8 flex w-full items-center md:justify-between ${
+                    className={`mb-10 flex w-full items-center md:justify-between ${
                       isLeft && "md:flex-row-reverse"
                     }`}
                   >
                     {/* Blank space */}
                     {isDesktop && <div className="order-1 w-5/12"></div>}
                     {/* Dot */}
-                    <div class="z-20 order-1 flex h-10 w-10 items-center rounded-full bg-cyan shadow-xl">
-                      <h1 class="m-auto font-semibold text-gray">{index}</h1>
-                    </div>
+                    <motion.div
+                      className="z-20 order-1 flex h-10 w-10 items-center rounded-full bg-cyan shadow-xl"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.4 }}
+                      transition={{
+                        delay: 0.4,
+                        duration: 0.5,
+                        ease: "easeInOut",
+                      }}
+                      variants={{
+                        hidden: { opacity: 0.5, scale: 0 },
+                        visible: { opacity: 1, scale: 1 },
+                      }}
+                    >
+                      {/* <h1 class="m-auto font-semibold text-gray">{index}</h1> */}
+                      {item.icon === "work" ? (
+                        <FontAwesomeIcon
+                          className="bg-cyan text-gray text-2xl m-auto rounded-lg"
+                          icon={faBriefcase}
+                        />
+                      ) : (
+                        <FontAwesomeIcon
+                          className="bg-cyan text-gray text-2xl m-auto rounded-lg"
+                          icon={faUserGraduate}
+                        />
+                      )}
+                    </motion.div>
                     {/* Container */}
-                    <div className="ml-4 md:ml-0 order-1 w-[calc(100%-60px)] md:w-5/12 rounded-lg bg-navy px-6 py-4 text-light-slate shadow-xl">
-                      <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
-                      <p>{item.content}</p>
-                    </div>
+                    <MotionDiv
+                      className="ml-4 md:ml-0 order-1 w-[calc(100%-60px)] md:w-5/12 rounded-lg bg-navy px-4 py-2 sm:px-6 sm:py-4 text-light-slate shadow-xl font-opensans"
+                      delay={0.4}
+                      duration={0.4}
+                      y1={50}
+                      y2={0}
+                    >
+                      <h3 className="font-bold sm:text-lg">
+                        {item.title} -{" "}
+                        <span className="text-cyan">{item.company}</span>
+                      </h3>
+                      <h2 className="mb-3 text-sm text-slate italic">
+                        {item.date}
+                      </h2>
+                      <ul className="list-disc list-outside ml-4 text-slate">
+                        {item.bulletPoints.map((content) => {
+                          return <li className="mb-2">{content}</li>;
+                        })}
+                      </ul>
+                    </MotionDiv>
                   </div>
                 );
               })}
