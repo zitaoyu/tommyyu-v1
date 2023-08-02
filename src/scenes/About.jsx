@@ -4,6 +4,30 @@ import MotionDiv from "../components/MotionDiv";
 import profilePicture from "../assets/profile-picture.jpg";
 import SectionTitle from "../components/SectionTitle";
 
+const aboutSectionContent = {
+  sectionTitle: "About Me",
+  intro: `I'm a passionate software engineer specializing in crafting
+          web applications with exceptional user experiences and
+          captivating graphics. From designing seamless interfaces to
+          implementing cutting-edge technologies, I'm dedicated to
+          creating digital wonders that leave a lasting impression.`,
+  skillIntro: `Here are some of the technologies I've been working with:`,
+  skills: [
+    {
+      title: `Language: `,
+      items: ["JavaScript", "TypeScript", "CSS", "Python", "Java", "C++"],
+    },
+    {
+      title: `Framework`,
+      items: ["React", "Angular", "Tailwind CSS"],
+    },
+    {
+      title: `Dev Tools`,
+      items: ["AWS", "Azure DevOps", "Linux"],
+    },
+  ],
+};
+
 const TechTerm = ({ children }) => {
   return (
     <span className="mr-3 mt-2 rounded-md bg-navy p-1 text-light-slate">
@@ -31,7 +55,7 @@ const BulletPoint = ({ title, items }) => {
       </div>
       <div className="flex flex-wrap">
         {items.map((item) => {
-          return <TechTerm>{item}</TechTerm>;
+          return <TechTerm key={item}>{item}</TechTerm>;
         })}
       </div>
     </div>
@@ -70,49 +94,32 @@ const AboutSection = ({ setSelectedPage }) => {
       >
         {/* SECTION TITLE */}
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
-          <SectionTitle index={1} title={"About Me"}></SectionTitle>
+          <SectionTitle
+            index={1}
+            title={aboutSectionContent.sectionTitle}
+          ></SectionTitle>
         </MotionDiv>
         <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
           <div className="gap-16 sm:flex sm:h-full sm:justify-between">
             {/* LEFT */}
             <div className="z-30 basis-3/5">
               <div className="flex flex-col font-opensans text-slate md:max-w-3xl">
-                <p className="mb-4">
-                  I'm a passionate software engineer specializing in crafting
-                  web applications with exceptional user experiences and
-                  captivating graphics. From designing seamless interfaces to
-                  implementing cutting-edge technologies, I'm dedicated to
-                  creating digital wonders that leave a lasting impression.
-                </p>
-                <p className="mb-2">
-                  Here are some of the technologies I've been working with:
-                </p>
+                {/* Intro */}
+                <p className="mb-4">{aboutSectionContent.intro}</p>
+                {/* Skills section intro */}
+                <p className="mb-2">{aboutSectionContent.skillIntro}</p>
+                {/* Skills */}
                 <ul className="font-robotomono">
-                  <li key="language" className="mb-4">
-                    <BulletPoint
-                      title={"Language: "}
-                      items={[
-                        "JavaScript",
-                        "TypeScript",
-                        "CSS",
-                        "Python",
-                        "Java",
-                        "C++",
-                      ]}
-                    ></BulletPoint>
-                  </li>
-                  <li key="framework" className="mb-4">
-                    <BulletPoint
-                      title={"Framework: "}
-                      items={["React", "Angular", "Tailwind CSS"]}
-                    ></BulletPoint>
-                  </li>{" "}
-                  <li key="devtools" className="mb-4">
-                    <BulletPoint
-                      title={"Dev Tools: "}
-                      items={["AWS", "Azure DevOps", "Linux"]}
-                    ></BulletPoint>
-                  </li>
+                  {aboutSectionContent.skills.map((item) => {
+                    return (
+                      <li key={item.title} className="mb-4">
+                        <BulletPoint
+                          title={`${item.title}: `}
+                          items={item.items}
+                        ></BulletPoint>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

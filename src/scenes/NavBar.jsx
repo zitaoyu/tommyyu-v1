@@ -70,7 +70,7 @@ const LinkGroup = ({
       <MotionDiv delay={0.6} duration={0.4} y1={-20} y2={0}>
         <Link
           index={3}
-          page={Page.Work}
+          page={Page.Projects}
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
           setIsMenuToggled={setIsMenuToggled}

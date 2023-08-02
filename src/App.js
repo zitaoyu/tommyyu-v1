@@ -4,13 +4,13 @@ import { Page } from "./util/page";
 import { LoadingScreen } from "./components/Logo";
 import NavBar from "./scenes/NavBar";
 import LandingSection from "./scenes/Landing";
-import DummySection from "./scenes/DummySection";
 import DotGroup from "./components/DotGroup";
 import IconGroup from "./components/IconGroup";
 import AboutSection from "./scenes/About";
 import Footer from "./scenes/Footer";
 import ContactSection from "./scenes/Contact";
 import ExperienceSection from "./scenes/Experience";
+import ProjectsSection from "./scenes/Projects";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;
@@ -61,8 +61,8 @@ function App() {
 
           <SectionDivider />
 
-          {/* Work */}
-          <DummySection page={Page.Work} setSelectedPage={setSelectedPage} />
+          {/* Projects */}
+          <ProjectsSection setSelectedPage={setSelectedPage} />
 
           <SectionDivider />
 

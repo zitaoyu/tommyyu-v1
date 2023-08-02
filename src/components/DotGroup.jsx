@@ -38,7 +38,7 @@ const DotGroup = ({ selectedPage, setSelectedPage }) => {
         setSelectedPage={setSelectedPage}
       />
       <DotLink
-        page={Page.Work}
+        page={Page.Projects}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
