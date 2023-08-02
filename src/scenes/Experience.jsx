@@ -47,8 +47,10 @@ const ExperienceSection = ({ setSelectedPage }) => {
   const isDesktop = useMediaQuery("(min-width: 1060px)");
   return (
     <motion.div
-      classNameName="mx-auto"
-      onViewportEnter={() => setSelectedPage(Page.Contact)}
+      className="mx-auto"
+      onViewportEnter={() => {
+        setSelectedPage(Page.Experience);
+      }}
       viewport={{ amount: 0.7 }}
     >
       <section id={Page.Experience} className="py-32">
@@ -97,12 +99,12 @@ const ExperienceSection = ({ setSelectedPage }) => {
                       {/* <h1 class="m-auto font-semibold text-gray">{index}</h1> */}
                       {item.icon === "work" ? (
                         <FontAwesomeIcon
-                          className="bg-cyan text-gray text-2xl m-auto rounded-lg"
+                          className="bg-cyan text-gray h-6 w-6 m-auto rounded-lg"
                           icon={faBriefcase}
                         />
                       ) : (
                         <FontAwesomeIcon
-                          className="bg-cyan text-gray text-2xl m-auto rounded-lg"
+                          className="bg-cyan text-gray h-6 w-6 m-auto rounded-lg"
                           icon={faUserGraduate}
                         />
                       )}
@@ -123,8 +125,15 @@ const ExperienceSection = ({ setSelectedPage }) => {
                         {item.date}
                       </h2>
                       <ul className="list-disc list-outside ml-4 text-slate">
-                        {item.bulletPoints.map((content) => {
-                          return <li className="mb-2">{content}</li>;
+                        {item.bulletPoints.map((content, index) => {
+                          return (
+                            <li
+                              key={`exp_bulletpoint${index}`}
+                              className="mb-2"
+                            >
+                              {content}
+                            </li>
+                          );
                         })}
                       </ul>
                     </MotionDiv>

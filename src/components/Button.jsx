@@ -4,7 +4,7 @@ export const LinkButton = ({
   link = "#",
   className,
   children,
-  onClick = {},
+  onClick = () => {},
 }) => {
   return (
     <a

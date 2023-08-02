@@ -88,7 +88,7 @@ const AboutSection = ({ setSelectedPage }) => {
                   Here are some of the technologies I've been working with:
                 </p>
                 <ul className="font-robotomono">
-                  <li className="mb-4">
+                  <li key="language" className="mb-4">
                     <BulletPoint
                       title={"Language: "}
                       items={[
@@ -101,13 +101,13 @@ const AboutSection = ({ setSelectedPage }) => {
                       ]}
                     ></BulletPoint>
                   </li>
-                  <li className="mb-4">
+                  <li key="framework" className="mb-4">
                     <BulletPoint
                       title={"Framework: "}
                       items={["React", "Angular", "Tailwind CSS"]}
                     ></BulletPoint>
                   </li>{" "}
-                  <li className="mb-4">
+                  <li key="devtools" className="mb-4">
                     <BulletPoint
                       title={"Dev Tools: "}
                       items={["AWS", "Azure DevOps", "Linux"]}
