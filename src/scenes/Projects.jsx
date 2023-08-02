@@ -55,6 +55,10 @@ const projectSectionContent = {
       "javaScript",
       "React",
     ]),
+    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+      "javaScript",
+      "React",
+    ]),
   ],
 };
 
@@ -71,7 +75,7 @@ const HighlightedProject = () => {
 };
 
 const Project = () => {
-  return <div className="m-auto h-60 w-60 rounded-lg bg-navy"></div>;
+  return <div className="h-60 w-60 rounded-lg bg-navy"></div>;
 };
 
 const ProjectsSection = ({ setSelectedPage }) => {
@@ -83,7 +87,7 @@ const ProjectsSection = ({ setSelectedPage }) => {
       onViewportEnter={() => {
         setSelectedPage(Page.Projects);
       }}
-      viewport={{ amount: 0.7 }}
+      viewport={{ amount: 0.4 }}
     >
       <section id={Page.Projects} className="py-32 md:py-52">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
@@ -102,12 +106,16 @@ const ProjectsSection = ({ setSelectedPage }) => {
         </div>
 
         {/* Other Projects Section */}
-        <h3 className="text-center font-robotomono text-3xl font-semibold text-light-slate sm:mb-6 sm:tracking-tight">
+        <h3 className="mb-6 text-center font-robotomono text-3xl font-semibold tracking-tight text-light-slate">
           Other Projects
         </h3>
-        <div className="my-10 grid grid-cols-2 justify-center gap-10 md:grid-cols-3">
+        <div className="container m-auto flex flex-wrap justify-center gap-10 md:grid-cols-3">
           {projectSectionContent.projects.map((item, index) => {
-            return <Project />;
+            return (
+              <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
+                <Project />
+              </MotionDiv>
+            );
           })}
         </div>
       </section>
