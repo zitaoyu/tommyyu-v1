@@ -3,6 +3,19 @@ import { Page } from "../util/page";
 import { AnchorLinkButton } from "../components/Button";
 import MotionDiv from "../components/MotionDiv";
 
+const landingSectionContent = {
+  heading1: `Hello world, my name is`,
+  heading2: `Tommy Yu`,
+  heading3: `I create fun things for the web.`,
+  intro: `I'm a passionate software engineer specializing in crafting web
+          applications with exceptional user experiences and captivating
+          graphics. From designing seamless interfaces to implementing
+          cutting-edge technologies, I'm dedicated to creating digital
+          wonders that leave a lasting impression.`,
+  button1: `Check me out!`,
+  button2: `Contact info`,
+};
+
 const ShapesCanvas = () => {
   return (
     <div className="h-full stroke-cyan stroke-[5px]">
@@ -55,26 +68,22 @@ const LandingSection = ({ setSelectedPage }) => {
         <div className="z-10 flex max-w-screen-md flex-col justify-start gap-2 sm:p-6 md:mt-0 md:gap-4 ss-max-h:mt-12">
           <MotionDiv delay={1} duration={0.4} x1={20} x2={0}>
             <h1 className="font-robotomono text-cyan">
-              Hello world, my name is
+              {landingSectionContent.heading1}
             </h1>
           </MotionDiv>
           <MotionDiv delay={1.2} duration={0.4} x1={20} x2={0}>
             <h2 className="font-opensans text-5xl font-extrabold tracking-tight text-light-slate sm:text-6xl md:text-7xl">
-              Tommy Yu
+              {landingSectionContent.heading2}
             </h2>
           </MotionDiv>
           <MotionDiv delay={2.2} duration={0.4} x1={20} x2={0}>
             <h3 className="font-opensans text-4xl font-bold tracking-tight text-slate sm:text-6xl md:text-7xl">
-              I create fun things for the web.
+              {landingSectionContent.heading3}
             </h3>
           </MotionDiv>
           <MotionDiv delay={2.4} duration={0.4} x1={20} x2={0}>
             <p className="max-w-3xl font-opensans text-slate">
-              I'm a passionate software engineer specializing in crafting web
-              applications with exceptional user experiences and captivating
-              graphics. From designing seamless interfaces to implementing
-              cutting-edge technologies, I'm dedicated to creating digital
-              wonders that leave a lasting impression.
+              {landingSectionContent.intro}
             </p>
           </MotionDiv>
           <MotionDiv delay={2.6} duration={0.4} x1={20} x2={0}>
@@ -84,7 +93,7 @@ const LandingSection = ({ setSelectedPage }) => {
                 link={Page.About}
                 onClick={() => setSelectedPage(Page.About)}
               >
-                Check me out!
+                {landingSectionContent.button1}
               </AnchorLinkButton>
 
               <AnchorLinkButton
@@ -92,7 +101,7 @@ const LandingSection = ({ setSelectedPage }) => {
                 link={Page.Contact}
                 onClick={() => setSelectedPage(Page.Contact)}
               >
-                Contact info
+                {landingSectionContent.button2}
               </AnchorLinkButton>
             </div>
           </MotionDiv>
