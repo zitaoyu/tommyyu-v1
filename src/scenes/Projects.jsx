@@ -6,11 +6,13 @@ import SectionTitle from "../components/SectionTitle";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 class ProjectItem {
-  constructor(title, description, image, terms) {
+  constructor(title, description, image, techTerms, githubLink, projectLink) {
     this.title = title;
     this.description = description;
     this.image = image;
-    this.terms = terms;
+    this.techTerms = techTerms;
+    this.githubLink = githubLink;
+    this.projectLink = projectLink;
   }
 }
 
@@ -75,7 +77,9 @@ const HighlightedProject = () => {
 };
 
 const Project = () => {
-  return <div className="h-60 w-60 rounded-lg bg-navy"></div>;
+  return <div className={`h-60 w-60 rounded-lg transition duration-500 ease-in hover:-translate-y-4 border-4 border-cyan
+                          before:absolute before:w-6 before:h-6 before:border-4 before:border-cyan before:top-[-10%] before:left-0
+                          `}></div>;
 };
 
 const ProjectsSection = ({ setSelectedPage }) => {
