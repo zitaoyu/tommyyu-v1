@@ -80,12 +80,18 @@ const HighlightedProject = () => {
 const Project = () => {
   return (
     <div
-      className={`m-auto h-60 rounded-lg transition duration-300 ease-in hover:-translate-y-2 border-4 border-cyan`}
-    ></div> // <div
-    //   className={`h-60 w-60 rounded-lg transition duration-500 ease-in hover:-translate-y-4 border-4 border-cyan
-    //                       before:absolute before:w-6 before:h-6 before:border-4 before:border-cyan before:top-[-10%] before:left-0
-    //                       `}
-    // ></div>
+      className={`project-folder rounded-b-lg rounded-tr-lg mt-10 m-auto p-4 h-60 border-2 border-cyan relative 
+      before:rounded-t-lg before:absolute before:w-[40%] before:content-[''] before:h-6 before:bottom-[100%] before:left-[-2px]
+      before:border-2 before:border-cyan`}
+    >
+      <div className="w-full h-full">
+        <h1>Project Name</h1>
+        <p>
+          dummy text dummy text dummy text dummy text dummy text dummy text
+          dummy text dummy text dummy text dummy text dummy text dummy text
+        </p>
+      </div>
+    </div>
   );
 };
 
@@ -120,7 +126,7 @@ const ProjectsSection = ({ setSelectedPage }) => {
         <h3 className="mb-6 text-center font-robotomono text-3xl font-semibold tracking-tight text-light-slate">
           Other Projects
         </h3>
-        <div className="max-w-4xl mx-auto gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div className="max-w-[80%] mx-auto gap-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {projectSectionContent.projects.map((item, index) => {
             return (
               <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>

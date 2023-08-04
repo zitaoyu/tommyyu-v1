@@ -52,6 +52,13 @@
       stroke-dashoffset: 0;
     }
   }
+
+  .project-folder {
+    transition: all 0.2s ease-in;
+  }
+  .project-folder:hover {
+    transform: translateY(-8px);
+  }
 }
 
 html,
