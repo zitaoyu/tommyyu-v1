@@ -55,7 +55,7 @@ const ExperienceSection = ({ setSelectedPage }) => {
       onViewportEnter={() => {
         setSelectedPage(Page.Experience);
       }}
-      viewport={{ amount: 0.5 }}
+      viewport={{ amount: 0.2 }}
     >
       <section id={Page.Experience} className="py-32 md:py-52">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>

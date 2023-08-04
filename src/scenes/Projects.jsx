@@ -4,6 +4,7 @@ import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
 import useMediaQuery from "../hooks/useMediaQuery";
+import projectPicture from "../assets/dummy_project.jpg";
 
 class ProjectItem {
   constructor(title, description, image, techTerms, githubLink, projectLink) {
@@ -19,45 +20,45 @@ class ProjectItem {
 const projectSectionContent = {
   sectionTitle: "Projects",
   highlightedProjects: [
-    new ProjectItem("Project 1", "Description of Project 1", "image1.jpg", [
+    new ProjectItem("Project 1", "Description of Project 1", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 2", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 2", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
   ],
   projects: [
-    new ProjectItem("Project 3", "Description of Project 1", "image1.jpg", [
+    new ProjectItem("Project 3", "Description of Project 1", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 3", "Description of Project 1", "image1.jpg", [
+    new ProjectItem("Project 3", "Description of Project 1", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
-    new ProjectItem("Project 4", "Description of Project 2", "image2.jpg", [
+    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
       "javaScript",
       "React",
     ]),
@@ -77,9 +78,15 @@ const HighlightedProject = () => {
 };
 
 const Project = () => {
-  return <div className={`h-60 w-60 rounded-lg transition duration-500 ease-in hover:-translate-y-4 border-4 border-cyan
-                          before:absolute before:w-6 before:h-6 before:border-4 before:border-cyan before:top-[-10%] before:left-0
-                          `}></div>;
+  return (
+    <div
+      className={`m-auto h-60 rounded-lg transition duration-300 ease-in hover:-translate-y-2 border-4 border-cyan`}
+    ></div> // <div
+    //   className={`h-60 w-60 rounded-lg transition duration-500 ease-in hover:-translate-y-4 border-4 border-cyan
+    //                       before:absolute before:w-6 before:h-6 before:border-4 before:border-cyan before:top-[-10%] before:left-0
+    //                       `}
+    // ></div>
+  );
 };
 
 const ProjectsSection = ({ setSelectedPage }) => {
@@ -91,7 +98,7 @@ const ProjectsSection = ({ setSelectedPage }) => {
       onViewportEnter={() => {
         setSelectedPage(Page.Projects);
       }}
-      viewport={{ amount: 0.4 }}
+      viewport={{ amount: 0.2 }}
     >
       <section id={Page.Projects} className="py-32 md:py-52">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
@@ -113,7 +120,7 @@ const ProjectsSection = ({ setSelectedPage }) => {
         <h3 className="mb-6 text-center font-robotomono text-3xl font-semibold tracking-tight text-light-slate">
           Other Projects
         </h3>
-        <div className="container m-auto flex flex-wrap justify-center gap-10 md:grid-cols-3">
+        <div className="max-w-4xl mx-auto gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {projectSectionContent.projects.map((item, index) => {
             return (
               <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
