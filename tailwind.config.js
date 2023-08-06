@@ -11,6 +11,7 @@ module.exports = {
         bgc: "#171E26",
         "bgc-light": "#1F2833",
         primary: "#06C8EF",
+        "primary-dark": "#02424F",
         secondary: "#06C8EF",
         slate: "#94a3b8",
         "light-slate": "#D8E0E9",

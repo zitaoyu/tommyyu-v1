@@ -22,17 +22,18 @@ class ProjectItem {
 
 const projectSectionContent = {
   sectionTitle: "Projects",
+  subSectionTitle: "Other Projects",
   highlightedProjects: [
     new ProjectItem("Project 1", "Description of Project 1", projectPicture, [
-      "javaScript",
+      "JS",
       "React",
     ]),
     new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
-      "javaScript",
+      "JS",
       "React",
     ]),
     new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
-      "javaScript",
+      "JS",
       "React",
     ]),
   ],
@@ -41,7 +42,23 @@ const projectSectionContent = {
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
-      ["JavaScript", "React", "Framer Motion"],
+      ["JS", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Automation Framework",
+      "Daily Automation test to validate intelligent camera features.",
+      null,
+      ["Python", "cv2", "pyautogui"],
+      null,
+      null,
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JS", "React", "Framer Motion"],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
@@ -49,7 +66,7 @@ const projectSectionContent = {
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
-      ["JavaScript", "React", "Framer Motion"],
+      ["JS", "React", "Framer Motion"],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
@@ -57,7 +74,7 @@ const projectSectionContent = {
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
-      ["JavaScript", "React", "Framer Motion"],
+      ["JS", "React", "Framer Motion"],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
@@ -65,30 +82,12 @@ const projectSectionContent = {
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
-      ["JavaScript", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectItem(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JavaScript", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectItem(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JavaScript", "React", "Framer Motion"],
+      ["JS", "React", "Framer Motion"],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
   ],
 };
-
-console.log(projectSectionContent);
 
 const HighlightedProject = () => {
   return (
@@ -97,7 +96,7 @@ const HighlightedProject = () => {
       duration={0.5}
       y1={50}
       y2={0}
-      className="h-[20vh] w-full rounded-lg bg-bgc-light"
+      className="h-[20vh] w-full rounded-lg bg-bgc-light shadow-xl"
     ></MotionDiv>
   );
 };
@@ -111,27 +110,27 @@ const Project = ({
 }) => {
   return (
     <div
-      className={`project-folder relative m-auto mt-10 h-64 rounded-b-lg rounded-tr-lg bg-bgc-light p-[16px] shadow-xl
-      before:absolute before:bottom-[100%] before:left-[0px] before:h-6 before:w-[40%] before:rounded-t-lg
-      before:bg-bgc-light before:content-[''] hover:border-2
-      hover:border-primary hover:p-[14px] hover:text-primary before:hover:left-[-2px] before:hover:border-2 before:hover:border-primary before:hover:bg-primary`}
+      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg bg-bgc-light p-[20px] shadow-xl
+      before:absolute before:bottom-[100%] before:left-[0px] before:h-6 before:w-[40%] before:rounded-t-lg before:bg-primary-dark before:content-[''] 
+      hover:border-2 hover:border-primary hover:p-[18px] hover:text-primary 
+      before:hover:left-[-2px] before:hover:w-[calc(40%+2px)] before:hover:border-2 before:hover:border-primary before:hover:bg-primary`}
     >
       <div className="flex h-full w-full flex-col justify-between text-left hover:left-[-2px] hover:top-[-2px]">
         <div>
           <h1 className="font-opensans text-2xl font-bold">{title}</h1>
           <p className="text-slate">{description}</p>
         </div>
-        <div className="bottom-0 right-0 flex justify-between gap-4 text-slate">
-          <div cla>
+        <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
+          <div className="font-robotomono text-sm text-slate">
             {techTerms.map((term) => {
-              return <span className="mr-4 text-sm text-slate">{term}</span>;
+              return <span className="mr-4">{term}</span>;
             })}
           </div>
-          <div className="text-right">
+          <div className="">
             {githubLink && (
               <a href={githubLink} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
-                  className="mx-2 text-2xl hover:text-primary"
+                  className="mr-4 text-2xl hover:text-primary"
                   icon={faGithub}
                 />
               </a>
@@ -139,7 +138,7 @@ const Project = ({
             {externalLink && (
               <a href={externalLink} target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon
-                  className="mx-2 text-2xl hover:text-primary"
+                  className="mr-4 text-2xl hover:text-primary"
                   icon={faUpRightFromSquare}
                 />
               </a>
@@ -180,9 +179,9 @@ const ProjectsSection = ({ setSelectedPage }) => {
 
         {/* Other Projects Section */}
         <h3 className="mb-6 text-center font-robotomono text-3xl font-semibold tracking-tight text-light-slate">
-          Other Projects
+          {projectSectionContent.subSectionTitle}
         </h3>
-        <div className="mx-auto grid max-w-[100%] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mx-auto grid max-w-[100%] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectSectionContent.projects.map((project, index) => {
             return (
               <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
