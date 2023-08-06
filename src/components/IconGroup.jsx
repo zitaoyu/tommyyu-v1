@@ -1,7 +1,7 @@
 const SocialMediaIcon = ({ link, children }) => {
   return (
     <a
-      className={`h-8 w-8 fill-slate stroke-transparent transition duration-500 hover:-translate-y-1 hover:fill-cyan ss-max-h:h-6 ss-max-h:w-6`}
+      className={`h-8 w-8 fill-slate stroke-transparent transition duration-500 hover:-translate-y-1 hover:fill-primary ss-max-h:h-6 ss-max-h:w-6`}
       href={link}
       target="_blank"
       rel="noreferrer"

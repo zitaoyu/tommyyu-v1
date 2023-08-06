@@ -9,8 +9,8 @@ export const LinkButton = ({
   return (
     <a
       className={`${className}
-      rounded-lg border-2 border-cyan p-4 text-center font-robotomono text-cyan
-      hover:animate-pulse-slow hover:bg-cyan hover:text-gray`}
+      rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary
+      hover:animate-pulse-slow hover:bg-primary hover:text-gray`}
       href={`${link}`}
       onClick={onClick}
     >
@@ -28,8 +28,8 @@ export const AnchorLinkButton = ({
   return (
     <AnchorLink
       className={`${className}
-      rounded-lg border-2 border-cyan p-4 text-center font-robotomono text-cyan
-      hover:animate-pulse-slow hover:bg-cyan hover:text-gray`}
+      rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary
+      hover:animate-pulse-slow hover:bg-primary hover:text-gray`}
       href={`#${link}`}
       onClick={onClick}
     >

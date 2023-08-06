@@ -24,8 +24,8 @@
   }
 
   .loading-letters {
-    stroke: #66fcf1;
-    fill: #66fcf1;
+    stroke: #06c8ef;
+    fill: #06c8ef;
     opacity: 0;
     animation: show-letters 0.5s ease 3s;
     animation-fill-mode: forwards;
@@ -37,7 +37,7 @@
   }
 
   .loading-polygon {
-    stroke: #66fcf1;
+    stroke: #06c8ef;
     stroke-width: 15;
     stroke-linecap: round;
     stroke-dasharray: 900;
@@ -54,7 +54,7 @@
   }
 
   .project-folder {
-    transition: all 0.2s ease-in;
+    transition: transform 0.3s ease-in;
   }
   .project-folder:hover {
     transform: translateY(-8px);
@@ -66,6 +66,6 @@ body,
 #root,
 .app {
   height: 100%;
-  background-color: #1f2833;
+  background-color: #171e26;
   @apply text-white;
 }

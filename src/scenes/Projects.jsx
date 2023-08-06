@@ -4,16 +4,19 @@ import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import projectPicture from "../assets/dummy_project.jpg";
 
 class ProjectItem {
-  constructor(title, description, image, techTerms, githubLink, projectLink) {
+  constructor(title, description, image, techTerms, githubLink, externalLink) {
     this.title = title;
     this.description = description;
     this.image = image;
     this.techTerms = techTerms;
     this.githubLink = githubLink;
-    this.projectLink = projectLink;
+    this.externalLink = externalLink;
   }
 }
 
@@ -34,36 +37,58 @@ const projectSectionContent = {
     ]),
   ],
   projects: [
-    new ProjectItem("Project 3", "Description of Project 1", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 3", "Description of Project 1", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
-    new ProjectItem("Project 4", "Description of Project 2", projectPicture, [
-      "javaScript",
-      "React",
-    ]),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectItem(
+      "Portfolio Website",
+      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
+      null,
+      ["JavaScript", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
   ],
 };
+
+console.log(projectSectionContent);
 
 const HighlightedProject = () => {
   return (
@@ -72,24 +97,55 @@ const HighlightedProject = () => {
       duration={0.5}
       y1={50}
       y2={0}
-      className="h-[20vh] w-full rounded-lg bg-navy"
+      className="h-[20vh] w-full rounded-lg bg-bgc-light"
     ></MotionDiv>
   );
 };
 
-const Project = () => {
+const Project = ({
+  title,
+  description,
+  techTerms = [],
+  githubLink = null,
+  externalLink = null,
+}) => {
   return (
     <div
-      className={`project-folder rounded-b-lg rounded-tr-lg mt-10 m-auto p-4 h-60 border-2 border-cyan relative 
-      before:rounded-t-lg before:absolute before:w-[40%] before:content-[''] before:h-6 before:bottom-[100%] before:left-[-2px]
-      before:border-2 before:border-cyan`}
+      className={`project-folder relative m-auto mt-10 h-64 rounded-b-lg rounded-tr-lg bg-bgc-light p-[16px] shadow-xl
+      before:absolute before:bottom-[100%] before:left-[0px] before:h-6 before:w-[40%] before:rounded-t-lg
+      before:bg-bgc-light before:content-[''] hover:border-2
+      hover:border-primary hover:p-[14px] hover:text-primary before:hover:left-[-2px] before:hover:border-2 before:hover:border-primary before:hover:bg-primary`}
     >
-      <div className="w-full h-full">
-        <h1>Project Name</h1>
-        <p>
-          dummy text dummy text dummy text dummy text dummy text dummy text
-          dummy text dummy text dummy text dummy text dummy text dummy text
-        </p>
+      <div className="flex h-full w-full flex-col justify-between text-left hover:left-[-2px] hover:top-[-2px]">
+        <div>
+          <h1 className="font-opensans text-2xl font-bold">{title}</h1>
+          <p className="text-slate">{description}</p>
+        </div>
+        <div className="bottom-0 right-0 flex justify-between gap-4 text-slate">
+          <div cla>
+            {techTerms.map((term) => {
+              return <span className="mr-4 text-sm text-slate">{term}</span>;
+            })}
+          </div>
+          <div className="text-right">
+            {githubLink && (
+              <a href={githubLink} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  className="mx-2 text-2xl hover:text-primary"
+                  icon={faGithub}
+                />
+              </a>
+            )}
+            {externalLink && (
+              <a href={externalLink} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon
+                  className="mx-2 text-2xl hover:text-primary"
+                  icon={faUpRightFromSquare}
+                />
+              </a>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -126,11 +182,17 @@ const ProjectsSection = ({ setSelectedPage }) => {
         <h3 className="mb-6 text-center font-robotomono text-3xl font-semibold tracking-tight text-light-slate">
           Other Projects
         </h3>
-        <div className="max-w-[80%] mx-auto gap-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {projectSectionContent.projects.map((item, index) => {
+        <div className="mx-auto grid max-w-[100%] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {projectSectionContent.projects.map((project, index) => {
             return (
               <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
-                <Project />
+                <Project
+                  title={project.title}
+                  description={project.description}
+                  techTerms={project.techTerms}
+                  githubLink={project.githubLink}
+                  externalLink={project.externalLink}
+                />
               </MotionDiv>
             );
           })}

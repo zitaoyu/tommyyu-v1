@@ -14,19 +14,19 @@ const Link = ({
   setSelectedPage,
   setIsMenuToggled,
 }) => {
-  // const beforeStyle = `before:content-['${index.toString()}'] before:mr-1 before:text-cyan`;
+  // const beforeStyle = `before:content-['${index.toString()}'] before:mr-1 before:text-primary`;
   return (
     <AnchorLink
       className={`${
-        selectedPage === page ? "text-cyan" : "text-slate"
-      } p-4 font-robotomono transition duration-500 hover:text-cyan`}
+        selectedPage === page ? "text-primary" : "text-slate"
+      } p-4 font-robotomono transition duration-500 hover:text-primary`}
       href={`#${page}`}
       onClick={() => {
         setSelectedPage(page);
         setIsMenuToggled(false);
       }}
     >
-      <span className="mr-1 text-cyan">{"[" + index + "]"}.</span>
+      <span className="mr-1 text-primary">{"[" + index + "]"}.</span>
       {page.charAt(0).toUpperCase() + page.slice(1)}
     </AnchorLink>
   );
@@ -151,7 +151,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
           <MotionDiv delay={0} y1={-20} y2={0}>
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <img
-                className="h-9 w-9 rounded-full bg-cyan p-2"
+                className="h-9 w-9 rounded-full bg-primary p-2"
                 alt="menu-icon"
                 src={menuIcon}
               />
@@ -163,7 +163,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
       {/* MOBILE MENU POPUP */}
       {
         <div
-          className={`fixed right-0 top-0 h-[150vh] w-[66%] bg-navy 
+          className={`fixed right-0 top-0 h-[150vh] w-[66%] bg-bgc-light 
                       duration-300 ease-in-out
                       ${
                         !isAboveSmallScreens && isMenuToggled
@@ -176,7 +176,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <img
                 alt="close-icon"
-                className="h-9 w-9 rounded-full bg-cyan p-2"
+                className="h-9 w-9 rounded-full bg-primary p-2"
                 src={closeIcon}
               />
             </button>
