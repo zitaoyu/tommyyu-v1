@@ -96,7 +96,7 @@ const HighlightedProject = () => {
       duration={0.5}
       y1={50}
       y2={0}
-      className="h-[20vh] w-full rounded-lg bg-bgc-light shadow-xl"
+      className="w-full min-h-[500px] rounded-lg shadow-xl bg-project_1 bg-cover bg-no-repeat brightness-[40%]"
     ></MotionDiv>
   );
 };
@@ -110,10 +110,10 @@ const Project = ({
 }) => {
   return (
     <div
-      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg bg-bgc-light p-[20px] shadow-xl
-      before:absolute before:bottom-[100%] before:left-[0px] before:h-6 before:w-[40%] before:rounded-t-lg before:bg-primary-dark before:content-[''] 
-      hover:border-2 hover:border-primary hover:p-[18px] hover:text-primary 
-      before:hover:left-[-2px] before:hover:w-[calc(40%+2px)] before:hover:border-2 before:hover:border-primary before:hover:bg-primary`}
+      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg bg-bgc-light p-5 shadow-xl border-2 border-bgc-light 
+      hover:border-primary hover:text-primary 
+      before:absolute before:bottom-[calc(100%+2px)] before:left-[-2px] before:h-6 before:w-[40%] before:rounded-t-lg before:bg-primary  before:content-[''] 
+      before:brightness-50 before:hover:brightness-100 before:border-2 before:border-primary before:hover:border-primary`}
     >
       <div className="flex h-full w-full flex-col justify-between text-left hover:left-[-2px] hover:top-[-2px]">
         <div>
@@ -171,7 +171,7 @@ const ProjectsSection = ({ setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="my-10 flex flex-col justify-center gap-10">
+        <div className="max-w-[90%] mx-auto my-10 flex flex-col justify-center gap-10">
           {projectSectionContent.highlightedProjects.map((item, index) => {
             return <HighlightedProject />;
           })}
