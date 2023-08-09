@@ -46,9 +46,7 @@ const experienceSectionContent = {
   ],
 };
 
-const ExperienceSection = ({ setSelectedPage }) => {
-  const isDesktop = useMediaQuery("(min-width: 1060px)");
-
+const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
   return (
     <motion.div
       className="mx-auto"

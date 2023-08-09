@@ -57,12 +57,18 @@ function App() {
           <SectionDivider />
 
           {/* Experience */}
-          <ExperienceSection setSelectedPage={setSelectedPage} />
+          <ExperienceSection
+            isDesktop={isDesktop}
+            setSelectedPage={setSelectedPage}
+          />
 
           <SectionDivider />
 
           {/* Projects */}
-          <ProjectsSection setSelectedPage={setSelectedPage} />
+          <ProjectsSection
+            isDesktop={isDesktop}
+            setSelectedPage={setSelectedPage}
+          />
 
           <SectionDivider />
 
