@@ -7,13 +7,19 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import projectPicture from "../assets/dummy_project.jpg";
 
-class ProjectItem {
-  constructor(title, description, image, techTerms, githubLink, externalLink) {
+class ProjectInfo {
+  constructor(
+    title,
+    description,
+    imageUrl,
+    techTerms,
+    githubLink,
+    externalLink,
+  ) {
     this.title = title;
     this.description = description;
-    this.image = image;
+    this.imageUrl = imageUrl;
     this.techTerms = techTerms;
     this.githubLink = githubLink;
     this.externalLink = externalLink;
@@ -24,21 +30,25 @@ const projectSectionContent = {
   sectionTitle: "Projects",
   subSectionTitle: "Other Projects",
   highlightedProjects: [
-    new ProjectItem("Project 1", "Description of Project 1", projectPicture, [
-      "JS",
-      "React",
-    ]),
-    new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
-      "JS",
-      "React",
-    ]),
-    new ProjectItem("Project 2", "Description of Project 2", projectPicture, [
-      "JS",
-      "React",
-    ]),
+    new ProjectInfo(
+      "Portfolio Website",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "url('./assets/dummy_project.jpg')",
+      ["JS", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectInfo(
+      "Portfolio Website",
+      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+      "url('./assets/dummy_project.jpg')",
+      ["JS", "React", "Framer Motion"],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
   ],
   projects: [
-    new ProjectItem(
+    new ProjectInfo(
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
@@ -46,7 +56,7 @@ const projectSectionContent = {
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
-    new ProjectItem(
+    new ProjectInfo(
       "Automation Framework",
       "Daily Automation test to validate intelligent camera features.",
       null,
@@ -54,7 +64,7 @@ const projectSectionContent = {
       null,
       null,
     ),
-    new ProjectItem(
+    new ProjectInfo(
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
@@ -62,7 +72,7 @@ const projectSectionContent = {
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
-    new ProjectItem(
+    new ProjectInfo(
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
@@ -70,7 +80,7 @@ const projectSectionContent = {
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
-    new ProjectItem(
+    new ProjectInfo(
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
@@ -78,7 +88,7 @@ const projectSectionContent = {
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
-    new ProjectItem(
+    new ProjectInfo(
       "Portfolio Website",
       "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
       null,
@@ -89,54 +99,98 @@ const projectSectionContent = {
   ],
 };
 
-const HighlightedProject = () => {
+const HighlightedProject = ({ projectInfo }) => {
   return (
     <MotionDiv
       delay={0.2}
       duration={0.5}
       y1={50}
       y2={0}
-      className="w-full min-h-[500px] rounded-lg shadow-xl bg-project_1 bg-cover bg-no-repeat brightness-[40%]"
-    ></MotionDiv>
+      className={`relative z-10 w-full rounded-lg p-10 shadow-xl transition duration-300 before:absolute before:left-0 before:top-0
+                  before:z-0 before:h-full before:w-full before:rounded-lg 
+                  md:p-20 before:bg-[${projectInfo.imageUrl}] before:bg-cover before:bg-no-repeat
+                  before:brightness-[30%] before:content-[''] hover:text-primary`}
+    >
+      <div className="relative flex flex-col gap-4 rounded-lg">
+        <h1 className="font-opensans text-3xl font-bold">
+          {projectInfo.title}
+        </h1>
+        <p className="mb-10 text-xl text-slate">{projectInfo.description}</p>
+        <div className="font-robotomono text-sm text-slate">
+          {projectInfo.techTerms.map((term) => {
+            return <span className="mr-4">{term}</span>;
+          })}
+        </div>
+        <div className="text-slate">
+          {projectInfo.githubLink && (
+            <a
+              href={projectInfo.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="mr-6 text-2xl hover:text-primary"
+                icon={faGithub}
+              />
+            </a>
+          )}
+          {projectInfo.externalLink && (
+            <a
+              href={projectInfo.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                className="mr-6 text-2xl hover:text-primary"
+                icon={faUpRightFromSquare}
+              />
+            </a>
+          )}
+        </div>
+      </div>
+    </MotionDiv>
   );
 };
 
-const Project = ({
-  title,
-  description,
-  techTerms = [],
-  githubLink = null,
-  externalLink = null,
-}) => {
+const Project = ({ projectInfo }) => {
   return (
     <div
-      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg bg-bgc-light p-5 shadow-xl border-2 border-bgc-light 
-      hover:border-primary hover:text-primary 
-      before:absolute before:bottom-[calc(100%+2px)] before:left-[-2px] before:h-6 before:w-[40%] before:rounded-t-lg before:bg-primary  before:content-[''] 
-      before:brightness-50 before:hover:brightness-100 before:border-2 before:border-primary before:hover:border-primary`}
+      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg border-2 border-bgc-light bg-bgc-light p-5 shadow-xl 
+      before:absolute before:bottom-[calc(100%+2px)] before:left-[-2px] before:h-6 before:w-[40%] before:rounded-t-lg before:border-2 before:border-primary before:bg-primary  before:brightness-50 before:content-[''] 
+      hover:border-primary hover:text-primary before:hover:border-primary before:hover:brightness-100`}
     >
-      <div className="flex h-full w-full flex-col justify-between text-left hover:left-[-2px] hover:top-[-2px]">
+      <div className="flex h-full w-full flex-col justify-between text-left">
         <div>
-          <h1 className="font-opensans text-2xl font-bold">{title}</h1>
-          <p className="text-slate">{description}</p>
+          <h1 className="font-opensans text-2xl font-bold">
+            {projectInfo.title}
+          </h1>
+          <p className="text-slate">{projectInfo.description}</p>
         </div>
         <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
           <div className="font-robotomono text-sm text-slate">
-            {techTerms.map((term) => {
+            {projectInfo.techTerms.map((term) => {
               return <span className="mr-4">{term}</span>;
             })}
           </div>
-          <div className="">
-            {githubLink && (
-              <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <div>
+            {projectInfo.githubLink && (
+              <a
+                href={projectInfo.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon
                   className="mr-4 text-2xl hover:text-primary"
                   icon={faGithub}
                 />
               </a>
             )}
-            {externalLink && (
-              <a href={externalLink} target="_blank" rel="noopener noreferrer">
+            {projectInfo.externalLink && (
+              <a
+                href={projectInfo.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon
                   className="mr-4 text-2xl hover:text-primary"
                   icon={faUpRightFromSquare}
@@ -171,9 +225,9 @@ const ProjectsSection = ({ setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="max-w-[90%] mx-auto my-10 flex flex-col justify-center gap-10">
-          {projectSectionContent.highlightedProjects.map((item, index) => {
-            return <HighlightedProject />;
+        <div className="mx-auto my-10 flex w-full flex-col justify-center gap-10 md:max-w-[90%]">
+          {projectSectionContent.highlightedProjects.map((projectInfo) => {
+            return <HighlightedProject projectInfo={projectInfo} />;
           })}
         </div>
 
@@ -182,16 +236,10 @@ const ProjectsSection = ({ setSelectedPage }) => {
           {projectSectionContent.subSectionTitle}
         </h3>
         <div className="mx-auto grid max-w-[100%] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projectSectionContent.projects.map((project, index) => {
+          {projectSectionContent.projects.map((projectInfo, index) => {
             return (
               <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
-                <Project
-                  title={project.title}
-                  description={project.description}
-                  techTerms={project.techTerms}
-                  githubLink={project.githubLink}
-                  externalLink={project.externalLink}
-                />
+                <Project projectInfo={projectInfo} />
               </MotionDiv>
             );
           })}
