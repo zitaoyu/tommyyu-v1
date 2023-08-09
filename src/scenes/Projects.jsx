@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { LinkButton } from "../components/Button";
 
 class ProjectInfo {
   constructor(

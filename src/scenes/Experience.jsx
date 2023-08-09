@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGraduate, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
