@@ -8,12 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gray: "#1f2833",
-        navy: "#0a192f",
-        "light-slate": "#D8E0E9",
+        bgc: "#171E26",
+        "bgc-light": "#1F2833",
+        primary: "#06C8EF",
+        "primary-dark": "#02424F",
+        secondary: "#06C8EF",
         slate: "#94a3b8",
+        "light-slate": "#D8E0E9",
+        // unused colors:
+        gray: "#171E26",
+        "light-gray": "#263240",
+        navy: "#0a192f",
         cyan: "#64ffda",
-        "gray-transparent-blur": "rgba(31, 40, 51, 0.96)",
+        blue: "#06C8EF",
+        "gray-transparent-blur": "rgba(23, 30, 38, 0.96)",
       },
       fontFamily: {
         robotomono: ["Roboto Mono", "monospace"],
@@ -36,6 +44,11 @@ module.exports = {
       },
       boxShadow: {
         "window-shadow": "0 6px 14px -4px black",
+      },
+      backgroundImage: {
+        project_0: "url('./assets/dummy_project.jpg')",
+        project_1: "url('./assets/dummy_project.jpg')",
+        project_2: "url('./assets/dummy_project.jpg')",
       },
     },
     screens: {

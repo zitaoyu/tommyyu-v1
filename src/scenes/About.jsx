@@ -30,7 +30,7 @@ const aboutSectionContent = {
 
 const TechTerm = ({ children }) => {
   return (
-    <span className="mr-3 mt-2 rounded-md bg-navy p-1 text-light-slate">
+    <span className="mr-3 mt-2 rounded-md bg-bgc-light p-1 text-light-slate">
       {children}
     </span>
   );
@@ -41,7 +41,7 @@ const BulletPoint = ({ title, items }) => {
     <div>
       <div className="mr-2 inline-block">
         <svg
-          className="mr-1 inline-block h-6 w-6 -translate-y-[2px] fill-none stroke-cyan stroke-2"
+          className="mr-1 inline-block h-6 w-6 -translate-y-[2px] fill-none stroke-primary stroke-2"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
           strokeLinecap="round"
@@ -51,7 +51,7 @@ const BulletPoint = ({ title, items }) => {
           <path d="M17 8L21 12L17 16" />
           <path d="M14 4L9.8589 19.4548" />
         </svg>
-        <span className="text-cyan">{title}</span>
+        <span className="text-primary">{title}</span>
       </div>
       <div className="flex flex-wrap">
         {items.map((item) => {
@@ -65,12 +65,12 @@ const BulletPoint = ({ title, items }) => {
 const ProfilePicture = () => {
   return (
     <div className="flex w-[90%] max-w-[380px] flex-col opacity-80 shadow-window-shadow transition duration-500 hover:opacity-90 md:w-full">
-      <div className="inline-flex h-[30px] w-full flex-1 rounded-t-lg border border-cyan bg-cyan">
+      <div className="inline-flex h-[30px] w-full flex-1 rounded-t-lg border border-primary bg-primary">
         <div className="m-[6px] rounded-xl border-[8px] text-[#ff5f56]"></div>
         <div className="m-[6px] rounded-xl border-[8px] text-[#ffbd2e]"></div>
         <div className="m-[6px] rounded-xl border-[8px] text-[#27c93f]"></div>
       </div>
-      <div className="flex aspect-[3/4] max-h-[500px] w-full flex-col justify-center rounded-b-lg border border-cyan bg-light-slate">
+      <div className="flex aspect-[3/4] max-h-[500px] w-full flex-col justify-center rounded-b-lg border border-primary bg-light-slate">
         <img
           className="m-[10px] rounded-lg md:m-[20px] md:transition md:duration-500 md:hover:scale-110"
           alt="profile"
@@ -90,7 +90,7 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="justify-centertext-left flex flex-col py-10 sm:py-32"
+        className="justify-centertext-left flex flex-col pb-32 pt-4 md:pb-64"
       >
         {/* SECTION TITLE */}
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>

@@ -1,8 +1,8 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Page } from "../util/page";
 
-const selectedStyles = `relative bg-cyan before:absolute before:w-6 before:h-6 
-  before:rounded-full before:border-2 before:border-cyan before:left-[-50%]
+const selectedStyles = `relative bg-primary before:absolute before:w-6 before:h-6 
+  before:rounded-full before:border-2 before:border-primary before:left-[-50%]
   before:top-[-50%]`;
 
 const DotLink = ({ page, selectedPage, setSelectedPage }) => {
@@ -11,7 +11,7 @@ const DotLink = ({ page, selectedPage, setSelectedPage }) => {
       className={`h-3 w-3 rounded-full transition duration-500 ${
         selectedPage === page
           ? selectedStyles
-          : "bg-slate hover:border-2 hover:border-cyan"
+          : "bg-slate hover:border-2 hover:border-primary"
       } `}
       href={`#${page}`}
       onClick={() => setSelectedPage(page)}

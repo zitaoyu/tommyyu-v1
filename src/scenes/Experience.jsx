@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/MotionDiv";
 import SectionTitle from "../components/SectionTitle";
-import useMediaQuery from "../hooks/useMediaQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGraduate, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
@@ -46,18 +45,16 @@ const experienceSectionContent = {
   ],
 };
 
-const ExperienceSection = ({ setSelectedPage }) => {
-  const isDesktop = useMediaQuery("(min-width: 1060px)");
-
+const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
   return (
     <motion.div
       className="mx-auto"
       onViewportEnter={() => {
         setSelectedPage(Page.Experience);
       }}
-      viewport={{ amount: 0.7 }}
+      viewport={{ amount: 0.5 }}
     >
-      <section id={Page.Experience} className="py-32 md:py-52">
+      <section id={Page.Experience} className="pb-32 pt-4 md:pb-64">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
           <SectionTitle
             index={2}
@@ -65,12 +62,12 @@ const ExperienceSection = ({ setSelectedPage }) => {
             isCenter={isDesktop ? true : false}
           />
         </MotionDiv>
-        <div className="container mx-auto h-full w-full py-4 sm:py-10 md:p-10">
+        <div className="container mx-auto h-full w-full pt-4 sm:pt-10 md:px-10">
           <div className="relative h-full overflow-hidden">
             {/* Timeline */}
-            <div className="absolute left-[20px] h-[20vh] w-[2px] bg-cyan bg-gradient-to-t from-cyan to-gray md:left-1/2"></div>
-            <div className="absolute left-[20px] top-[20vh] h-full w-[2px] bg-cyan md:left-1/2"></div>
-            <div className="absolute bottom-0 left-[20px] h-[20vh] w-[2px] bg-cyan bg-gradient-to-b from-cyan to-gray md:left-1/2"></div>
+            <div className="absolute left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-t from-primary to-gray md:left-1/2"></div>
+            <div className="absolute left-[20px] top-[20vh] h-full w-[2px] bg-primary md:left-1/2"></div>
+            <div className="absolute bottom-0 left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-b from-primary to-gray md:left-1/2"></div>
 
             {/* Timeline Items */}
             <div className="my-20">
@@ -87,7 +84,7 @@ const ExperienceSection = ({ setSelectedPage }) => {
                     {isDesktop && <div className="order-1 w-5/12"></div>}
                     {/* Dot */}
                     <motion.div
-                      className="z-20 order-1 flex h-10 w-10 items-center rounded-full bg-cyan shadow-xl"
+                      className="z-20 order-1 flex h-10 w-10 items-center rounded-full bg-primary shadow-xl"
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 1 }}
@@ -104,19 +101,19 @@ const ExperienceSection = ({ setSelectedPage }) => {
                       {/* <h1 class="m-auto font-semibold text-gray">{index}</h1> */}
                       {item.icon === "work" ? (
                         <FontAwesomeIcon
-                          className="m-auto rounded-lg bg-cyan text-2xl text-gray"
+                          className="m-auto rounded-lg bg-primary text-2xl text-gray"
                           icon={faBriefcase}
                         />
                       ) : (
                         <FontAwesomeIcon
-                          className="m-auto rounded-lg bg-cyan text-2xl text-gray"
+                          className="m-auto rounded-lg bg-primary text-2xl text-gray"
                           icon={faUserGraduate}
                         />
                       )}
                     </motion.div>
                     {/* Container */}
                     <MotionDiv
-                      className="order-1 ml-4 w-[calc(100%-60px)] rounded-lg bg-navy px-4 py-2 font-opensans text-light-slate shadow-xl sm:px-6 sm:py-4 md:ml-0 md:w-5/12"
+                      className="order-1 ml-4 w-[calc(100%-60px)] rounded-lg bg-bgc-light px-4 py-2 font-opensans text-light-slate shadow-xl sm:px-6 sm:py-4 md:ml-0 md:w-5/12"
                       delay={0.4}
                       duration={0.4}
                       y1={50}
@@ -124,7 +121,7 @@ const ExperienceSection = ({ setSelectedPage }) => {
                     >
                       <h3 className="font-bold sm:text-lg">
                         {item.title} -{" "}
-                        <span className="text-cyan">{item.company}</span>
+                        <span className="text-primary">{item.company}</span>
                       </h3>
                       <h2 className="mb-3 text-sm italic text-slate">
                         {item.date}

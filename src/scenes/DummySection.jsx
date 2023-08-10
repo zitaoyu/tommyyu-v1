@@ -8,7 +8,7 @@ const DummySection = ({ page, setSelectedPage }) => {
       viewport={{ amount: 0.7 }}
     >
       <section
-        className="flex h-full flex-col justify-center text-cyan"
+        className="flex h-full flex-col justify-center text-primary"
         id={page}
       >
         <h1 className="text-center font-opensans text-4xl">
