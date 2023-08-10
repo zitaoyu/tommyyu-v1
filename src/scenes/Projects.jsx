@@ -7,6 +7,7 @@ import SectionTitle from "../components/SectionTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import projectImage_0 from "../assets/dummy_project.jpg";
 
 class ProjectInfo {
   constructor(
@@ -33,7 +34,7 @@ const projectSectionContent = {
     new ProjectInfo(
       "Portfolio Website",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "bg-project_0",
+      projectImage_0,
       [
         "JavaScript",
         "React",
@@ -48,7 +49,7 @@ const projectSectionContent = {
     new ProjectInfo(
       "Dummy Project Holder",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "bg-project_1",
+      projectImage_0,
       [
         "JavaScript",
         "React",
@@ -63,7 +64,7 @@ const projectSectionContent = {
     new ProjectInfo(
       "Dummy Project Holder",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "bg-project_1",
+      projectImage_0,
       [
         "JavaScript",
         "React",
@@ -131,21 +132,23 @@ const projectSectionContent = {
 const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
   const isRight = index % 2 === 1;
   const imageCss = isDesktop
-    ? `${isRight ? "before:left-0" : "before:right-0"} before:w-[60%]`
-    : "before:left-0 before:w-full";
+    ? `${
+        isRight ? "left-0" : "right-0"
+      } w-[50%] bottom-0 top-0 z-0 my-auto aspect-[4/3]`
+    : "left-0 w-full h-full";
 
   return (
     <div
-      className={`${
+      className={`group relative z-10 w-full rounded-lg shadow-xl transition duration-300 md:shadow-none ${
         isRight && isDesktop && "flex justify-end"
-      } relative z-10 w-full rounded-lg shadow-xl transition duration-300 before:absolute before:top-0 
-      before:z-0 before:h-full before:rounded-lg ${imageCss} before:${
-        projectInfo.imageUrl
-      } before:bg-cover before:bg-fixed before:bg-center before:bg-no-repeat before:brightness-[30%]
-      before:transition before:duration-300 before:content-[''] hover:text-primary before:hover:brightness-[80%]
-      md:shadow-none
-      `}
+      }`}
     >
+      <img
+        className={`absolute rounded-lg bg-cover bg-center brightness-[30%] transition
+         duration-300 content-[''] group-hover:brightness-[40%] ${imageCss}`}
+        src={projectInfo.imageUrl}
+        alt={projectInfo.imageUrl.toString()}
+      />
       <div
         className={`${
           isRight && isDesktop ? "text-right md:pr-0" : "md:pl-0"
@@ -156,11 +159,13 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h1 className="font-opensans text-2xl font-bold xs:text-3xl">
+          <h1 className="font-opensans text-2xl font-bold text-primary xs:text-3xl">
             {projectInfo.title}
           </h1>
         </a>
-        <p className="mb-10 text-slate xs:text-xl">{projectInfo.description}</p>
+        <p className="mb-10 text-slate group-hover:text-light-slate xs:text-xl">
+          {projectInfo.description}
+        </p>
         <div className="font-robotomono text-sm text-slate">
           {projectInfo.techTerms.map((term) => {
             return <span className="mr-4">{term}</span>;

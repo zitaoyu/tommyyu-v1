@@ -45,11 +45,6 @@ module.exports = {
       boxShadow: {
         "window-shadow": "0 6px 14px -4px black",
       },
-      backgroundImage: {
-        project_0: "url('./assets/dummy_project.jpg')",
-        project_1: "url('./assets/dummy_project.jpg')",
-        project_2: "url('./assets/dummy_project.jpg')",
-      },
     },
     screens: {
       xs: "480px",
