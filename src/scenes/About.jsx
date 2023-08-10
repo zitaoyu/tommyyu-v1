@@ -90,7 +90,7 @@ const AboutSection = ({ setSelectedPage }) => {
     >
       <section
         id={Page.About}
-        className="justify-centertext-left flex flex-col py-10 sm:py-32"
+        className="justify-centertext-left flex flex-col pb-32 pt-4 md:pb-64"
       >
         {/* SECTION TITLE */}
         <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>

@@ -33,16 +33,45 @@ const projectSectionContent = {
     new ProjectInfo(
       "Portfolio Website",
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      "url('./assets/dummy_project.jpg')",
-      ["JS", "React", "Framer Motion"],
+      "bg-project_0",
+      [
+        "JavaScript",
+        "React",
+        "Framer Motion",
+        "Tailwind CSS",
+        "FontAwesome",
+        "Netlify",
+      ],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
     new ProjectInfo(
-      "Portfolio Website",
-      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-      "url('./assets/dummy_project.jpg')",
-      ["JS", "React", "Framer Motion"],
+      "Dummy Project Holder",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "bg-project_1",
+      [
+        "JavaScript",
+        "React",
+        "Framer Motion",
+        "Tailwind CSS",
+        "FontAwesome",
+        "Netlify",
+      ],
+      "https://github.com/zitaoyu/tommyyu-v1-example",
+      "https://zitaoyu.github.io/tommyyu-v1-example/",
+    ),
+    new ProjectInfo(
+      "Dummy Project Holder",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "bg-project_1",
+      [
+        "JavaScript",
+        "React",
+        "Framer Motion",
+        "Tailwind CSS",
+        "FontAwesome",
+        "Netlify",
+      ],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
@@ -99,22 +128,38 @@ const projectSectionContent = {
   ],
 };
 
-const HighlightedProject = ({ projectInfo }) => {
+const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
+  const isRight = index % 2 === 1;
+  const imageCss = isDesktop
+    ? `${isRight ? "before:left-0" : "before:right-0"} before:w-[60%]`
+    : "before:left-0 before:w-full";
+
   return (
-    <MotionDiv
-      delay={0.2}
-      duration={0.5}
-      y1={50}
-      y2={0}
-      className={`relative z-10 w-full rounded-lg p-10 shadow-xl transition duration-300 before:absolute before:left-0 before:top-0
-                  before:z-0 before:h-full before:w-full before:rounded-lg 
-                  md:p-20 before:bg-[${projectInfo.imageUrl}] before:bg-cover before:bg-no-repeat
-                  before:brightness-[30%] before:content-[''] hover:text-primary`}
+    <div
+      className={`${
+        isRight && isDesktop && "flex justify-end"
+      } relative z-10 w-full rounded-lg shadow-xl transition duration-300 before:absolute before:top-0 
+      before:z-0 before:h-full before:rounded-lg ${imageCss} before:${
+        projectInfo.imageUrl
+      } before:bg-cover before:bg-fixed before:bg-center before:bg-no-repeat before:brightness-[30%]
+      before:transition before:duration-300 before:content-[''] hover:text-primary before:hover:brightness-[80%]
+      md:shadow-none
+      `}
     >
-      <div className="relative flex flex-col gap-4 rounded-lg backdrop-blur-sm">
-        <h1 className="font-opensans text-2xl font-bold xs:text-3xl">
-          {projectInfo.title}
-        </h1>
+      <div
+        className={`${
+          isRight && isDesktop ? "text-right md:pr-0" : "md:pl-0"
+        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:p-20 md:backdrop-blur-none`}
+      >
+        <a
+          href={projectInfo?.externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <h1 className="font-opensans text-2xl font-bold xs:text-3xl">
+            {projectInfo.title}
+          </h1>
+        </a>
         <p className="mb-10 text-slate xs:text-xl">{projectInfo.description}</p>
         <div className="font-robotomono text-sm text-slate">
           {projectInfo.techTerms.map((term) => {
@@ -148,7 +193,7 @@ const HighlightedProject = ({ projectInfo }) => {
           )}
         </div>
       </div>
-    </MotionDiv>
+    </div>
   );
 };
 
@@ -223,7 +268,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
       }}
       viewport={{ amount: 0.2 }}
     >
-      <section id={Page.Projects} className="py-32 md:py-52">
+      <section id={Page.Projects} className="pt-4">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
           <SectionTitle
             index={3}
@@ -233,10 +278,20 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="mx-auto my-10 flex w-full flex-col justify-center gap-10 md:max-w-[90%]">
-          {projectSectionContent.highlightedProjects.map((projectInfo) => {
-            return <HighlightedProject projectInfo={projectInfo} />;
-          })}
+        <div className="mx-auto my-10 flex w-full flex-col justify-center gap-10 md:my-28 md:max-w-[90%] md:gap-28">
+          {projectSectionContent.highlightedProjects.map(
+            (projectInfo, index) => {
+              return (
+                <MotionDiv delay={0.1 * index} duration={0.5} y1={50} y2={0}>
+                  <HighlightedProject
+                    isDesktop={isDesktop}
+                    projectInfo={projectInfo}
+                    index={index}
+                  />
+                </MotionDiv>
+              );
+            },
+          )}
         </div>
 
         {/* Other Projects Section */}

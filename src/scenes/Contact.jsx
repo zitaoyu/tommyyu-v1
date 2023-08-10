@@ -15,13 +15,13 @@ const contactSectionContent = {
 const ContactSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="m-auto min-h-[80vh] md:w-2/3"
+      className="m-auto mt-24 h-[80vh] md:mt-0 md:w-2/3"
       onViewportEnter={() => setSelectedPage(Page.Contact)}
       viewport={{ amount: 0.7 }}
     >
       <section
         id={Page.Contact}
-        className="flex min-h-[80vh] flex-col justify-center gap-4 text-center"
+        className="flex h-full flex-col justify-center gap-4 text-center"
       >
         <MotionDiv duration={0.4} y1={50} y2={0}>
           <SectionTitle

@@ -52,9 +52,9 @@ const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
       onViewportEnter={() => {
         setSelectedPage(Page.Experience);
       }}
-      viewport={{ amount: 0.2 }}
+      viewport={{ amount: 0.5 }}
     >
-      <section id={Page.Experience} className="py-32 md:py-52">
+      <section id={Page.Experience} className="pb-32 pt-4 md:pb-64">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
           <SectionTitle
             index={2}
@@ -62,7 +62,7 @@ const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
             isCenter={isDesktop ? true : false}
           />
         </MotionDiv>
-        <div className="container mx-auto h-full w-full py-4 sm:py-10 md:p-10">
+        <div className="container mx-auto h-full w-full pt-4 sm:pt-10 md:px-10">
           <div className="relative h-full overflow-hidden">
             {/* Timeline */}
             <div className="absolute left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-t from-primary to-gray md:left-1/2"></div>
