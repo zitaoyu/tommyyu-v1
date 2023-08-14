@@ -1,4 +1,4 @@
-import IconGroup from "../components/IconGroup";
+import IconGroup from "../components/iconGroup";
 
 const Footer = ({ isDesktop }) => {
   return (

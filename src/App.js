@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { Page } from "./util/page";
-import { LoadingScreen } from "./components/Logo";
-import NavBar from "./scenes/NavBar";
-import LandingSection from "./scenes/Landing";
-import DotGroup from "./components/DotGroup";
-import IconGroup from "./components/IconGroup";
-import AboutSection from "./scenes/About";
-import Footer from "./scenes/Footer";
-import ContactSection from "./scenes/Contact";
-import ExperienceSection from "./scenes/Experience";
-import ProjectsSection from "./scenes/Projects";
+import { LoadingScreen } from "./components/logo";
+import NavBar from "./scenes/navBar";
+import LandingSection from "./scenes/landing";
+import DotGroup from "./components/dotGroup";
+import IconGroup from "./components/iconGroup";
+import AboutSection from "./scenes/about";
+import Footer from "./scenes/footer";
+import ContactSection from "./scenes/contact";
+import ExperienceSection from "./scenes/experience";
+import ProjectsSection from "./scenes/projects";
 
 const SectionDivider = () => {
   return <div className={`h-0.5 w-full `}></div>;

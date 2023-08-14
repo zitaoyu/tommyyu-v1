@@ -2,132 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
-import MotionDiv from "../components/MotionDiv";
-import SectionTitle from "../components/SectionTitle";
+import MotionDiv from "../components/motionDiv";
+import SectionTitle from "../components/sectionTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import projectImage_0 from "../assets/dummy_project.jpg";
-
-class ProjectInfo {
-  constructor(
-    title,
-    description,
-    imageUrl,
-    techTerms,
-    githubLink,
-    externalLink,
-  ) {
-    this.title = title;
-    this.description = description;
-    this.imageUrl = imageUrl;
-    this.techTerms = techTerms;
-    this.githubLink = githubLink;
-    this.externalLink = externalLink;
-  }
-}
-
-const projectSectionContent = {
-  sectionTitle: "Projects",
-  subSectionTitle: "Other Projects",
-  highlightedProjects: [
-    new ProjectInfo(
-      "Portfolio Website",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Dummy Project Holder",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Dummy Project Holder",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-  ],
-  projects: [
-    new ProjectInfo(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JS", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Automation Framework",
-      "Daily Automation test to validate intelligent camera features.",
-      null,
-      ["Python", "cv2", "pyautogui"],
-      null,
-      null,
-    ),
-    new ProjectInfo(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JS", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JS", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JS", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-    new ProjectInfo(
-      "Portfolio Website",
-      "An aesthetically designed portfolio website showcasing my creative journey and professional accomplishments.",
-      null,
-      ["JS", "React", "Framer Motion"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
-    ),
-  ],
-};
+import { projectSectionContent } from "./constants";
 
 const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
   const isRight = index % 2 === 1;
@@ -145,7 +25,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
     >
       <img
         className={`absolute rounded-lg bg-cover bg-center brightness-[30%] transition
-         duration-300 content-[''] group-hover:brightness-[40%] ${imageCss}`}
+         duration-300 group-hover:brightness-[40%] ${imageCss}`}
         src={projectInfo.imageUrl}
         alt={projectInfo.imageUrl.toString()}
       />
@@ -166,7 +46,11 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
         <p className="mb-10 text-slate group-hover:text-light-slate xs:text-xl">
           {projectInfo.description}
         </p>
-        <div className="font-robotomono text-sm text-slate">
+        <div
+          className={`font-robotomono text-sm text-slate flex flex-wrap ${
+            isDesktop && isRight && "justify-end"
+          }`}
+        >
           {projectInfo.techTerms.map((term) => {
             return <span className="mr-4">{term}</span>;
           })}
@@ -205,7 +89,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
 const Project = ({ projectInfo }) => {
   return (
     <div
-      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg border-2 border-bgc-light bg-bgc-light p-5 shadow-xl 
+      className={`project-folder relative m-auto mt-10 h-[256px] w-full max-w-sm rounded-b-lg rounded-tr-lg border-2 border-bgc-light bg-bgc-light p-5 shadow-xl 
       before:absolute before:bottom-[calc(100%+2px)] before:left-[-2px] before:h-6 before:w-[40%] before:rounded-t-lg before:border-2 before:border-primary before:bg-primary  before:brightness-50 before:content-[''] 
       hover:border-primary hover:text-primary before:hover:border-primary before:hover:brightness-100`}
     >
@@ -217,7 +101,7 @@ const Project = ({ projectInfo }) => {
           <p className="text-slate">{projectInfo.description}</p>
         </div>
         <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
-          <div className="font-robotomono text-sm text-slate">
+          <div className="font-robotomono text-sm text-slate flex flex-wrap justify-end">
             {projectInfo.techTerms.map((term) => {
               return <span className="mr-4">{term}</span>;
             })}
@@ -287,7 +171,13 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
           {projectSectionContent.highlightedProjects.map(
             (projectInfo, index) => {
               return (
-                <MotionDiv delay={0.1 * index} duration={0.5} y1={50} y2={0}>
+                <MotionDiv
+                  viewAmount={isDesktop ? 0.4 : 0.25}
+                  delay={0.1 * index}
+                  duration={0.5}
+                  y1={50}
+                  y2={0}
+                >
                   <HighlightedProject
                     isDesktop={isDesktop}
                     projectInfo={projectInfo}
@@ -308,7 +198,13 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
             .slice(0, displayedProjects)
             .map((projectInfo, index) => {
               return (
-                <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
+                <MotionDiv
+                  viewAmount={0.2}
+                  delay={isDesktop ? 0.2 * index : 0}
+                  duration={0.5}
+                  y1={50}
+                  y2={0}
+                >
                   <Project projectInfo={projectInfo} />
                 </MotionDiv>
               );
@@ -320,7 +216,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
               className="rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary hover:animate-pulse-slow hover:bg-primary hover:text-gray"
               onClick={toggleShowMore}
             >
-              Show More
+              {projectSectionContent.showMoreButton}
             </button>
           </div>
         )}

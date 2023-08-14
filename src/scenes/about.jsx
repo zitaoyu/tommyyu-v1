@@ -1,32 +1,9 @@
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
-import MotionDiv from "../components/MotionDiv";
+import MotionDiv from "../components/motionDiv";
 import profilePicture from "../assets/profile-picture.jpg";
-import SectionTitle from "../components/SectionTitle";
-
-const aboutSectionContent = {
-  sectionTitle: "About Me",
-  intro: `I'm a passionate software engineer specializing in crafting
-          web applications with exceptional user experiences and
-          captivating graphics. From designing seamless interfaces to
-          implementing cutting-edge technologies, I'm dedicated to
-          creating digital wonders that leave a lasting impression.`,
-  skillIntro: `Here are some of the technologies I've been working with:`,
-  skills: [
-    {
-      title: `Language: `,
-      items: ["JavaScript", "TypeScript", "CSS", "Python", "Java", "C++"],
-    },
-    {
-      title: `Framework`,
-      items: ["React", "Angular", "Tailwind CSS"],
-    },
-    {
-      title: `Dev Tools`,
-      items: ["AWS", "Azure DevOps", "Linux"],
-    },
-  ],
-};
+import SectionTitle from "../components/sectionTitle";
+import { aboutSectionContent } from "./constants";
 
 const TechTerm = ({ children }) => {
   return (
