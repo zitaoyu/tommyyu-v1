@@ -145,7 +145,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
     >
       <img
         className={`absolute rounded-lg bg-cover bg-center brightness-[30%] transition
-         duration-300 content-[''] group-hover:brightness-[40%] ${imageCss}`}
+         duration-300 group-hover:brightness-[40%] ${imageCss}`}
         src={projectInfo.imageUrl}
         alt={projectInfo.imageUrl.toString()}
       />
@@ -287,7 +287,13 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
           {projectSectionContent.highlightedProjects.map(
             (projectInfo, index) => {
               return (
-                <MotionDiv delay={0.1 * index} duration={0.5} y1={50} y2={0}>
+                <MotionDiv
+                  viewAmount={isDesktop ? 0.4 : 0.25}
+                  delay={0.1 * index}
+                  duration={0.5}
+                  y1={50}
+                  y2={0}
+                >
                   <HighlightedProject
                     isDesktop={isDesktop}
                     projectInfo={projectInfo}
@@ -308,7 +314,13 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
             .slice(0, displayedProjects)
             .map((projectInfo, index) => {
               return (
-                <MotionDiv delay={0.2 * index} duration={0.5} y1={50} y2={0}>
+                <MotionDiv
+                  viewAmount={0.2}
+                  delay={isDesktop ? 0.2 * index : 0}
+                  duration={0.5}
+                  y1={50}
+                  y2={0}
+                >
                   <Project projectInfo={projectInfo} />
                 </MotionDiv>
               );
