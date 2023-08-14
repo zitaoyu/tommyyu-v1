@@ -1,20 +1,8 @@
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
-import { AnchorLinkButton } from "../components/Button";
-import MotionDiv from "../components/MotionDiv";
-
-const landingSectionContent = {
-  heading1: `Hello world, my name is`,
-  heading2: `Tommy Yu`,
-  heading3: `I create fun things for the web.`,
-  intro: `I'm a passionate software engineer specializing in crafting web
-          applications with exceptional user experiences and captivating
-          graphics. From designing seamless interfaces to implementing
-          cutting-edge technologies, I'm dedicated to creating digital
-          wonders that leave a lasting impression.`,
-  button1: `Check me out!`,
-  button2: `Contact info`,
-};
+import { AnchorLinkButton } from "../components/button";
+import MotionDiv from "../components/motionDiv";
+import { landingSectionContent } from "./constants";
 
 const ShapesCanvas = () => {
   return (

@@ -1,49 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
-import MotionDiv from "../components/MotionDiv";
-import SectionTitle from "../components/SectionTitle";
+import MotionDiv from "../components/motionDiv";
+import SectionTitle from "../components/sectionTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserGraduate, faBriefcase } from "@fortawesome/free-solid-svg-icons";
-
-const experienceSectionContent = {
-  sectionTitle: "My Journey",
-  timelineItems: [
-    {
-      icon: "work",
-      title: "Software Engineer",
-      date: "March 2022 - Present",
-      company: "Microsoft",
-      bulletPoints: [
-        `Contributed to Microsoft Teams front-end development using TypeScript and React, focusing on enhancing the user interface and experience.`,
-        `Created a desktop application that simplified the configuration process of conference room devices through USB communication`,
-        `Developed a Python-based automation test framework to validate core features on intelligent cameras.`,
-        `Played a key role in embedded system engineering, encompassing firmware development and deployment`,
-      ],
-    },
-    {
-      icon: "education",
-      title: "AWS Certified Cloud Practitioner",
-      date: "June 2023",
-      company: "AWS",
-      bulletPoints: [
-        `Validation Number: 1JH9V0GCX24QQJSD`,
-        `Foundational, high-level understanding of AWS Cloud, services, and terminology.`,
-      ],
-    },
-    {
-      icon: "education",
-      title: "Bachelor Degree",
-      date: "August 2021",
-      company: "University of Washington",
-      bulletPoints: [
-        `Bachelor of Computer Science and Systems`,
-        `Minor in Mathematics, Algorithms.`,
-        `GPA: 3.74`,
-      ],
-    },
-  ],
-};
+import { experienceSectionContent } from "./constants";
 
 const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
   return (

@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
-import { LinkButton } from "../components/Button";
-import MotionDiv from "../components/MotionDiv";
-import SectionTitle from "../components/SectionTitle";
-
-const contactSectionContent = {
-  sectionTitle: "Contact Me",
-  intro: `Since you have reached this part of the page, I want to thank you
-          for checking out my page. I'm always open to new oppuntunities and
-          conversations, feel free to say hello to me.`,
-  button: "Say Hello",
-};
+import { LinkButton } from "../components/button";
+import MotionDiv from "../components/motionDiv";
+import SectionTitle from "../components/sectionTitle";
+import { contactSectionContent } from "./constants";
 
 const ContactSection = ({ setSelectedPage }) => {
   return (
