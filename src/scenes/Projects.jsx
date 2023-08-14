@@ -127,6 +127,7 @@ const projectSectionContent = {
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
   ],
+  showMoreButton: "Show More",
 };
 
 const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
@@ -166,7 +167,11 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
         <p className="mb-10 text-slate group-hover:text-light-slate xs:text-xl">
           {projectInfo.description}
         </p>
-        <div className="font-robotomono text-sm text-slate">
+        <div
+          className={`font-robotomono text-sm text-slate flex flex-wrap ${
+            isDesktop && isRight && "justify-end"
+          }`}
+        >
           {projectInfo.techTerms.map((term) => {
             return <span className="mr-4">{term}</span>;
           })}
@@ -205,7 +210,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
 const Project = ({ projectInfo }) => {
   return (
     <div
-      className={`project-folder relative m-auto mt-10 h-64 w-full max-w-sm rounded-b-lg rounded-tr-lg border-2 border-bgc-light bg-bgc-light p-5 shadow-xl 
+      className={`project-folder relative m-auto mt-10 h-[256px] w-full max-w-sm rounded-b-lg rounded-tr-lg border-2 border-bgc-light bg-bgc-light p-5 shadow-xl 
       before:absolute before:bottom-[calc(100%+2px)] before:left-[-2px] before:h-6 before:w-[40%] before:rounded-t-lg before:border-2 before:border-primary before:bg-primary  before:brightness-50 before:content-[''] 
       hover:border-primary hover:text-primary before:hover:border-primary before:hover:brightness-100`}
     >
@@ -217,7 +222,7 @@ const Project = ({ projectInfo }) => {
           <p className="text-slate">{projectInfo.description}</p>
         </div>
         <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
-          <div className="font-robotomono text-sm text-slate">
+          <div className="font-robotomono text-sm text-slate flex flex-wrap justify-end">
             {projectInfo.techTerms.map((term) => {
               return <span className="mr-4">{term}</span>;
             })}
@@ -332,7 +337,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
               className="rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary hover:animate-pulse-slow hover:bg-primary hover:text-gray"
               onClick={toggleShowMore}
             >
-              Show More
+              {projectSectionContent.showMoreButton}
             </button>
           </div>
         )}
