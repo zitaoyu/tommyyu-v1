@@ -4,6 +4,8 @@ import MotionDiv from "../components/motionDiv";
 import profilePicture from "../assets/profile-picture.jpg";
 import SectionTitle from "../components/sectionTitle";
 import { aboutSectionContent } from "./constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const TechTerm = ({ children }) => {
   return (
@@ -17,17 +19,10 @@ const BulletPoint = ({ title, items }) => {
   return (
     <div>
       <div className="mr-2 inline-block">
-        <svg
-          className="mr-1 inline-block h-6 w-6 -translate-y-[2px] fill-none stroke-primary stroke-2"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M7 8L3 12L7 16" />
-          <path d="M17 8L21 12L17 16" />
-          <path d="M14 4L9.8589 19.4548" />
-        </svg>
+        <FontAwesomeIcon
+          className="mr-1 text-lg inline-block text-primary"
+          icon={faCode}
+        />
         <span className="text-primary">{title}</span>
       </div>
       <div className="flex flex-wrap">

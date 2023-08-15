@@ -25,7 +25,7 @@ export const aboutSectionContent = {
   skillIntro: `Here are some of the technologies I've been working with:`,
   skills: [
     {
-      title: `Language: `,
+      title: `Language`,
       items: ["JavaScript", "TypeScript", "CSS", "Python", "Java", "C++"],
     },
     {

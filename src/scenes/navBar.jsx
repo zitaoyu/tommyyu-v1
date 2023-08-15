@@ -4,8 +4,8 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import MotionDiv from "../components/motionDiv";
 import { SpinLogo } from "../components/logo";
 import { Page } from "../util/page";
-import menuIcon from "../assets/menu-icon.svg";
-import closeIcon from "../assets/close-icon.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Link = ({
   index,
@@ -150,34 +150,36 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
         ) : (
           <MotionDiv delay={0} y1={-20} y2={0}>
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <img
-                className="h-9 w-9 rounded-full bg-primary p-2"
-                alt="menu-icon"
-                src={menuIcon}
+              <FontAwesomeIcon
+                className="h-8 w-8 text-primary p-2"
+                icon={faBars}
               />
             </button>
           </MotionDiv>
         )}
       </div>
-
+      <div
+        className={`fixed right-0 top-0 h-screen w-screen bg-transparent blur
+          ${!isAboveSmallScreens && isMenuToggled ? "visible" : `invisible`}`}
+        onClick={() => setIsMenuToggled(!isMenuToggled)}
+      ></div>
       {/* MOBILE MENU POPUP */}
       {
         <div
           className={`fixed right-0 top-0 h-[150vh] w-[66%] bg-bgc-light 
-                      duration-300 ease-in-out
-                      ${
-                        !isAboveSmallScreens && isMenuToggled
-                          ? "translate-x-0 overflow-hidden"
-                          : `translate-x-full`
-                      }`}
+                      duration-300 ease-in-out overflow-hidden
+          ${
+            !isAboveSmallScreens && isMenuToggled
+              ? "translate-x-0"
+              : `translate-x-full`
+          }`}
         >
           {/* CLOSE ICON */}
-          <div className="flex justify-end pr-8 pt-11">
+          <div className="flex justify-end pr-8 pt-[3vh]">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <img
-                alt="close-icon"
-                className="h-9 w-9 rounded-full bg-primary p-2"
-                src={closeIcon}
+              <FontAwesomeIcon
+                className="h-9 w-9 text-primary p-2"
+                icon={faXmark}
               />
             </button>
           </div>
