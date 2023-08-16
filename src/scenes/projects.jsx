@@ -24,8 +24,8 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
       }`}
     >
       <img
-        className={`absolute rounded-lg bg-cover bg-center brightness-[30%] transition
-         duration-300 group-hover:brightness-[40%] ${imageCss}`}
+        className={`absolute rounded-lg bg-cover bg-center brightness-[40%] transition
+         duration-300 group-hover:brightness-[70%] ${imageCss}`}
         src={projectInfo.imageUrl}
         alt={projectInfo.imageUrl.toString()}
       />
@@ -47,25 +47,26 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
           {projectInfo.description}
         </p>
         <div
-          className={`font-robotomono text-sm text-slate flex flex-wrap ${
-            isDesktop && isRight && "justify-end"
+          className={`font-robotomono text-sm text-slate gap-4 flex flex-wrap ${
+            ((isDesktop && isRight) || !isDesktop) && "justify-end"
           }`}
         >
           {projectInfo.techTerms.map((term) => {
-            return <span className="mr-4">{term}</span>;
+            return <span>{term}</span>;
           })}
         </div>
-        <div className="text-slate">
+        <div
+          className={`text-slate text-2xl flex flex-wrap gap-6 ${
+            ((isDesktop && isRight) || !isDesktop) && "justify-end"
+          }`}
+        >
           {projectInfo.githubLink && (
             <a
               href={projectInfo.githubLink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon
-                className="mr-6 text-2xl hover:text-primary"
-                icon={faGithub}
-              />
+              <FontAwesomeIcon className="hover:text-primary" icon={faGithub} />
             </a>
           )}
           {projectInfo.externalLink && (
@@ -75,7 +76,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
               rel="noopener noreferrer"
             >
               <FontAwesomeIcon
-                className="mr-6 text-2xl hover:text-primary"
+                className="hover:text-primary"
                 icon={faUpRightFromSquare}
               />
             </a>

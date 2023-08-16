@@ -1,11 +1,13 @@
-import projectImage_0 from "../assets/dummy_project.jpg";
+import projectImage_0 from "../assets/tommy-yu.png";
+import projectImage_1 from "../assets/sorting-visualizer.png";
+import projectImage_2 from "../assets/hollow-tree.png";
 
 // landing.jsx
 export const landingSectionContent = {
   heading1: `Hello world, my name is`,
   heading2: `Tommy Yu`,
   heading3: `I create fun things for the web.`,
-  intro: `I'm a passionate software engineer specializing in crafting web
+  intro: `I'm a passionate developer specializing in crafting web
           applications with exceptional user experiences and captivating
           graphics. From designing seamless interfaces to implementing
           cutting-edge technologies, I'm dedicated to creating digital
@@ -17,24 +19,37 @@ export const landingSectionContent = {
 // about.jsx
 export const aboutSectionContent = {
   sectionTitle: "About Me",
-  intro: `I'm a passionate software engineer specializing in crafting
-          web applications with exceptional user experiences and
-          captivating graphics. From designing seamless interfaces to
-          implementing cutting-edge technologies, I'm dedicated to
-          creating digital wonders that leave a lasting impression.`,
+  intro: `Hey there, I'm Tommy! I'm a passionate developer, especially 
+          interested in web applications and game development. I discovered 
+          my passion for programming in my Junior year of Highschool, and I 
+          love the limitless creativity of programming ever since then. In 
+          my free time, you'll find me diving into new tech, cooking up fun 
+          projects, and just enjoying the thrill of creating. Oh, and if I'm 
+          not glued to my keyboard, I'm probably out in Paldea, hunting shiny 
+          Pokémons.`,
   skillIntro: `Here are some of the technologies I've been working with:`,
   skills: [
     {
-      title: `Language: `,
-      items: ["JavaScript", "TypeScript", "CSS", "Python", "Java", "C++"],
+      title: `Languages`,
+      items: [
+        "JavaScript",
+        "TypeScript",
+        "CSS",
+        "Python",
+        "Java",
+        "C++",
+        "C#",
+        "Golang",
+        "Shell Scripting",
+      ],
     },
     {
-      title: `Framework`,
-      items: ["React", "Angular", "Tailwind CSS"],
+      title: `Frameworks`,
+      items: ["React", "Electron.js", "Angular", "Tailwind CSS", "GraphQL"],
     },
     {
       title: `Dev Tools`,
-      items: ["AWS", "Azure DevOps", "Linux"],
+      items: ["Netlify", "AWS", "Azure DevOps", "Unity", "Linux"],
     },
   ],
 };
@@ -61,7 +76,6 @@ export const experienceSectionContent = {
       date: "June 2023",
       company: "AWS",
       bulletPoints: [
-        `Validation Number: 1JH9V0GCX24QQJSD`,
         `Foundational, high-level understanding of AWS Cloud, services, and terminology.`,
       ],
     },
@@ -73,7 +87,6 @@ export const experienceSectionContent = {
       bulletPoints: [
         `Bachelor of Computer Science and Systems`,
         `Minor in Mathematics, Algorithms.`,
-        `GPA: 3.74`,
       ],
     },
   ],
@@ -103,8 +116,8 @@ export const projectSectionContent = {
   subSectionTitle: "Other Projects",
   highlightedProjects: [
     new ProjectInfo(
-      "Portfolio Website",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Portfolio V1 (This website)",
+      `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,
       projectImage_0,
       [
         "JavaScript",
@@ -114,38 +127,24 @@ export const projectSectionContent = {
         "FontAwesome",
         "Netlify",
       ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
+      "https://github.com/zitaoyu/tommyyu-v1",
+      "https://tommy-yu.com",
     ),
     new ProjectInfo(
-      "Dummy Project Holder",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
+      "Sorting Visualizer",
+      `Showcase various sorting algorithms such as Heap Sort, providing step-by-step visualization with color indication. Implemented adjustable array sizes and sorting speeds, enabling users to personalize their experience according to their preferences.`,
+      projectImage_1,
+      ["JavaScript", "React"],
+      "https://github.com/zitaoyu/Sorting-Visualiser",
+      "https://tommy-zitaoy.github.io/Sorting_Visualiser/",
     ),
     new ProjectInfo(
-      "Dummy Project Holder",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
+      "Hollow Tree",
+      `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying bugs (no pun intended).`,
+      projectImage_2,
+      ["JavaScript", "HTML"],
+      "https://github.com/zitaoyu/Hollow-Tree",
+      "https://zitaoyu.github.io/Hollow-Tree/",
     ),
   ],
   projects: [

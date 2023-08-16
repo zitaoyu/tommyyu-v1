@@ -8,7 +8,7 @@ import { contactSectionContent } from "./constants";
 const ContactSection = ({ setSelectedPage }) => {
   return (
     <motion.div
-      className="m-auto mt-24 h-[80vh] md:mt-0 md:w-2/3"
+      className="m-auto mt-24 h-[90vh] md:mt-0 md:w-2/3"
       onViewportEnter={() => setSelectedPage(Page.Contact)}
       viewport={{ amount: 0.7 }}
     >

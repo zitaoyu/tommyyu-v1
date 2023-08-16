@@ -13,7 +13,7 @@ import ExperienceSection from "./scenes/experience";
 import ProjectsSection from "./scenes/projects";
 
 const SectionDivider = () => {
-  return <div className={`h-0.5 w-full `}></div>;
+  return <div className="h-0.5 w-full"></div>;
 };
 
 function App() {
