@@ -1,6 +1,6 @@
 import projectImage_0 from "../assets/tommy-yu.png";
 import projectImage_1 from "../assets/sorting-visualizer.png";
-import projectImage_2 from "../assets/dummy_project.jpg";
+import projectImage_2 from "../assets/hollow-tree.png";
 
 // landing.jsx
 export const landingSectionContent = {
@@ -139,7 +139,7 @@ export const projectSectionContent = {
       "https://tommy-zitaoy.github.io/Sorting_Visualiser/",
     ),
     new ProjectInfo(
-      "Hollow Tree Game",
+      "Hollow Tree",
       `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying bugs (no pun intended).`,
       projectImage_2,
       ["JavaScript", "HTML"],
