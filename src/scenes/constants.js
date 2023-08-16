@@ -116,7 +116,7 @@ export const projectSectionContent = {
   subSectionTitle: "Other Projects",
   highlightedProjects: [
     new ProjectInfo(
-      "tommy-yu.com V1 (This website)",
+      "Portfolio V1 (This website)",
       `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,
       projectImage_0,
       [
@@ -132,7 +132,7 @@ export const projectSectionContent = {
     ),
     new ProjectInfo(
       "Sorting Visualizer",
-      ``,
+      `Showcase various sorting algorithms such as Heap Sort, providing step-by-step visualization with color indication. Implemented adjustable array sizes and sorting speeds, enabling users to personalize their experience according to their preferences.`,
       projectImage_1,
       ["JavaScript", "React"],
       "https://github.com/zitaoyu/Sorting-Visualiser",
@@ -140,9 +140,9 @@ export const projectSectionContent = {
     ),
     new ProjectInfo(
       "Hollow Tree Game",
-      ``,
+      `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying bugs (no pun intended).`,
       projectImage_2,
-      ["JavaScript"],
+      ["JavaScript", "HTML"],
       "https://github.com/zitaoyu/Hollow-Tree",
       "https://zitaoyu.github.io/Hollow-Tree/",
     ),

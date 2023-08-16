@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Page } from "../util/page";
 import MotionDiv from "../components/motionDiv";
-import profilePicture from "../assets/profile-picture.jpg";
 import SectionTitle from "../components/sectionTitle";
+import profilePicture from "../assets/profile-picture-2.jpg";
 import { aboutSectionContent } from "./constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
