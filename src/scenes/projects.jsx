@@ -24,8 +24,8 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
       }`}
     >
       <img
-        className={`absolute rounded-lg bg-cover bg-center brightness-[30%] transition
-         duration-300 group-hover:brightness-[40%] ${imageCss}`}
+        className={`absolute rounded-lg bg-cover bg-center brightness-[50%] transition
+         duration-300 group-hover:brightness-[70%] ${imageCss}`}
         src={projectInfo.imageUrl}
         alt={projectInfo.imageUrl.toString()}
       />
