@@ -151,7 +151,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
           <MotionDiv delay={0} y1={-20} y2={0}>
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <FontAwesomeIcon
-                className="h-8 w-8 text-primary p-2"
+                className="h-8 w-8 p-2 text-primary"
                 icon={faBars}
               />
             </button>
@@ -166,8 +166,8 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
       {/* MOBILE MENU POPUP */}
       {
         <div
-          className={`fixed right-0 top-0 h-[150vh] w-[66%] bg-bgc-light 
-                      duration-300 ease-in-out overflow-hidden
+          className={`fixed right-0 top-0 h-[150vh] w-[66%] overflow-hidden 
+                      bg-bgc-light duration-300 ease-in-out
           ${
             !isAboveSmallScreens && isMenuToggled
               ? "translate-x-0"
@@ -178,7 +178,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
           <div className="flex justify-end pr-8 pt-[3vh]">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <FontAwesomeIcon
-                className="h-9 w-9 text-primary p-2"
+                className="h-9 w-9 p-2 text-primary"
                 icon={faXmark}
               />
             </button>

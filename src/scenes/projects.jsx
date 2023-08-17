@@ -31,8 +31,10 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
       />
       <div
         className={`${
-          isRight && isDesktop ? "text-right md:pr-0" : "md:pl-0"
-        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:py-14 md:pr-20 md:backdrop-blur-none`}
+          isRight && isDesktop
+            ? "text-right md:pl-20 md:pr-0"
+            : "md:pl-0 md:pr-20"
+        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:py-14 md:backdrop-blur-none`}
       >
         <a
           href={projectInfo?.externalLink}
@@ -47,7 +49,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
           {projectInfo.description}
         </p>
         <div
-          className={`font-robotomono text-sm text-slate gap-4 flex flex-wrap ${
+          className={`flex flex-wrap gap-4 font-robotomono text-sm text-slate ${
             ((isDesktop && isRight) || !isDesktop) && "justify-end"
           }`}
         >
@@ -56,7 +58,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
           })}
         </div>
         <div
-          className={`text-slate text-2xl flex flex-wrap gap-6 ${
+          className={`flex flex-wrap gap-6 text-2xl text-slate ${
             ((isDesktop && isRight) || !isDesktop) && "justify-end"
           }`}
         >
@@ -102,7 +104,7 @@ const Project = ({ projectInfo }) => {
           <p className="text-slate">{projectInfo.description}</p>
         </div>
         <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
-          <div className="font-robotomono text-sm text-slate flex flex-wrap justify-end">
+          <div className="flex flex-wrap justify-end font-robotomono text-sm text-slate">
             {projectInfo.techTerms.map((term) => {
               return <span className="mr-4">{term}</span>;
             })}
@@ -168,7 +170,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="mx-auto mb-10 flex w-full flex-col justify-center gap-10 md:mt-20 md:mb-28 md:max-w-[90%] md:gap-28">
+        <div className="mx-auto mb-10 flex w-full flex-col justify-center gap-10 md:mb-28 md:mt-20 md:max-w-[90%] md:gap-28">
           {projectSectionContent.highlightedProjects.map(
             (projectInfo, index) => {
               return (

@@ -23,9 +23,9 @@ export const aboutSectionContent = {
           interested in web applications and game development. I discovered 
           my passion for programming in my Junior year of Highschool, and I 
           love the limitless creativity of programming ever since then. In 
-          my free time, you'll find me diving into new tech, cooking up fun 
-          projects, and just enjoying the thrill of creating. Oh, and if I'm 
-          not glued to my keyboard, I'm probably out in Paldea, hunting shiny 
+          my free time, I love to learn new tech, cooking up fun projects, 
+          and just enjoying the thrill of creating. Oh, and if I'm not glued 
+          to my keyboard, I'm probably out in Paldea, hunting shiny 
           Pokémons.`,
   skillIntro: `Here are some of the technologies I've been working with:`,
   skills: [
@@ -34,18 +34,18 @@ export const aboutSectionContent = {
       items: [
         "JavaScript",
         "TypeScript",
-        "CSS",
         "Python",
+        "CSS",
+        "HTML5",
         "Java",
         "C++",
         "C#",
         "Golang",
-        "Shell Scripting",
       ],
     },
     {
       title: `Frameworks`,
-      items: ["React", "Electron.js", "Angular", "Tailwind CSS", "GraphQL"],
+      items: ["React", "Electron.js", "Tailwind CSS", "GraphQL"],
     },
     {
       title: `Dev Tools`,
