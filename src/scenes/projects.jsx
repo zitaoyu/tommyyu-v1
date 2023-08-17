@@ -32,7 +32,7 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
       <div
         className={`${
           isRight && isDesktop ? "text-right md:pr-0" : "md:pl-0"
-        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:p-20 md:backdrop-blur-none`}
+        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:py-14 md:pr-20 md:backdrop-blur-none`}
       >
         <a
           href={projectInfo?.externalLink}
@@ -168,7 +168,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="mx-auto my-10 flex w-full flex-col justify-center gap-10 md:my-28 md:max-w-[90%] md:gap-28">
+        <div className="mx-auto mb-10 flex w-full flex-col justify-center gap-10 md:mt-20 md:mb-28 md:max-w-[90%] md:gap-28">
           {projectSectionContent.highlightedProjects.map(
             (projectInfo, index) => {
               return (

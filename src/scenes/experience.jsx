@@ -16,7 +16,7 @@ const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
       }}
       viewport={{ amount: 0.5 }}
     >
-      <section id={Page.Experience} className="pb-32 pt-4 md:pb-64">
+      <section id={Page.Experience} className="pb-32 pt-4 md:pb-60">
         <MotionDiv className="mb-4" delay={0.2} duration={0.4} y1={50} y2={0}>
           <SectionTitle
             index={2}
