@@ -8,10 +8,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const icons = [
-  { link: "https://www.linkedin.com", faIcon: faLinkedin },
-  { link: "https://www.github.com", faIcon: faGithub },
-  { link: "https://www.codepen.com", faIcon: faCodepen },
-  { link: "https://www.instagram.com", faIcon: faInstagram },
+  { link: "https://www.linkedin.com/in/tommy-yu-a2435b1b3/", faIcon: faLinkedin },
+  { link: "https://github.com/zitaoyu", faIcon: faGithub },
+  { link: "https://codepen.io/zitaoyu", faIcon: faCodepen },
+  { link: "https://www.instagram.com/", faIcon: faInstagram },
 ];
 
 const SocialMediaIcon = ({ link, faIcon }) => {

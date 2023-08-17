@@ -96,7 +96,7 @@ const Project = ({ projectInfo }) => {
     >
       <div className="flex h-full w-full flex-col justify-between text-left">
         <div>
-          <h1 className="font-opensans text-2xl font-bold">
+          <h1 className="mb-2 font-opensans text-2xl font-bold">
             {projectInfo.title}
           </h1>
           <p className="text-slate">{projectInfo.description}</p>
