@@ -152,15 +152,15 @@ export const projectSectionContent = {
       "SmartManage",
       "An ASP.NET web app to manage and organize billing information.",
       null,
-      [ "C#", "ASP.NET"],
+      ["C#", "ASP.NET"],
       "https://github.com/zitaoyu/SmartManage",
       null,
-    ),        
+    ),
     new ProjectInfo(
       "Portfolio",
       "A portfolio site template written in React and Tailwind CSS.",
       null,
-      [ "React", "Tailwind CSS"],
+      ["React", "Tailwind CSS"],
       "https://github.com/zitaoyu/tommyyu-v1-example",
       "https://zitaoyu.github.io/tommyyu-v1-example/",
     ),
@@ -170,7 +170,7 @@ export const projectSectionContent = {
       null,
       ["Python", "PyAutoGUI", "OpenCV"],
       null,
-      null
+      null,
     ),
     new ProjectInfo(
       "Pokemon Battle Simulator",
@@ -178,7 +178,7 @@ export const projectSectionContent = {
       null,
       ["Python", "PyGame"],
       "https://github.com/zitaoyu/pygame-poke",
-      null
+      null,
     ),
     new ProjectInfo(
       "CosmoWeb",
@@ -194,15 +194,15 @@ export const projectSectionContent = {
       null,
       ["Java"],
       "https://github.com/zitaoyu/Pentago-AI",
-      null
-    ),    
+      null,
+    ),
     new ProjectInfo(
       "ProgrammerJoke API",
       "A RESTful API service that delivers jokes for programmers.",
       null,
       ["JavaScript", "RESTful API"],
       "https://github.com/zitaoyu/ProgrammerJokeAPI",
-      null
+      null,
     ),
   ],
   showMoreButton: "Show More",
