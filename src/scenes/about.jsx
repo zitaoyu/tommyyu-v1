@@ -20,7 +20,7 @@ const BulletPoint = ({ title, items }) => {
     <div>
       <div className="mr-2 inline-block">
         <FontAwesomeIcon
-          className="mr-1 text-lg inline-block text-primary"
+          className="mr-1 inline-block text-lg text-primary"
           icon={faCode}
         />
         <span className="text-primary">{title}</span>
@@ -53,7 +53,7 @@ const ProfilePicture = () => {
   );
 };
 
-const AboutSection = ({ setSelectedPage }) => {
+const AboutSection = ({ isDesktop, setSelectedPage }) => {
   return (
     <motion.div
       className="mx-auto md:w-5/6 "
@@ -65,13 +65,19 @@ const AboutSection = ({ setSelectedPage }) => {
         className="justify-centertext-left flex flex-col pb-32 pt-4 md:pb-64"
       >
         {/* SECTION TITLE */}
-        <MotionDiv delay={0.2} duration={0.5} y1={50} y2={0}>
+        <MotionDiv delay={0.2} duration={0.2} y1={50} y2={0}>
           <SectionTitle
             index={1}
             title={aboutSectionContent.sectionTitle}
           ></SectionTitle>
         </MotionDiv>
-        <MotionDiv delay={0.5} duration={0.5} y1={50} y2={0}>
+        <MotionDiv
+          viewAmount={isDesktop ? 0.5 : 0.1}
+          delay={0.4}
+          duration={0.5}
+          y1={50}
+          y2={0}
+        >
           <div className="gap-16 sm:flex sm:h-full sm:justify-between">
             {/* LEFT */}
             <div className="z-30 basis-3/5">

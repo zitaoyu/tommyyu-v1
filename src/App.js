@@ -52,7 +52,10 @@ function App() {
           <SectionDivider />
 
           {/* About */}
-          <AboutSection setSelectedPage={setSelectedPage} />
+          <AboutSection
+            isDesktop={isDesktop}
+            setSelectedPage={setSelectedPage}
+          />
 
           <SectionDivider />
 

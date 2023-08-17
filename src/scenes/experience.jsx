@@ -27,9 +27,9 @@ const ExperienceSection = ({ isDesktop, setSelectedPage }) => {
         <div className="container mx-auto h-full w-full pt-4 sm:pt-10 md:px-10">
           <div className="relative h-full overflow-hidden">
             {/* Timeline */}
-            <div className="absolute left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-t from-primary to-gray md:left-1/2"></div>
+            <div className="absolute left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-t from-primary to-bgc md:left-1/2"></div>
             <div className="absolute left-[20px] top-[20vh] h-full w-[2px] bg-primary md:left-1/2"></div>
-            <div className="absolute bottom-0 left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-b from-primary to-gray md:left-1/2"></div>
+            <div className="absolute bottom-0 left-[20px] h-[20vh] w-[2px] bg-primary bg-gradient-to-b from-primary to-bgc md:left-1/2"></div>
 
             {/* Timeline Items */}
             <div className="my-20">
