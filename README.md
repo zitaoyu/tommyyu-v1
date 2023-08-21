@@ -1,39 +1,58 @@
-# Tommy Yu's [Portfolio Website](https://tommy-yu.com)
 
-## [tommy-yu.com](https://tommy-yu.com) built with React and TailwindCss hosted by Netlify
+# tommy-yu.com Version 1
 
-## Dev Doc:
+A portfolio website built with React, Tailwind CSS, and Framer Motion deployed and hosted by Netlify.
 
-### Set Up Tailwind CSS
+Official Link: [tommy-yu.com](https://tommy-yu.com)
 
-### `npm install -D tailwindcss`
 
-### `npx tailwindcss init`
 
-### `npx tailwindcss -i .\src\index.css -o .\public\output.css --watch`
 
-# Getting Started with Create React App
+## Run Locally
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install dependencies
 
-## Available Scripts
+```bash
+  npm install
+```
 
-In the project directory, you can run:
+Install Tailwind CSS
 
-### `npm start`
+```bash
+  npm install -D tailwindcss
+  npx tailwindcss init
+  npx tailwindcss -i .\src\index.css -o .\public\output.css --watch
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Start the server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+  npm run start
+```
 
-### `npm run build`
+Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run Build Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npx serve -s build
+```
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Primary | ![#06C8EF](https://via.placeholder.com/10/06C8EF?text=+) #06C8EF |
+| Background Color | ![#171E26](https://via.placeholder.com/10/171E26?text=+) #171E26 |
+| Background Color Light | ![#1F2833](https://via.placeholder.com/10/1F2833?text=+) #1F2833 |
+| Text Color | ![#94a3b8](https://via.placeholder.com/10/94a3b8?text=+) #94a3b8 |
+| Text Color Light | ![#D8E0E9](https://via.placeholder.com/10/D8E0E9?text=+) #D8E0E9 |
+
+
+## Authors
+
+- [Tommy Yu](https://github.com/zitaoyu/)
+

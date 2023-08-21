@@ -20,7 +20,7 @@ const icons = [
 const SocialMediaIcon = ({ link, faIcon }) => {
   return (
     <a
-      className={`h-8 w-8 p-1 text-slate transition duration-500 hover:-translate-y-1 hover:text-primary ss-max-h:h-6 ss-max-h:w-6`}
+      className={`h-8 w-8 p-1 text-slate transition duration-500 hover:-translate-y-1 hover:text-primary`}
       href={link}
       target="_blank"
       rel="noreferrer"
@@ -42,11 +42,7 @@ const IconGroup = ({ isVerticle = true }) => {
       {icons.map((icon) => {
         return <SocialMediaIcon link={icon.link} faIcon={icon.faIcon} />;
       })}
-      {isVerticle && (
-        <div
-          className={`m-auto h-[100px] w-0.5 bg-slate ss-max-h:h-[75px]`}
-        ></div>
-      )}
+      {isVerticle && <div className={`m-auto h-[100px] w-0.5 bg-slate`}></div>}
     </div>
   );
 };
