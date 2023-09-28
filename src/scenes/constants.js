@@ -45,11 +45,11 @@ export const aboutSectionContent = {
     },
     {
       title: `Frameworks`,
-      items: ["React", "Electron.js", "Tailwind CSS", "GraphQL"],
+      items: ["React", "Electron.js", "Tailwind CSS", "GraphQL", "ASP.NET"],
     },
     {
       title: `Dev Tools`,
-      items: ["Netlify", "AWS", "Azure DevOps", "Unity", "Linux"],
+      items: ["AWS", "Azure DevOps", "Node.js", "MySQL", "MongoDB", "RESTful APIs", "Netlify", "Unity", "Linux"],
     },
   ],
 };
