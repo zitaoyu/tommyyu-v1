@@ -144,12 +144,12 @@ const Project = ({ projectInfo }) => {
 const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
   const maxProjects = projectSectionContent.projects.length;
   const initialDisplayProjects = isDesktop ? 6 : 3;
-  const [displayedProjects, setDisplayProjects] = useState(
-    initialDisplayProjects,
-  );
+  const [displayedProjects, setDisplayedProjects] = useState(0);
+  const [projects, setProjects] = useState(initialDisplayProjects);
 
   const toggleShowMore = () => {
-    setDisplayProjects(displayedProjects + 3);
+    setDisplayedProjects(projects);
+    setProjects(projects + 3);
   };
 
   return (
@@ -198,12 +198,12 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
         </h3>
         <div className="mx-auto grid max-w-[100%] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectSectionContent.projects
-            .slice(0, displayedProjects)
+            .slice(0, projects)
             .map((projectInfo, index) => {
               return (
                 <MotionDiv
                   viewAmount={0.2}
-                  delay={isDesktop ? 0.2 * index : 0}
+                  delay={isDesktop ? 0.2 * index - displayedProjects * 0.2 : 0}
                   duration={0.5}
                   y1={50}
                   y2={0}
@@ -213,15 +213,17 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
               );
             })}
         </div>
-        {displayedProjects < maxProjects && (
-          <div className="mt-10 flex justify-center">
-            <button
-              className="rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary hover:animate-pulse-slow hover:bg-primary hover:text-gray"
-              onClick={toggleShowMore}
-            >
-              {projectSectionContent.showMoreButton}
-            </button>
-          </div>
+        {projects < maxProjects && (
+          <MotionDiv delay={0.4} duration={0.4} y1={50} y2={0}>
+            <div className="mt-10 flex justify-center">
+              <button
+                className="rounded-lg border-2 border-primary p-4 text-center font-robotomono text-primary hover:animate-pulse-slow hover:bg-primary hover:text-gray"
+                onClick={toggleShowMore}
+              >
+                {projectSectionContent.showMoreButton}
+              </button>
+            </div>
+          </MotionDiv>
         )}
       </section>
     </motion.div>

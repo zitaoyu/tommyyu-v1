@@ -1,6 +1,7 @@
 import projectImage_0 from "../assets/tommy-yu.png";
 import projectImage_1 from "../assets/sorting-visualizer.png";
 import projectImage_2 from "../assets/hollow-tree-01.png";
+import projectImage_3 from "../assets/profit-tracker.png";
 
 // landing.jsx
 export const landingSectionContent = {
@@ -45,11 +46,29 @@ export const aboutSectionContent = {
     },
     {
       title: `Frameworks`,
-      items: ["React", "Electron.js", "Tailwind CSS", "GraphQL", "ASP.NET"],
+      items: [
+        "React",
+        "Electron.js",
+        "Bootstrap",
+        "Tailwind CSS",
+        "GraphQL",
+        "ASP.NET",
+        "Ruby on Rails",
+      ],
     },
     {
       title: `Dev Tools`,
-      items: ["AWS", "Azure DevOps", "Node.js", "MySQL", "MongoDB", "RESTful APIs", "Netlify", "Unity", "Linux"],
+      items: [
+        "AWS",
+        "Azure DevOps",
+        "Node.js",
+        "MySQL",
+        "MongoDB",
+        "RESTful APIs",
+        "Netlify",
+        "Unity",
+        "Linux",
+      ],
     },
   ],
 };
@@ -115,6 +134,14 @@ export const projectSectionContent = {
   sectionTitle: "Projects",
   subSectionTitle: "Other Projects",
   highlightedProjects: [
+    new ProjectInfo(
+      "Profit Tracker",
+      `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits. The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports SQLite or PostgreSQL databases for optimal data management.`,
+      projectImage_3,
+      ["Ruby on Rails", "Bootstrap", "SQLite", "PostgreSQL"],
+      "https://github.com/zitaoyu/profit-tracker",
+      null,
+    ),
     new ProjectInfo(
       "Portfolio V1 (This website)",
       `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,

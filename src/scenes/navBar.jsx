@@ -94,7 +94,7 @@ const NavBar = ({ selectedPage, setSelectedPage }) => {
   const [mouseAtTop, setMouseAtTop] = useState(false);
   const [showNavBar, setShowNavBar] = useState(true);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const isAboveSmallScreens = useMediaQuery("(min-width: 768px)");
+  const isAboveSmallScreens = useMediaQuery("(min-width: 1060px)");
 
   const updateNavBar = () => {
     const windowY = window.scrollY;

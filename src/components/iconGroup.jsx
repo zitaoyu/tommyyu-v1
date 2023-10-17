@@ -4,7 +4,6 @@ import {
   faLinkedin,
   faCodepen,
   faGithub,
-  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
 const icons = [
@@ -14,7 +13,6 @@ const icons = [
   },
   { link: "https://github.com/zitaoyu", faIcon: faGithub },
   { link: "https://codepen.io/zitaoyu", faIcon: faCodepen },
-  { link: "https://www.instagram.com/", faIcon: faInstagram },
 ];
 
 const SocialMediaIcon = ({ link, faIcon }) => {
