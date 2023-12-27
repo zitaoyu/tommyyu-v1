@@ -2,6 +2,7 @@ import projectImage_0 from "../assets/tommy-yu.png";
 import projectImage_1 from "../assets/sorting-visualizer.png";
 import projectImage_2 from "../assets/hollow-tree-01.png";
 import projectImage_3 from "../assets/profit-tracker.png";
+import projectImage_4 from "../assets/bnb.png";
 
 // landing.jsx
 export const landingSectionContent = {
@@ -36,8 +37,6 @@ export const aboutSectionContent = {
         "JavaScript",
         "TypeScript",
         "Python",
-        "CSS",
-        "HTML5",
         "Java",
         "C++",
         "C#",
@@ -48,26 +47,26 @@ export const aboutSectionContent = {
       title: `Frameworks`,
       items: [
         "React",
+        "Next.js",
+        "Django",
+        "ASP.NET",
+        "Ruby on Rails",
         "Electron.js",
         "Bootstrap",
         "Tailwind CSS",
-        "GraphQL",
-        "ASP.NET",
-        "Ruby on Rails",
       ],
     },
     {
       title: `Dev Tools`,
       items: [
         "AWS",
-        "Azure DevOps",
-        "Node.js",
+        "Azure",
+        "Firebase",
         "MySQL",
         "MongoDB",
-        "RESTful APIs",
-        "Netlify",
-        "Unity",
+        "RESTful API",
         "Linux",
+        "Bash",
       ],
     },
   ],
@@ -135,16 +134,37 @@ export const projectSectionContent = {
   subSectionTitle: "Other Projects",
   highlightedProjects: [
     new ProjectInfo(
+      "Bednbreakfast",
+      `Bednbreakfast (Airbnb clone) is a fully functional online booking site implemented with MERN stack and other
+      cloud services. Users can register account, list a place, book a place, and more. Click the link below to try 
+      it out!`,
+      projectImage_4,
+      [
+        "MongoDB",
+        "Express",
+        "React",
+        "Node.js",
+        "AWS S3",
+        "Serverless Functions",
+      ],
+      "https://github.com/zitaoyu/bed-and-breakfast-client",
+      "https://bnbapp.netlify.app",
+    ),
+    new ProjectInfo(
       "Profit Tracker",
-      `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits. The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports SQLite or PostgreSQL databases for optimal data management.`,
+      `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits. 
+      The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports 
+      PostgreSQL for optimal data management.`,
       projectImage_3,
-      ["Ruby on Rails", "Bootstrap", "SQLite", "PostgreSQL"],
+      ["Ruby on Rails", "Bootstrap", "PostgreSQL"],
       "https://github.com/zitaoyu/profit-tracker",
       null,
     ),
     new ProjectInfo(
       "Portfolio V1 (This website)",
-      `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,
+      `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React 
+      with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface 
+      that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,
       projectImage_0,
       [
         "JavaScript",
@@ -158,16 +178,10 @@ export const projectSectionContent = {
       "https://tommy-yu.com",
     ),
     new ProjectInfo(
-      "Sorting Visualizer",
-      `Showcase various sorting algorithms such as Heap Sort, providing step-by-step visualization with color indication. Implemented adjustable array sizes and sorting speeds, enabling users to personalize their experience according to their preferences.`,
-      projectImage_1,
-      ["JavaScript", "React"],
-      "https://github.com/zitaoyu/Sorting-Visualiser",
-      "https://tommy-zitaoy.github.io/Sorting_Visualiser/",
-    ),
-    new ProjectInfo(
       "Hollow Tree",
-      `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying bugs (no pun intended).`,
+      `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In 
+      this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying 
+      bugs (no pun intended).`,
       projectImage_2,
       ["JavaScript", "HTML"],
       "https://github.com/zitaoyu/Hollow-Tree",
@@ -184,12 +198,12 @@ export const projectSectionContent = {
       null,
     ),
     new ProjectInfo(
-      "Portfolio",
-      "A portfolio site template written in React and Tailwind CSS.",
+      "Sorting Visualizer",
+      "Showcase various sorting algorithms, providing step-by-step visualization with color indication.",
       null,
-      ["React", "Tailwind CSS"],
-      "https://github.com/zitaoyu/tommyyu-v1-example",
-      "https://zitaoyu.github.io/tommyyu-v1-example/",
+      ["JavaScript", "React"],
+      "https://github.com/zitaoyu/Sorting-Visualiser",
+      "https://tommy-zitaoy.github.io/Sorting_Visualiser/",
     ),
     new ProjectInfo(
       "Automation Framework",
@@ -200,6 +214,14 @@ export const projectSectionContent = {
       null,
     ),
     new ProjectInfo(
+      "CosmoWeb",
+      "A websitefor my cat Cosmo, powered by Facebook develper APIs.",
+      null,
+      ["React", "RESTful API"],
+      "https://github.com/zitaoyu/cosmoweb",
+      "https://zitaoyu.github.io/cosmoweb/",
+    ),
+    new ProjectInfo(
       "Pokemon Battle Simulator",
       "A Pokemon battle simulator to build teams and practice battles.",
       null,
@@ -207,14 +229,7 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/pygame-poke",
       null,
     ),
-    new ProjectInfo(
-      "CosmoWeb",
-      "A pet portfolio website to showcase photos using Facebook develper APIs.",
-      null,
-      ["React", "RESTful API"],
-      "https://github.com/zitaoyu/cosmoweb",
-      "https://zitaoyu.github.io/cosmoweb/",
-    ),
+
     new ProjectInfo(
       "Pentago AI",
       "Play Pentago game with an AI but you would never win.",
@@ -238,8 +253,7 @@ export const projectSectionContent = {
 // contact.jsx
 export const contactSectionContent = {
   sectionTitle: "Contact Me",
-  intro: `Since you have reached this part of the page, I want to thank you
-          for checking out my page. I'm always open to new oppuntunities and
-          conversations, feel free to say hello to me.`,
+  intro: `Thank you for checking out my page. I'm always open to new oppuntunities and
+          conversations, if you like what you see, feel free to say hello to me.`,
   button: "Say Hello",
 };
