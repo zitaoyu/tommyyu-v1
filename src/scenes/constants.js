@@ -3,17 +3,16 @@ import projectImage_0 from "../assets/tommy-yu.png";
 import projectImage_2 from "../assets/hollow-tree-01.png";
 import projectImage_3 from "../assets/profit-tracker.png";
 import projectImage_4 from "../assets/bnb.png";
+import projectImage_5 from "../assets/porygondex.png";
 
 // landing.jsx
 export const landingSectionContent = {
   heading1: `Hello world, my name is`,
   heading2: `Tommy Yu`,
   heading3: `I create fun things for the web.`,
-  intro: `I'm a passionate developer specializing in crafting web
+  intro: `I'm a a Full-Stack developer specializing in crafting web
           applications with exceptional user experiences and captivating
-          graphics. From designing seamless interfaces to implementing
-          cutting-edge technologies, I'm dedicated to creating digital
-          wonders that leave a lasting impression.`,
+          graphics.`,
   button1: `Check me out!`,
   button2: `Contact info`,
 };
@@ -139,32 +138,35 @@ export const projectSectionContent = {
       cloud services. Users can register account, list a place, book a place, and more. Click the link below to try 
       it out!`,
       projectImage_4,
-      [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js",
-        "AWS S3",
-        "Serverless Functions",
-      ],
+      ["MongoDB", "Express", "React", "Node.js", "AWS S3", "Firebase"],
       "https://github.com/zitaoyu/bed-and-breakfast-client",
       "https://bnbapp.netlify.app",
     ),
     new ProjectInfo(
-      "Profit Tracker",
-      `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits. 
-      The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports 
-      PostgreSQL for optimal data management.`,
-      projectImage_3,
-      ["Ruby on Rails", "Bootstrap", "PostgreSQL"],
-      "https://github.com/zitaoyu/profit-tracker",
-      null,
+      "Porygon Dex (Pokemon Wiki)",
+      `Porygon Dex serves as a wiki site for the Pokémon main series games, dedicated to the Pokémon community. 
+      Since most other wiki sites are primarily designed for desktop clients, navigating them on a mobile device 
+      can be challenging. The goal of this project is to ensure smooth site navigation for both mobile and 
+      desktop browsers.`,
+      projectImage_5,
+      ["Next.js", "TypeScript", "React", "NextUI"],
+      "https://github.com/zitaoyu/porygondex",
+      "https://porygondex.vercel.app",
     ),
+    // new ProjectInfo(
+    //   "Profit Tracker",
+    //   `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits.
+    //   The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports
+    //   PostgreSQL for optimal data management.`,
+    //   projectImage_3,
+    //   ["Ruby on Rails", "Bootstrap", "PostgreSQL"],
+    //   "https://github.com/zitaoyu/profit-tracker",
+    //   null,
+    // ),
     new ProjectInfo(
       "Portfolio V1 (This website)",
       `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React 
-      with libraries such as Framer Motion, Tailwind CSS, and FontAwesome, seamlessly combining to deliver a dynamic user interface 
-      that guarantees an exceptional experience. This site is hosted using Netlify, complete with a deployment pipeline all set up.`,
+      with libraries such as Framer Motion, Tailwind CSS, and FontAwesome.`,
       projectImage_0,
       [
         "JavaScript",
