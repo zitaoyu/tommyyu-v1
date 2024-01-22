@@ -1,7 +1,7 @@
 import projectImage_0 from "../assets/tommy-yu.png";
 // import projectImage_1 from "../assets/sorting-visualizer.png";
 import projectImage_2 from "../assets/hollow-tree-01.png";
-import projectImage_3 from "../assets/profit-tracker.png";
+// import projectImage_3 from "../assets/profit-tracker.png";
 import projectImage_4 from "../assets/bnb.png";
 import projectImage_5 from "../assets/porygondex.png";
 
