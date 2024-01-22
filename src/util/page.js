@@ -1,7 +1,7 @@
 export const Page = {
   Home: "home",
   About: "about",
-  Experience: "experience",
+  Experience: "work",
   Projects: "projects",
   Contact: "contact",
 };

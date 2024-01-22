@@ -9,12 +9,50 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { projectSectionContent } from "./constants";
 
+const TechTerms = ({ terms, isRight = true }) => {
+  return (
+    <div
+      className={`flex flex-wrap gap-4 font-robotomono text-sm text-slate ${
+        isRight && "justify-end"
+      }`}
+    >
+      {terms.map((term) => {
+        return <span>{term}</span>;
+      })}
+    </div>
+  );
+};
+
+const ProjectIcons = ({ githubLink, externalLink, isRight = true }) => {
+  return (
+    <div
+      className={`flex flex-wrap gap-6 text-2xl text-slate ${
+        isRight && "justify-end"
+      }`}
+    >
+      {githubLink && (
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon className="hover:text-primary" icon={faGithub} />
+        </a>
+      )}
+      {externalLink && (
+        <a href={externalLink} target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon
+            className="hover:text-primary"
+            icon={faUpRightFromSquare}
+          />
+        </a>
+      )}
+    </div>
+  );
+};
+
 const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
   const isRight = index % 2 === 1;
   const imageCss = isDesktop
     ? `${
         isRight ? "left-0" : "right-0"
-      } w-[50%] bottom-0 top-0 z-0 my-auto aspect-[4/3]`
+      } w-[45%] bottom-0 top-0 z-0 my-auto aspect-[4/3]`
     : "left-0 w-full h-full";
 
   return (
@@ -23,18 +61,26 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
         isRight && isDesktop && "flex justify-end"
       }`}
     >
-      <img
-        className={`absolute rounded-lg bg-cover bg-center brightness-[40%] transition
-         duration-300 group-hover:brightness-[70%] ${imageCss}`}
-        src={projectInfo.imageUrl}
-        alt={projectInfo.imageUrl.toString()}
-      />
+      {/* Project Image */}
+      <a
+        href={projectInfo?.externalLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          className={`absolute cursor-pointer rounded-lg bg-cover bg-center brightness-[40%] 
+                      transition duration-300 md:hover:brightness-[65%] ${imageCss}`}
+          src={projectInfo.imageUrl}
+          alt={projectInfo.imageUrl.toString()}
+        />
+      </a>
+      {/* Prject Info Box */}
       <div
         className={`${
           isRight && isDesktop
-            ? "text-right md:pl-20 md:pr-0"
-            : "md:pl-0 md:pr-20"
-        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[80%] md:py-14 md:backdrop-blur-none`}
+            ? "text-right md:ml-20 md:pr-0"
+            : "md:mr-20 md:pl-0"
+        } flex flex-col gap-4 rounded-lg p-6 backdrop-blur-sm md:w-[65%] md:py-14 md:backdrop-blur-none`}
       >
         <a
           href={projectInfo?.externalLink}
@@ -45,45 +91,18 @@ const HighlightedProject = ({ isDesktop, projectInfo, index }) => {
             {projectInfo.title}
           </h1>
         </a>
-        <p className="mb-10 text-slate group-hover:text-light-slate xs:text-xl">
+        <p className="mb-10 text-slate transition group-hover:text-light-slate xs:text-xl">
           {projectInfo.description}
         </p>
-        <div
-          className={`flex flex-wrap gap-4 font-robotomono text-sm text-slate ${
-            ((isDesktop && isRight) || !isDesktop) && "justify-end"
-          }`}
-        >
-          {projectInfo.techTerms.map((term) => {
-            return <span>{term}</span>;
-          })}
-        </div>
-        <div
-          className={`flex flex-wrap gap-6 text-2xl text-slate ${
-            ((isDesktop && isRight) || !isDesktop) && "justify-end"
-          }`}
-        >
-          {projectInfo.githubLink && (
-            <a
-              href={projectInfo.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon className="hover:text-primary" icon={faGithub} />
-            </a>
-          )}
-          {projectInfo.externalLink && (
-            <a
-              href={projectInfo.externalLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon
-                className="hover:text-primary"
-                icon={faUpRightFromSquare}
-              />
-            </a>
-          )}
-        </div>
+        <TechTerms
+          terms={projectInfo.techTerms}
+          isRight={(isDesktop && isRight) || !isDesktop}
+        />
+        <ProjectIcons
+          githubLink={projectInfo.githubLink}
+          externalLink={projectInfo.externalLink}
+          isRight={(isDesktop && isRight) || !isDesktop}
+        />
       </div>
     </div>
   );
@@ -104,37 +123,11 @@ const Project = ({ projectInfo }) => {
           <p className="text-slate">{projectInfo.description}</p>
         </div>
         <div className="bottom-0 right-0 flex flex-col gap-4 text-right text-slate">
-          <div className="flex flex-wrap justify-end font-robotomono text-sm text-slate">
-            {projectInfo.techTerms.map((term) => {
-              return <span className="mr-4">{term}</span>;
-            })}
-          </div>
-          <div>
-            {projectInfo.githubLink && (
-              <a
-                href={projectInfo.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  className="mr-4 text-2xl hover:text-primary"
-                  icon={faGithub}
-                />
-              </a>
-            )}
-            {projectInfo.externalLink && (
-              <a
-                href={projectInfo.externalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon
-                  className="mr-4 text-2xl hover:text-primary"
-                  icon={faUpRightFromSquare}
-                />
-              </a>
-            )}
-          </div>
+          <TechTerms terms={projectInfo.techTerms} />
+          <ProjectIcons
+            githubLink={projectInfo.githubLink}
+            externalLink={projectInfo.externalLink}
+          />
         </div>
       </div>
     </div>
@@ -170,7 +163,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
         </MotionDiv>
 
         {/* Highlighted Projects Section */}
-        <div className="mx-auto mb-10 flex w-full flex-col justify-center gap-10 md:mb-28 md:mt-20 md:max-w-[90%] md:gap-28">
+        <div className="mx-auto mb-10 flex w-full flex-col justify-center gap-10 md:mb-28 md:mt-20 md:max-w-[90%] md:gap-20">
           {projectSectionContent.highlightedProjects.map(
             (projectInfo, index) => {
               return (

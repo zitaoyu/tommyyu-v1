@@ -73,7 +73,7 @@ export const aboutSectionContent = {
 
 // experience.jsx
 export const experienceSectionContent = {
-  sectionTitle: "My Journey",
+  sectionTitle: "My Work",
   timelineItems: [
     {
       icon: "work",
@@ -143,7 +143,7 @@ export const projectSectionContent = {
       "https://bnbapp.netlify.app",
     ),
     new ProjectInfo(
-      "Porygon Dex (Pokemon Wiki)",
+      "Porygon Dex",
       `Porygon Dex serves as a wiki site for the Pokémon main series games, dedicated to the Pokémon community. 
       Since most other wiki sites are primarily designed for desktop clients, navigating them on a mobile device 
       can be challenging. The goal of this project is to ensure smooth site navigation for both mobile and 
@@ -153,16 +153,6 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/porygondex",
       "https://porygondex.vercel.app",
     ),
-    // new ProjectInfo(
-    //   "Profit Tracker",
-    //   `Profit Tracker is a Ruby on Rails web application designed to help you efficiently manage your investments and track profits.
-    //   The app utilizes a stack that includes Devise for user authentication, Bootstrap for a responsive design, and it supports
-    //   PostgreSQL for optimal data management.`,
-    //   projectImage_3,
-    //   ["Ruby on Rails", "Bootstrap", "PostgreSQL"],
-    //   "https://github.com/zitaoyu/profit-tracker",
-    //   null,
-    // ),
     new ProjectInfo(
       "Portfolio V1 (This website)",
       `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React 
@@ -197,6 +187,14 @@ export const projectSectionContent = {
       null,
       ["C#", "ASP.NET"],
       "https://github.com/zitaoyu/SmartManage",
+      null,
+    ),
+    new ProjectInfo(
+      "Profit Tracker",
+      "A Ruby on Rails web application to help you efficiently manage your investments and track profits.",
+      null,
+      ["Ruby on Rails", "Bootstrap", "PostgreSQL"],
+      "https://github.com/zitaoyu/profit-tracker",
       null,
     ),
     new ProjectInfo(
