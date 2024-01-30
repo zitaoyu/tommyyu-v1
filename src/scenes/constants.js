@@ -143,15 +143,15 @@ export const projectSectionContent = {
       "https://bnbapp.netlify.app",
     ),
     new ProjectInfo(
-      "Porygon Dex",
-      `Porygon Dex serves as a wiki site for the Pokémon main series games, dedicated to the Pokémon community. 
+      "Pokédex",
+      `Secret Base serves as a wiki site for the Pokémon main series games, dedicated to the Pokémon community. 
       Since most other wiki sites are primarily designed for desktop clients, navigating them on a mobile device 
       can be challenging. The goal of this project is to ensure smooth site navigation for both mobile and 
       desktop browsers.`,
       projectImage_5,
       ["Next.js", "TypeScript", "React", "NextUI"],
-      "https://github.com/zitaoyu/porygondex",
-      "https://porygondex.vercel.app",
+      "https://github.com/zitaoyu/secretbase",
+      "https://secretbase.vercel.app",
     ),
     new ProjectInfo(
       "Portfolio V1 (This website)",
