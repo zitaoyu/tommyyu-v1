@@ -17,7 +17,7 @@ const TechTerms = ({ terms, isRight = true }) => {
       }`}
     >
       {terms.map((term) => {
-        return <span>{term}</span>;
+        return <span key={term}>{term}</span>;
       })}
     </div>
   );
@@ -168,6 +168,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
             (projectInfo, index) => {
               return (
                 <MotionDiv
+                  key={projectInfo.title}
                   viewAmount={isDesktop ? 0.4 : 0.25}
                   delay={0.1 * index}
                   duration={0.5}
@@ -195,6 +196,7 @@ const ProjectsSection = ({ isDesktop, setSelectedPage }) => {
             .map((projectInfo, index) => {
               return (
                 <MotionDiv
+                  key={projectInfo.title}
                   viewAmount={0.2}
                   delay={isDesktop ? 0.2 * index - displayedProjects * 0.2 : 0}
                   duration={0.5}
