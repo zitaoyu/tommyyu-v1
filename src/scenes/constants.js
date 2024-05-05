@@ -1,6 +1,6 @@
-import projectImage_0 from "../assets/tommy-yu.png";
+// import projectImage_0 from "../assets/tommy-yu.png";
 // import projectImage_1 from "../assets/sorting-visualizer.png";
-import projectImage_2 from "../assets/hollow-tree-01.png";
+// import projectImage_2 from "../assets/hollow-tree-01.png";
 // import projectImage_3 from "../assets/profit-tracker.png";
 import projectImage_4 from "../assets/bnb.png";
 import projectImage_5 from "../assets/secretbase.png";
@@ -9,10 +9,9 @@ import projectImage_5 from "../assets/secretbase.png";
 export const landingSectionContent = {
   heading1: `Hello world, my name is`,
   heading2: `Tommy Yu`,
-  heading3: `I create fun things for the web.`,
-  intro: `I'm a a Full-Stack developer specializing in crafting web
-          applications with exceptional user experiences and captivating
-          graphics.`,
+  heading3: `I enjoy creating fun things.`,
+  intro: `
+  I'm a Software Developer dedicated to creating applications that prioritize exceptional user experiences.`,
   button1: `Check me out!`,
   button2: `Contact info`,
 };
@@ -24,49 +23,22 @@ export const aboutSectionContent = {
           interested in web applications and game development. I discovered 
           my passion for programming in my Junior year of Highschool, and I 
           love the limitless creativity of programming ever since then. In 
-          my free time, I love to learn new tech, cooking up fun projects, 
-          and just enjoying the thrill of creating. Oh, and if I'm not glued 
-          to my keyboard, I'm probably out in Paldea, hunting shiny 
-          Pokémons.`,
+          my free time, I enjoy making web apps and participating in game jams. 
+          Oh, and if I'm not glued to my keyboard, I'm probably gaming because I love
+          to figure out how games work under the hood.`,
   skillIntro: `Here are some of the technologies I've been working with:`,
   skills: [
     {
       title: `Languages`,
-      items: [
-        "JavaScript",
-        "TypeScript",
-        "Python",
-        "Java",
-        "C++",
-        "C#",
-        "Golang",
-      ],
+      items: ["TypeScript", "Python", "C++", "C#"],
     },
     {
       title: `Frameworks`,
-      items: [
-        "React",
-        "Next.js",
-        "Django",
-        "ASP.NET",
-        "Ruby on Rails",
-        "Electron.js",
-        "Bootstrap",
-        "Tailwind CSS",
-      ],
+      items: ["React", "Next.js", "ASP.NET", "Electron.js", "Tailwind CSS"],
     },
     {
       title: `Dev Tools`,
-      items: [
-        "AWS",
-        "Azure",
-        "Firebase",
-        "MySQL",
-        "MongoDB",
-        "RESTful API",
-        "Linux",
-        "Bash",
-      ],
+      items: ["AWS", "Azure", "Firebase", "MySQL", "MongoDB"],
     },
   ],
 };
@@ -81,11 +53,17 @@ export const experienceSectionContent = {
       date: "March 2022 - Present",
       company: "Microsoft",
       bulletPoints: [
-        `Contributed to Microsoft Teams front-end development using TypeScript and React, focusing on enhancing the user interface and experience.`,
-        `Created a desktop application that simplified the configuration process of conference room devices through USB communication`,
-        `Developed a Python-based automation test framework to validate core features on intelligent cameras.`,
-        `Played a key role in embedded system engineering, encompassing firmware development and deployment`,
+        `Microsoft Teams & Microsoft Teams Rooms.`,
+        `AI Integrated Conference Room Devices.`,
+        `E2E Automation Tests.`,
+        `Cross-team Collaborations with OEMs.`,
       ],
+      // bulletPoints: [
+      //   `Contributed to Microsoft Teams front-end development using TypeScript and React, focusing on enhancing the user interface and experience.`,
+      //   `Created a desktop application that simplified the configuration process of conference room devices through USB communication`,
+      //   `Developed a Python-based automation test framework to validate core features on intelligent cameras.`,
+      //   `Played a key role in embedded system engineering, encompassing firmware development and deployment`,
+      // ],
     },
     {
       icon: "education",
@@ -143,7 +121,7 @@ export const projectSectionContent = {
       "https://bnbapp.netlify.app",
     ),
     new ProjectInfo(
-      "Pokédex",
+      "Secret Base",
       `Secret Base serves as a wiki site for the Pokémon main series games, dedicated to the Pokémon community. 
       Since most other wiki sites are primarily designed for desktop clients, navigating them on a mobile device 
       can be challenging. The goal of this project is to ensure smooth site navigation for both mobile and 
@@ -153,32 +131,32 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/secretbase",
       "https://secretbase.vercel.app",
     ),
-    new ProjectInfo(
-      "Portfolio V1 (This website)",
-      `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React 
-      with libraries such as Framer Motion, Tailwind CSS, and FontAwesome.`,
-      projectImage_0,
-      [
-        "JavaScript",
-        "React",
-        "Framer Motion",
-        "Tailwind CSS",
-        "FontAwesome",
-        "Netlify",
-      ],
-      "https://github.com/zitaoyu/tommyyu-v1",
-      "https://tommy-yu.com",
-    ),
-    new ProjectInfo(
-      "Hollow Tree",
-      `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In 
-      this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying 
-      bugs (no pun intended).`,
-      projectImage_2,
-      ["JavaScript", "HTML"],
-      "https://github.com/zitaoyu/Hollow-Tree",
-      "https://zitaoyu.github.io/Hollow-Tree/",
-    ),
+    // new ProjectInfo(
+    //   "Portfolio V1 (This website)",
+    //   `A portfolio website project that rocks a dark gray and blue aesthetic reminiscent of the Linux terminal. Crafted using React
+    //   with libraries such as Framer Motion, Tailwind CSS, and FontAwesome.`,
+    //   projectImage_0,
+    //   [
+    //     "JavaScript",
+    //     "React",
+    //     "Framer Motion",
+    //     "Tailwind CSS",
+    //     "FontAwesome",
+    //     "Netlify",
+    //   ],
+    //   "https://github.com/zitaoyu/tommyyu-v1",
+    //   "https://tommy-yu.com",
+    // ),
+    // new ProjectInfo(
+    //   "Hollow Tree",
+    //   `A Metroidvania 2D platformer game, powered by Googler Seth Ladd's game engine and inspired by his Google IO talk in 2011. In
+    //   this game, you play as a druid who collects powerful magic stones to learn new spells and upgrades, all to combat terrifying
+    //   bugs (no pun intended).`,
+    //   projectImage_2,
+    //   ["JavaScript", "HTML"],
+    //   "https://github.com/zitaoyu/Hollow-Tree",
+    //   "https://zitaoyu.github.io/Hollow-Tree/",
+    // ),
   ],
   projects: [
     new ProjectInfo(
@@ -205,14 +183,14 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/Sorting-Visualiser",
       "https://tommy-zitaoy.github.io/Sorting_Visualiser/",
     ),
-    new ProjectInfo(
-      "Automation Framework",
-      "An automation bot designed to execute E2E tests on a daily basis, triggering email alerts when errors are detected.",
-      null,
-      ["Python", "PyAutoGUI", "OpenCV"],
-      null,
-      null,
-    ),
+    // new ProjectInfo(
+    //   "Automation Framework",
+    //   "An automation bot designed to execute E2E tests on a daily basis, triggering email alerts when errors are detected.",
+    //   null,
+    //   ["Python", "PyAutoGUI", "OpenCV"],
+    //   null,
+    //   null,
+    // ),
     new ProjectInfo(
       "CosmoWeb",
       "A websitefor my cat Cosmo, powered by Facebook develper APIs.",
@@ -221,14 +199,14 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/cosmoweb",
       "https://zitaoyu.github.io/cosmoweb/",
     ),
-    new ProjectInfo(
-      "Pokemon Battle Simulator",
-      "A Pokemon battle simulator to build teams and practice battles.",
-      null,
-      ["Python", "PyGame"],
-      "https://github.com/zitaoyu/pygame-poke",
-      null,
-    ),
+    // new ProjectInfo(
+    //   "Pokemon Battle Simulator",
+    //   "A Pokemon battle simulator to build teams and practice battles.",
+    //   null,
+    //   ["Python", "PyGame"],
+    //   "https://github.com/zitaoyu/pygame-poke",
+    //   null,
+    // ),
 
     new ProjectInfo(
       "Pentago AI",
@@ -238,14 +216,14 @@ export const projectSectionContent = {
       "https://github.com/zitaoyu/Pentago-AI",
       null,
     ),
-    new ProjectInfo(
-      "ProgrammerJoke API",
-      "A RESTful API service that delivers jokes for programmers.",
-      null,
-      ["JavaScript", "RESTful API"],
-      "https://github.com/zitaoyu/ProgrammerJokeAPI",
-      null,
-    ),
+    // new ProjectInfo(
+    //   "ProgrammerJoke API",
+    //   "A RESTful API service that delivers jokes for programmers.",
+    //   null,
+    //   ["JavaScript", "RESTful API"],
+    //   "https://github.com/zitaoyu/ProgrammerJokeAPI",
+    //   null,
+    // ),
   ],
   showMoreButton: "Show More",
 };

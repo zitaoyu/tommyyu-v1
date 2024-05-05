@@ -4,15 +4,18 @@ import {
   faLinkedin,
   faCodepen,
   faGithub,
+  faItchIo,
 } from "@fortawesome/free-brands-svg-icons";
 
 const icons = [
   {
     link: "https://www.linkedin.com/in/tommy-yu-a2435b1b3/",
     faIcon: faLinkedin,
+    name: "linkedin",
   },
-  { link: "https://github.com/zitaoyu", faIcon: faGithub },
-  { link: "https://codepen.io/zitaoyu", faIcon: faCodepen },
+  { link: "https://github.com/zitaoyu", faIcon: faGithub, name: "github" },
+  { link: "https://codepen.io/zitaoyu", faIcon: faCodepen, name: "codepen" },
+  { link: "https://tommyyu.itch.io/", faIcon: faItchIo, name: "itch" },
 ];
 
 const SocialMediaIcon = ({ link, faIcon }) => {
@@ -38,7 +41,13 @@ const IconGroup = ({ isVerticle = true }) => {
       } gap-6 ss-max-h:gap-3`}
     >
       {icons.map((icon) => {
-        return <SocialMediaIcon link={icon.link} faIcon={icon.faIcon} />;
+        return (
+          <SocialMediaIcon
+            key={icon.name}
+            link={icon.link}
+            faIcon={icon.faIcon}
+          />
+        );
       })}
       {isVerticle && <div className={`m-auto h-[100px] w-0.5 bg-slate`}></div>}
     </div>
